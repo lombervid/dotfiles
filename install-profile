@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+set -e
+
+#BASE_CONFIG="base"
+#CONFIG_SUFFIX=".yaml"
+
+#META_DIR="meta"
+#CONFIG_DIR="configs"
+#PROFILES_DIR="profiles"
+
+#DOTBOT_DIR="dotbot"
+#DOTBOT_BIN="bin/dotbot"
+
+#BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+source ./settings.sh
+
+cd "${BASE_DIR}"
+git submodule update --init --recursive --remote
+
+
+while IFS= read -r config; do
+    CONFIGS+=" ${config}"
+done < "${PROFILES_DIR}/$1"
+
+shift
+
+for config in ${CONFIGS} ${@}; do
+    echo -e "\nConfigure $config"
+    # create temporary file
+    configFile="$(mktemp)"
+    suffix="-sudo"
+    echo -e "$(<"${CONFIG_DIR}/${BASE_CONFIG}")\n$(<"${MODULES_DIR}/${config%"$suffix"}${CONFIG_SUFFIX}")" > "$configFile"
+
+    cmd=("${DOTBOT_BIN}" -d "${BASE_DIR}" -c "$configFile")
+
+    if [[ $config == *"sudo"* ]]; then
+        cmd=(sudo "${cmd[@]}")
+    fi
+
+    "${cmd[@]}"
+    rm -f "$configFile"
+done
+
+cd "${BASE_DIR}"
+
+echo "Restart your terminal..."

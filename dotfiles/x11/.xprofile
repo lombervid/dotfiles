@@ -1,0 +1,21 @@
+#echo 'Inside .xprofile file'
+export EXPROFILE="Loaded"
+#export DOTFILES_DIR="$(dirname $(readlink -f ${0}))"
+
+#export XDG_CONFIG_HOME="${HOME}/.config"
+#export XDG_CACHE_HOME="${HOME}/.cache"      
+#export XDG_DATA_HOME="${HOME}/.local/share" 
+#export XDG_STATE_HOME="${HOME}/.local/state"
+#export XDG_DATA_DIRS="/usr/local/share:/usr/share"
+#export XDG_CONFIG_DIRS="/etc/xdg"
+
+#export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
+#export SHELL_DOT_DIR="${XDG_CONFIG_HOME}/shell"
+#export SHELL_ALIASES_DIR="${SHELL_DOT_DIR}/aliases"
+
+#export PATH="${HOME}/.local/bin:${PATH}"
+#export EDITOR="nvim"
+#export VISUAL="${EDITOR}"
+#export TERMINAL="kitty"
+#export BROWSER="firefox"
+

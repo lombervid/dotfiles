@@ -1,0 +1,5 @@
+#!/bin/bash
+
+source $HOME/.config/bspwm/packages/bspwm.sh
+
+bspwm::resize "$@"

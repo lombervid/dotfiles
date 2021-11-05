@@ -1,0 +1,15 @@
+configuration {
+  modi: "drun,window,combi";
+  //theme: "themes/slate";
+  font: "FiraCode Nerd Font 12";
+  combi-modi: "window,drun,keys,mobi";
+  show-icons: true;
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
+}

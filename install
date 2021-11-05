@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -e
+
+source ./settings.sh
+CONFIG="install.conf${CONFIG_SUFFIX}"
+cd "${BASE_DIR}"
+
+#git -C "${META_DIR}/${DOTBOT_DIR}" submodule sync --quiet --recursive
+#git submodule update --init --recursive "${META_DIR}/${DOTBOT_DIR}"
+git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
+git submodule update --init --recursive "${DOTBOT_DIR}"
+#git submodule update --init --recursive --remote
+
+"${DOTBOT_BIN}" -d "${BASE_DIR}" -c "${CONFIG_DIR}/${CONFIG}" "${@}"

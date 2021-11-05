@@ -1,0 +1,30 @@
+- defaults:
+    link:
+        create: true
+        relink: true
+    clean:
+        force: true
+
+- clean:
+    ~/:
+    ~/.config:
+        recursive: true
+
+- link:
+    ~/.bash_profile: ${DOTFILES_DIR}/bash/.bash_profile
+    ~/.bashrc: ${DOTFILES_DIR}/bash/.bashrc
+    ~/.profile: ${DOTFILES_DIR}/.profile
+    ~/.xinitrc: ${DOTFILES_DIR}/x11/.xinitrc
+    ~/.xprofile: ${DOTFILES_DIR}/x11/.xprofile
+    ~/.config/bspwm: ${DOTFILES_DIR}/bspwm
+    ~/.config/kitty: ${DOTFILES_DIR}/kitty
+    ~/.config/gtk-2.0: ${DOTFILES_DIR}/gtk/gtk-2.0
+    ~/.config/gtk-3.0: ${DOTFILES_DIR}/gtk/gtk-3.0
+    ~/.config/nvim: ${DOTFILES_DIR}/nvim
+    ~/.config/picom: ${DOTFILES_DIR}/picom
+    ~/.config/polybar: ${DOTFILES_DIR}/polybar
+    ~/.config/rofi: ${DOTFILES_DIR}/rofi
+    ~/.config/shell: ${DOTFILES_DIR}/shell
+    ~/.config/sxhkd: ${DOTFILES_DIR}/sxhkd
+    ~/.config/zsh: ${DOTFILES_DIR}/zsh
+    ~/.zshenv: ${DOTFILES_DIR}/zsh/.zshenv
