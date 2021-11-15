@@ -1,47 +1,64 @@
 #!/usr/bin/env bash
 
-set -e
-
-#BASE_CONFIG="base"
-#CONFIG_SUFFIX=".yaml"
-
-#META_DIR="meta"
-#CONFIG_DIR="configs"
-#PROFILES_DIR="profiles"
-
-#DOTBOT_DIR="dotbot"
-#DOTBOT_BIN="bin/dotbot"
-
-#BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+set -e          # Abort on nonzero exit status
+set -u          # Abort on unbound variable
+set -o pipefail # Do not hide errors within pipes
 
 source ./settings.sh
 
+declare -a configs
+declare -r PROFILE="${1:-}" && shift || true
+declare -r MODULE_SUFFIX="-sudo" # Suffix to run module as sudo
+declare -r CONFIG_FILE="$(mktemp --suffix="${CONFIG_SUFFIX}")"
+declare -r CONFIG_FILE_SUDO="$(mktemp --suffix="${CONFIG_SUFFIX}")"
+declare -r CMD=("${DOTBOT_BIN}" -d "${BASE_DIR}" -c)
+declare -i sudo_count=0
+
+if [[ -z "${PROFILE}" ]]; then
+    exception "Missing profile." 22
+fi
+
+if [[ ! -r "${PROFILES_DIR}/${PROFILE}" ]]; then
+    exception "Profile \"${PROFILE}\" does not exists or it's not readable." 2
+fi
+
 cd "${BASE_DIR}"
-git submodule update --init --recursive --remote
+git submodule update --init --recursive "${DOTBOT_DIR}"
 
+while read -r line || [[ -n "${line}" ]]; do
+    [[ -n "${line}" ]] && configs+=("${line}")
+done < "${PROFILES_DIR}/${PROFILE}"
 
-while IFS= read -r config; do
-    CONFIGS+=" ${config}"
-done < "${PROFILES_DIR}/$1"
+# Append defaults.yaml and base.yaml files
+echo -e "$(<"${DEFAULTS_CONFIG}")${LF}${LF}$(<"${BASE_CONFIG}")${LF}" > "${CONFIG_FILE}"
+echo -e "$(<"${DEFAULTS_CONFIG}")${LF}" > "${CONFIG_FILE_SUDO}"
 
-shift
+for config in "${configs[@]}" "${@}"; do
+    configFile="${CONFIG_FILE}"
+    module="${config%"${MODULE_SUFFIX}"}"
+    module_dir="${MODULES_DIR}/${module}${CONFIG_SUFFIX}"
 
-for config in ${CONFIGS} ${@}; do
-    echo -e "\nConfigure $config"
-    # create temporary file
-    configFile="$(mktemp)"
-    suffix="-sudo"
-    echo -e "$(<"${CONFIG_DIR}/${BASE_CONFIG}")\n$(<"${MODULES_DIR}/${config%"$suffix"}${CONFIG_SUFFIX}")" > "$configFile"
-
-    cmd=("${DOTBOT_BIN}" -d "${BASE_DIR}" -c "$configFile")
-
-    if [[ $config == *"sudo"* ]]; then
-        cmd=(sudo "${cmd[@]}")
+    if [[ ! -r "${module_dir}" ]]; then
+        exception "Module \"${module}\" does not exists or it's not readable in: \"${module_dir}\"." 2
     fi
 
-    "${cmd[@]}"
-    rm -f "$configFile"
+    if [[ "${config}" == *"${MODULE_SUFFIX}" ]]; then
+        configFile="${CONFIG_FILE_SUDO}"
+        ((sudo_count+=1))
+    fi
+
+    echo -e "$(config_message "${module}")" >> "${configFile}"
+    echo -e "$(<"${module_dir}")${LF}" >> "${configFile}"
 done
+
+# Execute dotbot
+cmd=("${CMD[@]}" "${CONFIG_FILE}") && "${cmd[@]}"
+
+# Execute dotbot with sudo if any module was added
+if (( sudo_count > 0 )); then
+    echo -e "${LF}${LF}${LF}Executing sudo modules..."
+    cmd_sudo=(sudo "${CMD[@]}" "${CONFIG_FILE_SUDO}") && "${cmd_sudo[@]}"
+fi
 
 cd "${BASE_DIR}"
 

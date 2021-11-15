@@ -6,5 +6,6 @@
     clean:
         force: true
     shell:
+        stdin: true
         stdout: true
         stderr: true
