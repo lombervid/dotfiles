@@ -1,0 +1,3 @@
+- link:
+    ~/.bashrc: ${DOTFILES_DIR}/bash/.bashrc
+    ~/.bash_profile: ${DOTFILES_DIR}/bash/.bash_profile

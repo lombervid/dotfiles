@@ -1,0 +1,2 @@
+- link:
+    ~/.config/picom: ${DOTFILES_DIR}/picom

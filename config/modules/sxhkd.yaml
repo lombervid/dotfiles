@@ -1,0 +1,2 @@
+- link:
+    ~/.config/sxhkd: ${DOTFILES_DIR}/sxhkd

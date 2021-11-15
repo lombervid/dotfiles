@@ -1,0 +1,3 @@
+- link:
+    ~/.xinitrc: ${DOTFILES_DIR}/x11/.xinitrc
+    ~/.xprofile: ${DOTFILES_DIR}/x11/.xprofile

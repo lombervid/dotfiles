@@ -1,0 +1,6 @@
+- link:
+    ~/.zshenv: ${DOTFILES_DIR}/zsh/.zshenv
+    ~/.config/zsh/.zshrc: ${DOTFILES_DIR}/zsh/.zshrc
+    ~/.config/zsh/:
+        glob: true
+        path: ${DOTFILES_DIR}/zsh/*

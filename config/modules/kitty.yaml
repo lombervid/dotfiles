@@ -1,0 +1,2 @@
+- link:
+    ~/.config/kitty: ${DOTFILES_DIR}/kitty
