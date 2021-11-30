@@ -5,23 +5,22 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 ################ Autostart #################
 
 # Load vmware settings
-vmware-user-suid-wrapper &
+# vmware-user-suid-wrapper &
 
 # Set wallpaper
 nitrogen --restore &
 
-# default cursor
+# Default cursor
 xsetroot -cursor_name left_ptr &
 
-# compositor
-# picom -f --experimental-backends &
+# Compositor
 picom -f --experimental-backends &
-# picom -f &
 
 # Polybar
 polybar -r example &
 
-[ "$1" = 0 ] && wmname LG3D
+# Fix for Java apps
+# [ "$1" = 0 ] && wmname LG3D
 
 ############### Configuration ###############
 bspc monitor -d I II III IV V VI VII VIII IX X
@@ -33,11 +32,19 @@ bspc config split_ratio          0.50
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Chromium desktop='^2'
-bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=off
+#bspc rule -a Gimp desktop='^8' state=floating follow=on
+#bspc rule -a Chromium desktop='^2'
+#bspc rule -a mplayer2 state=floating
+#bspc rule -a Kupfer.py focus=on
+#bspc rule -a Screenkey manage=off
 
-bspc rule -a firefox desktop="^2"
+bspc rule -a firefox:Navigator desktop='^2' follow=on
+bspc rule -a firefox:Places sticky=on state=floating center=on
+bspc rule -a feh state=fullscreen focus=on
+bspc rule -a Nvidia-settings state=floating center=on focus=on
+bspc rule -a Thunar state=floating center=on focus=on
+bspc rule -a Font-manager state=floating center=on focus=on
+bspc rule -a Font-viewer state=floating center=on focus=on
+bspc rule -a TelegramDesktop state=floating center=on focus=on
+bspc rule -a discord state=floating center=on focus=on
 # bspc rule -a Code desktop="^2"
