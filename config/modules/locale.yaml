@@ -1,0 +1,2 @@
+- link:
+    ~/.config/locale.conf: ${DOTFILES_DIR}/locale.conf
