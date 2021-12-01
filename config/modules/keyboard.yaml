@@ -1,0 +1,5 @@
+- shell:
+    -
+        description: 'Setting keyboard layout'
+        command: localectl --no-convert set-x11-keymap us pc105+inet altgr-intl terminate:ctrl_alt_bksp
+        quiet: true
