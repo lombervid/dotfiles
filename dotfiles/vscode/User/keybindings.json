@@ -1,0 +1,27 @@
+// Coloque sus enlaces de teclado en este archivo para sobrescribir los valores predeterminados.
+[
+    {
+        "key": "ctrl+alt+a",
+        "command": "wwm.aligncode",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": ".",
+        "command": ""
+    },
+    {
+        "key": "cmd+v",
+        "command": "pasteAndIndent.action",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+v",
+        "command": "editor.action.clipboardPasteAction",
+        "when": "!editorTextFocus"
+    },
+    {
+        "key": "cmd+shift+v",
+        "command": "editor.action.clipboardPasteAction",
+        "when": "editorTextFocus && !editorReadonly"
+    }
+]

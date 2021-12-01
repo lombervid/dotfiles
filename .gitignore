@@ -1,2 +1,9 @@
+# Zsh
 dotfiles/zsh/.zcompdump
 dotfiles/zsh/.zhistory
+
+# VSCode
+dotfiles/vscode/User/*
+!dotfiles/vscode/User/snippets/
+!dotfiles/vscode/User/settings.json
+!dotfiles/vscode/User/keybindings.json
