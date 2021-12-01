@@ -1,0 +1,7 @@
+- link:
+    ~/.config/Code/User: ${DOTFILES_DIR}/vscode/User
+
+- shell:
+    -
+        description: 'Installing extensions'
+        command: xargs -L 1 code --install-extension < "${DOTFILES_DIR}/vscode/extensions"
