@@ -6,10 +6,13 @@
 super + Return
 	kitty
 
-
 # Navigator
-super + n
+super + x; n
     firefox
+
+# File manager
+super + x; e
+	thunar
 
 # program launcher
 super + shift + @space
@@ -20,6 +23,13 @@ super + @space
 #    rofi -show drun
 #    rofi -show drun -show-icons -font "FiraCodeNerdFontCompleteM-Regular" -display-drun "🌀" -theme ~/.config/rofi/config/slate.rasi
     rofi -show
+
+# Screenshots
+Print
+	scrot ~/Pictures/Screenshots/%Y-%m-%d-%T-screenshot.png
+
+super + Print
+	scrot --select --line mode=edge,color=#f97bff,opacity=30 ~/Pictures/Screenshots/%Y-%m-%d-%T-screenshot.png
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -131,7 +141,7 @@ super + alt + {Left,Down,Up,Right}
 
 # expand a window by moving one of its side outward
 ## super + alt + {h,j,k,l}
-#super + alt + {Left,Down,Up,Right} 
+#super + alt + {Left,Down,Up,Right}
 #	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # contract a window by moving one of its side inward
