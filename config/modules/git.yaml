@@ -1,0 +1,2 @@
+- link:
+    ~/.gitconfig: ${DOTFILES_DIR}/git/.gitconfig
