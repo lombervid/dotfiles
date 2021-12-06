@@ -1,4 +1,4 @@
 #!/bin/sh
 
 # Go path
-export GOPATH="${HOME}/.config/go"
+export GOPATH="${HOME}/.local/share"
