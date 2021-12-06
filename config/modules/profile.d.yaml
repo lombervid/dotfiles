@@ -1,0 +1,4 @@
+- link:
+    /etc/profile.d/:
+        glob: true
+        path: system/profile.d/*
