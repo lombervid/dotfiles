@@ -5,6 +5,9 @@ alias ll='ls -lh'
 alias ls='ls --color=tty'
 alias lsa='ls -lah'
 
+# Startx
+alias startx='\startx ${XINITRC}'
+
 # grep
 alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}'
 alias fgrep='fgrep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}'
