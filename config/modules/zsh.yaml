@@ -1,6 +1,12 @@
 - link:
-    ~/.zshenv: ${DOTFILES_DIR}/zsh/.zshenv
+    ~/.config/zsh/.zshenv: ${DOTFILES_DIR}/zsh/.zshenv
     ~/.config/zsh/.zshrc: ${DOTFILES_DIR}/zsh/.zshrc
     ~/.config/zsh/:
         glob: true
         path: ${DOTFILES_DIR}/zsh/*
+
+- shell:
+    -
+        description: Adding ZDOTDIR variable to /etc/environment
+        command: grep -q '^ZDOTDIR=' /etc/environment || sudo sed -ie "\$aZDOTDIR=${HOME}/.config/zsh" /etc/environment
+        quiet: true

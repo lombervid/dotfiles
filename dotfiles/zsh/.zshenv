@@ -1,7 +1,6 @@
 [[ -f ~/.profile ]] && . ~/.profile
 
 export DOTFILES_DIR="${${(%):-%x}:A:h:h}"
-export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 export ZSH_DOT_DIR="${ZDOTDIR}"
 export ZSH_CONFIG_DIR="${ZSH_DOT_DIR}/config"
 export ZSH_PLUGINS_DIR="${ZSH_DOT_DIR}/plugins"
