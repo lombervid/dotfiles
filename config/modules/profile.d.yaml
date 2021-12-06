@@ -1,3 +1,5 @@
+- clean: ['/etc/profile.d']
+
 - link:
     /etc/profile.d/:
         glob: true

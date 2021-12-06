@@ -1,4 +1,4 @@
 #!/bin/sh
 
 # Go path
-export GOPATH="${XDG_CONFIG_HOME}/go"
+export GOPATH="${HOME}/.config/go"
