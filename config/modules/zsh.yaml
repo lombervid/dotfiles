@@ -7,6 +7,6 @@
 
 - shell:
     -
-        description: Adding ZDOTDIR variable to /etc/environment
-        command: grep -q '^ZDOTDIR=' /etc/environment || sudo sed -ie "\$aZDOTDIR=${HOME}/.config/zsh" /etc/environment
+        description: Adding ZDOTDIR variable to /etc/security/pam_env.conf
+        command: grep -q '^ZDOTDIR' /etc/security/pam_env.conf || sudo sed -ie "\$aZDOTDIR     DEFAULT=@{HOME}/.config/zsh" /etc/security/pam_env.conf
         quiet: true
