@@ -50,4 +50,5 @@ bspc rule -a Font-viewer state=floating center=on focus=on
 bspc rule -a TelegramDesktop state=floating center=on focus=on
 bspc rule -a discord state=floating focus=on
 bspc rule -a Pavucontrol state=floating center=on focus=on
+bspc rule -a SimpleScreenRecorder state=floating focus=on
 # bspc rule -a Code desktop="^2"
