@@ -1,0 +1,69 @@
+- shell:
+    # export XDG_CONFIG_HOME="${HOME}/.config"
+    -
+        description: Setting XDG variables in /etc/security/pam_env.conf
+                # -e '$aXDG_CONFIG_HOME DEFAULT=@{HOME}/.config' \
+        command: >-
+            sed -i \
+                -e '/^XDG_CONFIG_HOME.*/{s//XDG_CONFIG_HOME DEFAULT=@{HOME}\/.config/;:a;n;ba;q}' \
+                -e "\$a#\\n# XDG Base Directory\\nXDG_CONFIG_HOME DEFAULT=@{HOME}/.config" \
+                /etc/security/pam_env.conf
+        quiet: true
+
+    # export XDG_CACHE_HOME="${HOME}/.cache"
+    -
+        description: Setting XDG_CACHE_HOME variable
+        command: >-
+            sed -i \
+                -e '/^XDG_CACHE_HOME.*/{s//XDG_CACHE_HOME  DEFAULT=@{HOME}\/.cache/;:a;n;ba;q}' \
+                -e '$aXDG_CACHE_HOME  DEFAULT=@{HOME}\/.cache' \
+                /etc/security/pam_env.conf
+        quiet: true
+
+    # export XDG_DATA_HOME="${HOME}/.local/share"
+    -
+        description: Setting XDG_DATA_HOME variable
+        command: >-
+            sed -i \
+                -e '/^XDG_DATA_HOME.*/{s//XDG_DATA_HOME   DEFAULT=@{HOME}\/.local\/share/;:a;n;ba;q}' \
+                -e '$aXDG_DATA_HOME   DEFAULT=@{HOME}\/.local\/share' \
+                /etc/security/pam_env.conf
+        quiet: true
+
+    # export XDG_STATE_HOME="${HOME}/.local/state"
+    -
+        description: Setting XDG_STATE_HOME variable
+        command: >-
+            sed -i \
+                -e '/^XDG_STATE_HOME.*/{s//XDG_STATE_HOME  DEFAULT=@{HOME}\/.local\/state/;:a;n;ba;q}' \
+                -e '$aXDG_STATE_HOME  DEFAULT=@{HOME}\/.local\/state' \
+                /etc/security/pam_env.conf
+        quiet: true
+
+    # export XDG_DATA_DIRS="/usr/local/share:/usr/share"
+    -
+        description: Setting XDG_DATA_DIRS variable
+        command: >-
+            sed -i \
+                -e '/^XDG_DATA_DIRS.*/{s//XDG_DATA_DIRS   DEFAULT=\/usr\/local\/share:\/usr\/share/;:a;n;ba;q}' \
+                -e '$aXDG_DATA_DIRS   DEFAULT=\/usr\/local\/share:\/usr\/share' \
+                /etc/security/pam_env.conf
+        quiet: true
+
+    # export XDG_CONFIG_DIRS="/etc/xdg"
+    -
+        description: Setting XDG_CONFIG_DIRS variable
+        command: >-
+            sed -i \
+                -e '/^XDG_CONFIG_DIRS.*/{s//XDG_CONFIG_DIRS DEFAULT=\/etc\/xdg/;:a;n;ba;q}' \
+                -e '$aXDG_CONFIG_DIRS DEFAULT=\/etc\/xdg' \
+                /etc/security/pam_env.conf
+        quiet: true
+
+# sed \
+#     -e '/^\(option=\).*/{s//\1value/;:a;n;ba;q}' \
+#     -e '$aoption=value' filename
+
+# sed -i \
+#     -e '/^#\?\(\s*option\s*=\s*\).*/{s//\1value/;:a;n;ba;q}' \
+#     -e '$aoption=value' filename
