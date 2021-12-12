@@ -59,11 +59,3 @@
                 -e '$aXDG_CONFIG_DIRS DEFAULT=\/etc\/xdg' \
                 /etc/security/pam_env.conf
         quiet: true
-
-# sed \
-#     -e '/^\(option=\).*/{s//\1value/;:a;n;ba;q}' \
-#     -e '$aoption=value' filename
-
-# sed -i \
-#     -e '/^#\?\(\s*option\s*=\s*\).*/{s//\1value/;:a;n;ba;q}' \
-#     -e '$aoption=value' filename
