@@ -47,7 +47,7 @@ _exit() {
 }
 
 config_message() {
-    echo "- shell:\
+    echo -e "- shell:\
         ${LFTAB}-\
         ${LFTAB2}description: ''\
         ${LFTAB2}command: echo \"\\${LF}Configuring "${1:-}"...\"\

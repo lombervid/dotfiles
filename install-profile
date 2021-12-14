@@ -30,8 +30,11 @@ while read -r line || [[ -n "${line}" ]]; do
 done < "${PROFILES_DIR}/${PROFILE}"
 
 # Append defaults.yaml and base.yaml files
-echo -e "$(<"${DEFAULTS_CONFIG}")${LF}${LF}$(<"${BASE_CONFIG}")${LF}" > "${CONFIG_FILE}"
-echo -e "$(<"${DEFAULTS_CONFIG}")${LF}" > "${CONFIG_FILE_SUDO}"
+{
+    echo -E "$(<"${DEFAULTS_CONFIG}")";
+    echo -E "$(<"${BASE_CONFIG}")";
+} > "${CONFIG_FILE}"
+echo -E "$(<"${DEFAULTS_CONFIG}")" > "${CONFIG_FILE_SUDO}"
 
 for config in "${configs[@]}" "${@}"; do
     configFile="${CONFIG_FILE}"
@@ -47,8 +50,8 @@ for config in "${configs[@]}" "${@}"; do
         ((sudo_count+=1))
     fi
 
-    echo -e "$(config_message "${module}")" >> "${configFile}"
-    echo -e "$(<"${module_dir}")${LF}" >> "${configFile}"
+    echo -E "$(config_message "${module}")" >> "${configFile}"
+    echo -E "$(<"${module_dir}")" >> "${configFile}"
 done
 
 # Execute dotbot
