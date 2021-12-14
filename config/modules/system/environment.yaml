@@ -6,7 +6,7 @@
         command: >-
             sed -i \
                 -e '/^XDG_CONFIG_HOME.*/{s//XDG_CONFIG_HOME DEFAULT=@{HOME}\/.config/;:a;n;ba;q}' \
-                -e "\$a#\\n# XDG Base Directory\\nXDG_CONFIG_HOME DEFAULT=@{HOME}/.config" \
+                -e '$a\\n# XDG Base Directory\nXDG_CONFIG_HOME DEFAULT=@{HOME}/.config' \
                 /etc/security/pam_env.conf
         quiet: true
 

@@ -11,6 +11,6 @@
         command: >-
             sudo sed -i \
                 -e '/^ZDOTDIR.*/{s//ZDOTDIR     DEFAULT=@{HOME}\/.config\/zsh/;:a;n;ba;q}' \
-                -e '$a#\\n# ZSH Directory\\nZDOTDIR     DEFAULT=@{HOME}/.config/zsh' \
+                -e '$a\\n# ZSH Directory\nZDOTDIR     DEFAULT=@{HOME}/.config/zsh' \
                 /etc/security/pam_env.conf
         quiet: true
