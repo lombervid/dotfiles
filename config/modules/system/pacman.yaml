@@ -1,0 +1,13 @@
+- shell:
+    -
+        description: Enable color in pacman
+        command: >-
+            sed -ie 's/^#\?\s*Color\s*$/Color/' /etc/pacman.conf
+        quiet: true
+
+    -
+        description: Enable ILoveCandy in pacman
+        command: >-
+            grep -q '^ILoveCandy$' /etc/pacman.conf \
+                || sed -ie 's/\(^#\?\s*Color\s*$\)/\1\nILoveCandy/' /etc/pacman.conf
+        quiet: true
