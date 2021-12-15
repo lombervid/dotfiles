@@ -1,0 +1,40 @@
+env:
+  TERM: xterm-256color
+
+schemes:
+  # uwu.vim
+  # https://github.com/Mangeshrex/uwu.vim
+  uwu_vim: &uwu_vim
+    # Default colors
+    primary:
+      background: '#131A1C'
+      foreground: '#C5C8C9'
+
+    # Colors the cursor will use if `custom_cursor_colors` is true
+    cursor:
+      text: '#d6d6d6'
+      cursor: '#6db0ad'
+
+    # Normal colors
+    normal:
+      black:   '#1b2224'
+      red:     '#f65b5b'
+      green:   '#6bb05d'
+      yellow:  '#e59e67'
+      blue:    '#53A7BF'
+      magenta: '#bb8fe5'
+      cyan:    '#51a39f'
+      white:   '#c4c4c4'
+
+    # Bright colors
+    bright:
+      black:   '#232a2c'
+      red:     '#c26f6f'
+      green:   '#8dc776'
+      yellow:  '#e7ac7e'
+      blue:    '#6CBAD1'
+      magenta: '#b185db'
+      cyan:    '#6db0ad'
+      white:   '#cecece'
+
+colors: *uwu_vim
