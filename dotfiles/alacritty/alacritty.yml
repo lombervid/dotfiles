@@ -1,5 +1,5 @@
 import:
-  - ~/.config/alacritty/themes/uwu_vim.yml
+  - ~/.config/alacritty/themes/uwu.yml
 
 window:
   padding:
@@ -13,7 +13,6 @@ font:
   normal:
     family: Rec Mono Casual
     style: Regular
-
   size: 11.0
 
 # If `true`, bold text is drawn using the bright color variants.

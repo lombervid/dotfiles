@@ -2,9 +2,9 @@ env:
   TERM: xterm-256color
 
 schemes:
-  # uwu.vim
+  # UwU
   # https://github.com/Mangeshrex/uwu.vim
-  uwu_vim: &uwu_vim
+  UwU: &uwu
     # Default colors
     primary:
       background: '#131A1C'
@@ -37,4 +37,4 @@ schemes:
       cyan:    '#6db0ad'
       white:   '#cecece'
 
-colors: *uwu_vim
+colors: *uwu
