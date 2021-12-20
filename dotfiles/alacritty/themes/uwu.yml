@@ -7,8 +7,8 @@ schemes:
   UwU: &uwu
     # Default colors
     primary:
-      background: '#131A1C'
-      foreground: '#C5C8C9'
+      background: '#131a1c'
+      foreground: '#c5c8c9'
 
     # Colors the cursor will use if `custom_cursor_colors` is true
     cursor:
@@ -21,8 +21,8 @@ schemes:
       red:     '#f65b5b'
       green:   '#6bb05d'
       yellow:  '#e59e67'
-      blue:    '#53A7BF'
-      magenta: '#bb8fe5'
+      blue:    '#53a7bf'
+      magenta: '#b185db'
       cyan:    '#51a39f'
       white:   '#c4c4c4'
 
@@ -32,8 +32,8 @@ schemes:
       red:     '#c26f6f'
       green:   '#8dc776'
       yellow:  '#e7ac7e'
-      blue:    '#6CBAD1'
-      magenta: '#b185db'
+      blue:    '#6cbad1'
+      magenta: '#bb8fe5'
       cyan:    '#6db0ad'
       white:   '#cecece'
 
