@@ -2,6 +2,7 @@ system/environment-sudo
 system/profile.d-sudo
 system/keyboard
 system/locale
+profile
 bash
 bspwm
 git

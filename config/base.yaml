@@ -5,6 +5,3 @@
     ~/:
     ~/.config:
         recursive: true
-
-- link:
-    ~/.profile: ${DOTFILES_DIR}/.profile
