@@ -4,13 +4,13 @@
 	ignore = dirty
 [submodule "powerlevel10k"]
 	path = dotfiles/zsh/themes/powerlevel10k
-	url = https://github.com/romkatv/powerlevel10k.git
+	url = https://github.com/romkatv/powerlevel10k
 [submodule "zsh-autosuggestions"]
 	path = dotfiles/zsh/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
 [submodule "zsh-completions"]
 	path = dotfiles/zsh/plugins/zsh-completions
-	url = git://github.com/zsh-users/zsh-completions.git
+	url = https://github.com/zsh-users/zsh-completions
 [submodule "zsh-syntax-highlighting"]
 	path = dotfiles/zsh/plugins/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
