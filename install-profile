@@ -60,7 +60,7 @@ cmd=("${CMD[@]}" "${CONFIG_FILE}") && "${cmd[@]}"
 # Execute dotbot with sudo if any module was added
 if (( sudo_count > 0 )); then
     echo -e "${LF}${LF}${LF}Executing sudo modules..."
-    cmd_sudo=(sudo "${CMD[@]}" "${CONFIG_FILE_SUDO}") && "${cmd_sudo[@]}"
+    cmd_sudo=(sudo DOTFILES_DIR=${DOTFILES_DIR} "${CMD[@]}" "${CONFIG_FILE_SUDO}") && "${cmd_sudo[@]}"
 fi
 
 cd "${BASE_DIR}"

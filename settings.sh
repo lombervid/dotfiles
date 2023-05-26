@@ -18,7 +18,7 @@ DOTBOT_BIN="${DOTBOT_DIR}/bin/dotbot"
 
 declare -r BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-declare -xr DOTFILES_DIR
+declare -xr DOTFILES_DIR="${BASE_DIR}/${DOTFILES_DIR}"
 declare -r DEFAULTS_CONFIG="${CONFIG_DIR}/${DEFAULTS_CONFIG}${CONFIG_SUFFIX}"
 declare -r BASE_CONFIG="${CONFIG_DIR}/${BASE_CONFIG}${CONFIG_SUFFIX}"
 declare -r CONFIG_DIR="${BASE_DIR}/${CONFIG_DIR}"
@@ -50,7 +50,7 @@ config_message() {
     echo -e "- shell:\
         ${LFTAB}-\
         ${LFTAB2}description: ''\
-        ${LFTAB2}command: echo \"\\${LF}Configuring "${1:-}"...\"\
+        ${LFTAB2}command: echo -e \"\\${LF}Configuring "${1:-}"...\"\
         ${LFTAB2}quiet: true"
 }
 
