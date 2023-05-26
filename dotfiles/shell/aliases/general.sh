@@ -24,4 +24,8 @@ if (command_exists 'bat'); then
     alias cat='bat  --paging=never'
     alias catp='bat  --paging=never -p'
     alias catn='bat  --paging=never -n'
+elif (command_exists 'batcat'); then
+    alias cat='batcat  --paging=never'
+    alias catp='batcat  --paging=never -p'
+    alias catn='batcat  --paging=never -n'
 fi
