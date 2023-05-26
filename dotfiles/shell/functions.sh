@@ -1,7 +1,7 @@
 include_file() {
     if (file_exists "${1}"); then
         . "${1}"
-    else 
+    else
         echo "There was an error trying to load "${1}""
     fi
 }
@@ -11,12 +11,12 @@ file_exists() {
 }
 
 command_exists() {
-    return "$(command -v "${1}" &> /dev/null)"
+    command -v "${1}" > /dev/null 2>&1
 }
 
 load_aliases() {
     for file in ${SHELL_ALIASES_DIR}/*.sh; do
-        . "${file}"                              
+        . "${file}"
     done
 }
 
