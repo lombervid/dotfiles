@@ -1,0 +1,2 @@
+- link:
+    /etc/wsl.conf: ${DOTFILES_DIR}/wsl/wsl.conf
