@@ -1,4 +1,4 @@
-export SHELL_DOT_DIR="${XDG_CONFIG_HOME}/shell"
+export SHELL_DOT_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/shell"
 export SHELL_ALIASES_DIR="${SHELL_DOT_DIR}/aliases"
 
 export PATH="${HOME}/.local/bin:${PATH}"
