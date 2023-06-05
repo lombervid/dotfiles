@@ -1,0 +1,3 @@
+- link:
+    ~/.gitconfig: ${DOTFILES_DIR}/windows/git/.gitconfig
+    ~/.gitignore_global: ${DOTFILES_DIR}/windows/git/.gitignore_global

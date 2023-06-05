@@ -1,0 +1,2 @@
+- link:
+    ~/.wslconfig: ${DOTFILES_DIR}/windows/wsl/.wslconfig

@@ -1,0 +1,7 @@
+[boot]
+systemd=true
+
+[wsl2]
+localhostForwarding=true
+memory=6GB
+swap=2GB

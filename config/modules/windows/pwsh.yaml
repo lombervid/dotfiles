@@ -1,0 +1,2 @@
+- link:
+    ~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1: ${DOTFILES_DIR}/windows/pwsh/profile.ps1

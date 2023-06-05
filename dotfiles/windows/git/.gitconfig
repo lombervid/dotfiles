@@ -1,0 +1,15 @@
+[user]
+	email = david.lomberlan@gmail.com
+	name = David Lombera
+[core]
+	excludesFile = ~/.gitignore_global
+	autocrlf = true
+[init]
+	defaultBranch = main
+#
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
+[safe]
+	directory = *

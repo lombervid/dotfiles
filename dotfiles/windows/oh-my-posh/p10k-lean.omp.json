@@ -1,0 +1,83 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 2,
+  "blocks": [
+    {
+      "type": "rprompt",
+      "segments": [
+        {
+          "type": "exit",
+          "style": "plain",
+          "foreground": "#0b5a18",
+          "foreground_templates": ["{{ if gt .Code 0 }}#910d0d{{ end }}"]
+        },
+        {
+          "type": "executiontime",
+          "style": "plain",
+          "foreground": "#87875f",
+          "template": " {{ .FormattedMs }} \uf252",
+          "properties": {
+            "style": "round",
+            "threshold": 3
+          }
+        },
+        {
+          "type": "time",
+          "style": "plain",
+          "foreground": "#5f8787",
+          "template": " {{ .CurrentDate | date .Format }} \uf017",
+          "properties": {
+            "time_format": "15:04:05"
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "os",
+          "style": "plain",
+          "foreground": "#00AEE9",
+          "templates_logic": "first_match",
+          "templates": [
+            "{{ if eq .Shell \"bash\" }}\uebca {{ end }}",
+            "{{ if eq .Shell \"pwsh\" }}{{ .Icon }} {{ end }}",
+            "\udb80\udea0 "
+          ],
+          "foreground_templates": [
+            "{{ if eq .Shell \"bash\" }}#F54D27{{ end }}"
+          ]
+        },
+        {
+          "type": "root",
+          "style": "plain",
+          "foreground": "#8e7800",
+          "template": "\uf0e7 "
+        },
+        {
+          "type": "path",
+          "style": "plain",
+          "foreground": "#2EEFBF",
+          "template": "{{ .Path }} ",
+          "properties": {
+            "style": "folder"
+          }
+        },
+        {
+          "type": "git",
+          "style": "plain",
+          "foreground": "#FFE700",
+          "template": "<#F54D27>\ue725 </>{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uF044 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uF046 {{ .Staging.String }}{{ end }} "
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "#43D426",
+          "template": "\u276f "
+        }
+      ]
+    }
+  ]
+}
