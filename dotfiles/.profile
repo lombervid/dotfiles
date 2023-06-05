@@ -6,3 +6,6 @@ export EDITOR="nvim"
 export VISUAL="${EDITOR}"
 export TERMINAL="kitty"
 export BROWSER="firefox"
+
+# Composer bin
+export PATH="${HOME}/.config/composer/vendor/bin:${PATH}"
