@@ -1,3 +1,5 @@
+[[ -z ${XDG_CONFIG_HOME+x} ]] && export XDG_CONFIG_HOME="${HOME}/.config"
+
 export SHELL_DOT_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/shell"
 export SHELL_ALIASES_DIR="${SHELL_DOT_DIR}/aliases"
 
@@ -9,3 +11,6 @@ export BROWSER="firefox"
 
 # Composer bin
 export PATH="${HOME}/.config/composer/vendor/bin:${PATH}"
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
