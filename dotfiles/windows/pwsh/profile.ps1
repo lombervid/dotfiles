@@ -23,6 +23,9 @@ $env:BAT_CONFIG_PATH = "${BatConfigDir}/bat.conf"
 $env:ZDOTDIR = "/home/lombervid/.config/zsh"
 $env:WSLENV = "${env:WSLENV}::ZDOTDIR"
 
+$env:GOPATH = "/home/lombervid/.local/share/go"
+$env:WSLENV = "${env:WSLENV}::GOPATH"
+
 # Git Bash
 function gitbash() {
     & "C:\Program Files\Git\bin\bash.exe" --cd=$(Get-Location)
