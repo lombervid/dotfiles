@@ -3,3 +3,9 @@
 	email = david.lomberlan@gmail.com
 [init]
 	defaultBranch = main
+[core]
+	editor = code --wait --new-window
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
