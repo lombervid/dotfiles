@@ -1,15 +1,15 @@
 # PHPUnit
-alias phpunit='./vendor/bin/phpunit'
+alias punit='./vendor/bin/phpunit'
 
 # PHPStan
-alias phpstan='./vendor/bin/phpstan'
+alias pstan='./vendor/bin/phpstan'
 
 # Psalm
 alias psalm='./vendor/bin/psalm'
 
 # Laravel
 alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
-alias artisan='php artisan'
+alias art='php artisan'
 
 # Symfony
 alias sf='symfony'
