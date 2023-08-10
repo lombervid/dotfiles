@@ -155,3 +155,7 @@ function phpbc { php bin/console @Args }
 function phpunit { vendor/bin/phpunit @Args }
 function phpsunit { vendor/bin/simple-phpunit @Args }
 
+# Fast Node Manager (fnm)
+fnm env --use-on-cd | Out-String | Invoke-Expression
+fnm completions --shell powershell | Out-String | Invoke-Expression
+
