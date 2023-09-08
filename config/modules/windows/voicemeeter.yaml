@@ -1,0 +1,3 @@
+- link:
+    ~/Documents/Voicemeeter/VoicemeeterBanana_LastSettings.xml: ${DOTFILES_DIR}/windows/voicemeeter/VoicemeeterBanana_LastSettings.xml
+    ~/Documents/Voicemeeter/MacroButtonConfig.xml: ${DOTFILES_DIR}/windows/voicemeeter/MacroButtonConfig.xml

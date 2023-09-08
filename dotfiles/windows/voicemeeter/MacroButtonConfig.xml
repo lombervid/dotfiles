@@ -1,0 +1,970 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VBAudioVoicemeeterMacroButtonMap>
+<MacroButtonConfiguration x0='1427' y0='231' dx='1044' dy='196' >
+	<MacroButton index='1' type='0' color='3' key='113' ctrl='0' shift='0' alt='0' anyway='0' exclusive='1' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#0' id='MBhid0' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name>Vol +</MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest>Bus[0].gain = -16;</MB_InitRequest>
+		<MB_OnRequest>Bus[0].gain += 1;
+Bus[1].gain += 1;</MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='2' type='0' color='8' key='112' ctrl='0' shift='0' alt='0' anyway='0' exclusive='1' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#1' id='MBhid1' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name>Vol -</MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest>Bus[0].gain -= 1;
+Bus[1].gain -= 1;</MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='3' type='0' color='5' key='111' ctrl='0' shift='0' alt='0' anyway='0' exclusive='1' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#2' id='MBhid2' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name>Switch Audio output</MB_Name>
+		<MB_Subname>Speakers / Micro</MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest>Bus[0].Mute += 1;
+Bus[1].Mute += 1;</MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='4' type='0' color='0' key='64' ctrl='1' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#3' id='MBhid3' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name>Reset volume</MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest>Bus[0].gain = -15;
+Bus[1].gain = -20;</MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='5' type='0' color='4' key='63' ctrl='1' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#4' id='MBhid4' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name>Reset volume</MB_Name>
+		<MB_Subname>Headphones</MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest>Bus[0].gain = -12;
+Bus[1].gain = -25;</MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='6' type='0' color='7' key='111' ctrl='1' shift='0' alt='0' anyway='0' exclusive='1' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#5' id='MBhid5' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name>Switch mute</MB_Name>
+		<MB_Subname>Microphone</MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest>Strip[0].mute += 1</MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='7' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#6' id='MBhid6' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='8' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#7' id='MBhid7' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='9' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#8' id='MBhid8' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='10' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#9' id='MBhid9' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='11' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#10' id='MBhid10' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='12' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#11' id='MBhid11' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='13' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#12' id='MBhid12' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='14' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#13' id='MBhid13' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='15' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#14' id='MBhid14' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='16' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#15' id='MBhid15' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='17' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#16' id='MBhid16' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='18' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#17' id='MBhid17' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='19' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#18' id='MBhid18' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='20' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#19' id='MBhid19' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='21' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#20' id='MBhid20' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='22' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#21' id='MBhid21' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='23' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#22' id='MBhid22' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='24' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#23' id='MBhid23' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='25' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#24' id='MBhid24' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='26' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#25' id='MBhid25' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='27' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#26' id='MBhid26' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='28' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#27' id='MBhid27' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='29' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#28' id='MBhid28' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='30' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#29' id='MBhid29' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='31' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#30' id='MBhid30' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='32' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#31' id='MBhid31' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='33' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#32' id='MBhid32' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='34' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#33' id='MBhid33' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='35' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#34' id='MBhid34' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='36' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#35' id='MBhid35' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='37' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#36' id='MBhid36' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='38' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#37' id='MBhid37' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='39' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#38' id='MBhid38' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='40' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#39' id='MBhid39' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='41' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#40' id='MBhid40' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='42' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#41' id='MBhid41' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='43' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#42' id='MBhid42' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='44' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#43' id='MBhid43' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='45' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#44' id='MBhid44' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='46' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#45' id='MBhid45' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='47' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#46' id='MBhid46' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='48' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#47' id='MBhid47' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='49' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#48' id='MBhid48' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='50' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#49' id='MBhid49' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='51' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#50' id='MBhid50' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='52' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#51' id='MBhid51' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='53' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#52' id='MBhid52' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='54' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#53' id='MBhid53' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='55' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#54' id='MBhid54' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='56' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#55' id='MBhid55' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='57' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#56' id='MBhid56' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='58' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#57' id='MBhid57' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='59' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#58' id='MBhid58' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='60' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#59' id='MBhid59' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='61' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#60' id='MBhid60' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='62' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#61' id='MBhid61' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='63' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#62' id='MBhid62' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='64' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#63' id='MBhid63' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='65' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#64' id='MBhid64' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='66' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#65' id='MBhid65' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='67' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#66' id='MBhid66' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='68' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#67' id='MBhid67' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='69' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#68' id='MBhid68' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='70' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#69' id='MBhid69' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='71' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#70' id='MBhid70' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='72' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#71' id='MBhid71' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='73' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#72' id='MBhid72' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='74' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#73' id='MBhid73' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='75' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#74' id='MBhid74' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='76' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#75' id='MBhid75' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='77' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#76' id='MBhid76' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='78' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#77' id='MBhid77' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='79' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#78' id='MBhid78' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+	<MacroButton index='80' type='0' color='0' key='0' ctrl='0' shift='0' alt='0' anyway='0' exclusive='0' trigger='0' xinput='0' >
+		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
+		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
+		<MB_XINPUT nctrl='0' nbutton='0' />
+		<MB_GPIO ninput='0' />
+		<VBHIDMapItem name='Button#79' id='MBhid79' device='' vendor='0' product='0' version='0' uspa='0' us='0' nbb='0' code1='0' code2='0' code3='0' type='0' mode='0'></VBHIDMapItem>
+		<MB_Name></MB_Name>
+		<MB_Subname></MB_Subname>
+		<MB_InitRequest></MB_InitRequest>
+		<MB_OnRequest></MB_OnRequest>
+		<MB_OffRequest></MB_OffRequest>
+	</MacroButton>
+</MacroButtonConfiguration>
+</VBAudioVoicemeeterMacroButtonMap>
