@@ -141,6 +141,12 @@ function Format-FileSize() {
     Else { "" }
 }
 
+function Find-Command() {
+    param ([string]$commandName)
+
+    return [bool]   (Get-Command $commandName -ErrorAction SilentlyContinue)
+}
+
 
 # Functions
 
@@ -156,6 +162,8 @@ function phpunit { vendor/bin/phpunit @Args }
 function phpsunit { vendor/bin/simple-phpunit @Args }
 
 # Fast Node Manager (fnm)
+if (Find-Command -commandName 'fnm') {
 fnm env --use-on-cd | Out-String | Invoke-Expression
 fnm completions --shell powershell | Out-String | Invoke-Expression
+}
 
