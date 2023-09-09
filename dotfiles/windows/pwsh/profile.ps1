@@ -8,6 +8,9 @@ Import-Module -Name Terminal-Icons
 oh-my-posh init pwsh --config ~/p10k-lean.omp.json | Invoke-Expression
 $env:POSH_GIT_ENABLED = $true
 
+# Set completion as list
+Set-PSReadLineOption -PredictionViewStyle ListView
+
 # Aliases
 Set-Alias dk docker
 Set-Alias dkc docker-compose
