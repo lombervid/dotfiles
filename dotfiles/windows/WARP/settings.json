@@ -122,6 +122,10 @@
     [
       "*.ttvnw.net",
       "Twitch"
+    ],
+    [
+      "*.cpuid.com",
+      "CPUID"
     ]
   ]
 }
