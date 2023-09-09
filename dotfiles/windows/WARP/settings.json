@@ -1,0 +1,127 @@
+{
+  "version": 1,
+  "always_on": true,
+  "operation_mode": "Warp",
+  "families": "Off",
+  "dns_log_until": null,
+  "excluded_ips": [
+    [
+      "10.0.0.0/8",
+      null
+    ],
+    [
+      "100.64.0.0/10",
+      null
+    ],
+    [
+      "169.254.0.0/16",
+      null
+    ],
+    [
+      "172.16.0.0/12",
+      null
+    ],
+    [
+      "192.0.0.0/24",
+      null
+    ],
+    [
+      "192.168.0.0/16",
+      null
+    ],
+    [
+      "224.0.0.0/24",
+      null
+    ],
+    [
+      "240.0.0.0/4",
+      null
+    ],
+    [
+      "239.255.255.250/32",
+      null
+    ],
+    [
+      "255.255.255.255/32",
+      null
+    ],
+    [
+      "fe80::/10",
+      null
+    ],
+    [
+      "fd00::/8",
+      null
+    ],
+    [
+      "ff01::/16",
+      null
+    ],
+    [
+      "ff02::/16",
+      null
+    ],
+    [
+      "ff03::/16",
+      null
+    ],
+    [
+      "ff04::/16",
+      null
+    ],
+    [
+      "ff05::/16",
+      null
+    ],
+    [
+      "fc00::/7",
+      null
+    ],
+    [
+      "24.105.0.0/16",
+      "Overwatch (ord1)"
+    ]
+  ],
+  "excluded_hosts": [
+    [
+      "downloadly.ir",
+      "Downloadly"
+    ],
+    [
+      "unionfansub.com",
+      "Union Fansub"
+    ],
+    [
+      "torrent.unionfansub.com",
+      "Union Fansub Torrent"
+    ],
+    [
+      "nexflix.com",
+      "Netflix"
+    ],
+    [
+      "account.arena.net",
+      "GuildWars 2"
+    ],
+    [
+      "broadcasthe.net",
+      "BTN"
+    ],
+    [
+      "gazellegames.net",
+      "Gazelle Games"
+    ],
+    [
+      "thegeeks.click",
+      "The Geeks"
+    ],
+    [
+      "9anime.to",
+      "9anime"
+    ],
+    [
+      "*.ttvnw.net",
+      "Twitch"
+    ]
+  ]
+}
