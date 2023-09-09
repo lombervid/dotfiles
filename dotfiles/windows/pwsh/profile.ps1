@@ -17,6 +17,15 @@ Set-Alias ls lsAlias
 # Add user/bin to PATH
 $env:PATH = "${env:USERPROFILE}/bin;${env:PATH}"
 
+# Add Go to path
+$env:GOPATH = "${env:USERPROFILE}/.config/go"
+$env:GOBIN = "${env:GOPATH}/bin"
+$env:PATH = "${env:PATH};E:\bin\go\bin;${env:GOPATH}/bin"
+
+# Add PHP to path
+$env:PATH = "${env:PATH};E:\bin\php"
+
+
 # Bat
 $BatConfigDir = "${env:USERPROFILE}/.bat"
 $env:BAT_CONFIG_PATH = "${BatConfigDir}/bat.conf"
@@ -26,8 +35,8 @@ $env:BAT_CONFIG_PATH = "${BatConfigDir}/bat.conf"
 $env:ZDOTDIR = "/home/lombervid/.config/zsh"
 $env:WSLENV = "${env:WSLENV}::ZDOTDIR"
 
-$env:GOPATH = "/home/lombervid/.local/share/go"
-$env:WSLENV = "${env:WSLENV}::GOPATH"
+# $env:GOPATH = "/home/lombervid/.local/share/go"
+# $env:WSLENV = "${env:WSLENV}::GOPATH"
 
 # Git Bash
 function gitbash() {
