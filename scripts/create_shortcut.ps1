@@ -24,6 +24,11 @@ param (
     [System.IO.FileInfo]
     $TargetPath,
 
+    [Parameter(HelpMessage = "Enter arguments")]
+    [Alias("args")]
+    [string]
+    $Arguments,
+
     [Parameter(HelpMessage = "Enter path where the icon is located")]
     [Alias("icon")]
     [ValidateScript({
@@ -33,7 +38,12 @@ param (
             $true
         })]
     [System.IO.FileInfo]
-    $IconLocation
+    $IconLocation,
+
+    [Parameter(HelpMessage = "Enter a system icon")]
+    [Alias("sicon")]
+    [int]
+    $SystemIcon
 )
 
 # Stop script on error
@@ -53,6 +63,12 @@ $shortcut.TargetPath = "${TargetPath}"
 
 if ( $PSBoundParameters.ContainsKey('IconLocation') ) {
     $shortcut.IconLocation = "${IconLocation}"
+} elseif ( $PSBoundParameters.ContainsKey('SystemIcon') ) {
+    $shortcut.IconLocation = "shell32.dll,${SystemIcon}"
+}
+
+if ( $PSBoundParameters.ContainsKey('Arguments') ) {
+    $shortcut.Arguments = "${Arguments}"
 }
 
 $shortcut.Save()
