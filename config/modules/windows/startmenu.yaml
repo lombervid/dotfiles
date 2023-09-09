@@ -58,3 +58,8 @@
       description: Creating MKVToolNic GUI shortcut
       command: pwsh ./scripts/create_shortcut.ps1 -TargetPath "E:\Program Files\mkvtoolnix\mkvtoolnix-gui.exe" -Name "MKVToolNic GUI"
       quiet: true
+
+    -
+      description: Creating RAMMap shortcut
+      command: pwsh ./scripts/create_shortcut.ps1 -TargetPath "E:\Program Files\RAMMap\RAMMap64.exe" -Name "RAMMap"
+      quiet: true
