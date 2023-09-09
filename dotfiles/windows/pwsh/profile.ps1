@@ -35,7 +35,7 @@ $env:BAT_CONFIG_PATH = "${BatConfigDir}/bat.conf"
 . "${BatConfigDir}/autocomplete/_bat.ps1"
 
 # WSL Environment
-$env:ZDOTDIR = "/home/lombervid/.config/zsh"
+$env:ZDOTDIR = "/home/${env:USERNAME}/.config/zsh"
 $env:WSLENV = "${env:WSLENV}::ZDOTDIR"
 
 # $env:GOPATH = "/home/lombervid/.local/share/go"
