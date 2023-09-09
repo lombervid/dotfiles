@@ -14,6 +14,9 @@ Set-Alias dkc docker-compose
 Set-Alias neofetch winfetch
 Set-Alias ls lsAlias
 
+# Add user/bin to PATH
+$env:PATH = "${env:USERPROFILE}/bin;${env:PATH}"
+
 # Bat
 $BatConfigDir = "${env:USERPROFILE}/.bat"
 $env:BAT_CONFIG_PATH = "${BatConfigDir}/bat.conf"
