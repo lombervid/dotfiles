@@ -23,10 +23,13 @@ $env:PATH = "${env:USERPROFILE}/bin;${env:PATH}"
 # Add Go to path
 $env:GOPATH = "${env:USERPROFILE}/.config/go"
 $env:GOBIN = "${env:GOPATH}/bin"
-$env:PATH = "${env:PATH};E:\bin\go\bin;${env:GOPATH}/bin"
+$env:PATH = "${env:PATH};F:\bin\go\bin;${env:GOPATH}/bin"
 
 # Add PHP to path
-$env:PATH = "${env:PATH};E:\bin\php"
+$env:PATH = "${env:PATH};F:\bin\php"
+
+# Add MSYS2 to path
+$env:PATH = "${env:PATH};F:\bin\msys64\mingw64\bin"
 
 
 # Bat

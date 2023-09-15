@@ -1,65 +1,65 @@
 - shell:
     -
       description: Creating qBittorrent shortcut
-      command: pwsh ./scripts/create_shortcut.ps1 -TargetPath "E:\Program Files\qbittorrent\qbittorrent.exe" -Name qBittorrent
+      command: pwsh ./scripts/create_shortcut.ps1 -TargetPath "F:\Program Files\qbittorrent\qbittorrent.exe" -Name qBittorrent
       quiet: true
 
     -
       description: Creating jDownloader shortcut
-      command: pwsh ./scripts/create_shortcut.ps1 -TargetPath "E:\Program Files\JDownloader\JDownloader.jar" -IconLocation "E:\Program Files\JDownloader\themes\standard\org\jdownloader\images\logo\icon.ico"
+      command: pwsh ./scripts/create_shortcut.ps1 -TargetPath "F:\Program Files\JDownloader\JDownloader.jar" -IconLocation "F:\Program Files\JDownloader\themes\standard\org\jdownloader\images\logo\icon.ico"
       quiet: true
 
     -
       description: Creating Bitwarden shortcut
-      command: pwsh ./scripts/create_shortcut.ps1 -TargetPath "E:\Program Files\Bitwarden\Bitwarden.exe"
+      command: pwsh ./scripts/create_shortcut.ps1 -TargetPath "F:\Program Files\Bitwarden\Bitwarden.exe"
       quiet: true
 
     -
       description: Creating KeePassXC shortcut
-      command: pwsh ./scripts/create_shortcut.ps1 -TargetPath "E:\Program Files\KeePassXC\KeePassXC.exe"
+      command: pwsh ./scripts/create_shortcut.ps1 -TargetPath "F:\Program Files\KeePassXC\KeePassXC.exe"
       quiet: true
 
     -
       description: Creating MultiMC shortcut
-      command: pwsh ./scripts/create_shortcut.ps1 -TargetPath "E:\Program Files\MultiMC\MultiMC.exe"
+      command: pwsh ./scripts/create_shortcut.ps1 -TargetPath "F:\Program Files\MultiMC\MultiMC.exe"
       quiet: true
 
     -
       description: Creating RevoUninstaller Portable shortcut
-      command: pwsh ./scripts/create_shortcut.ps1 -TargetPath "E:\Program Files\RevoUninstaller\RevoUPort.exe" -Name "RevoUninstaller Portable"
+      command: pwsh ./scripts/create_shortcut.ps1 -TargetPath "F:\Program Files\RevoUninstaller\RevoUPort.exe" -Name "RevoUninstaller Portable"
       quiet: true
 
     -
       description: Creating CrystalDiskInfo shortcut
-      command: pwsh ./scripts/create_shortcut.ps1 -TargetPath "E:\Program Files\CrystalDiskInfo\DiskInfo64.exe" -Name CrystalDiskInfo
+      command: pwsh ./scripts/create_shortcut.ps1 -TargetPath "F:\Program Files\CrystalDiskInfo\DiskInfo64.exe" -Name CrystalDiskInfo
       quiet: true
 
     -
       description: Creating DisplayProfile shortcut
-      command: pwsh ./scripts/create_shortcut.ps1 -TargetPath "E:\Program Files\DisplayProfile\DisplayProfile.exe"
+      command: pwsh ./scripts/create_shortcut.ps1 -TargetPath "F:\Program Files\DisplayProfile\DisplayProfile.exe"
       quiet: true
 
     -
       description: Creating mpv shortcut
-      command: pwsh ./scripts/create_shortcut.ps1 -TargetPath "E:\Program Files\mpv\mpv.exe"
+      command: pwsh ./scripts/create_shortcut.ps1 -TargetPath "F:\Program Files\mpv\mpv.exe"
       quiet: true
 
     -
       description: Creating MegaDownloader shortcut
-      command: pwsh ./scripts/create_shortcut.ps1 -TargetPath "E:\Program Files\MegaDownloader\MegaDownloader.exe"
+      command: pwsh ./scripts/create_shortcut.ps1 -TargetPath "F:\Program Files\MegaDownloader\MegaDownloader.exe"
       quiet: true
 
     -
       description: Creating MEGA Link Downloader shortcut
-      command: pwsh ./scripts/create_shortcut.ps1 -TargetPath "E:\Program Files\MEGA Link Downloader\MEGA Link Downloader.exe"
+      command: pwsh ./scripts/create_shortcut.ps1 -TargetPath "F:\Program Files\MEGA Link Downloader\MEGA Link Downloader.exe"
       quiet: true
 
     -
       description: Creating MKVToolNic GUI shortcut
-      command: pwsh ./scripts/create_shortcut.ps1 -TargetPath "E:\Program Files\mkvtoolnix\mkvtoolnix-gui.exe" -Name "MKVToolNic GUI"
+      command: pwsh ./scripts/create_shortcut.ps1 -TargetPath "F:\Program Files\mkvtoolnix\mkvtoolnix-gui.exe" -Name "MKVToolNic GUI"
       quiet: true
 
     -
       description: Creating RAMMap shortcut
-      command: pwsh ./scripts/create_shortcut.ps1 -TargetPath "E:\Program Files\RAMMap\RAMMap64.exe" -Name "RAMMap"
+      command: pwsh ./scripts/create_shortcut.ps1 -TargetPath "F:\Program Files\RAMMap\RAMMap64.exe" -Name "RAMMap"
       quiet: true
