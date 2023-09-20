@@ -29,7 +29,7 @@ $env:PATH = "${env:PATH};F:\bin\go\bin;${env:GOPATH}/bin"
 $env:PATH = "${env:PATH};F:\bin\php"
 
 # Add MSYS2 to path
-$env:PATH = "${env:PATH};F:\bin\msys64\mingw64\bin"
+$env:PATH = "F:\bin\msys64\ucrt64\bin;${env:PATH}"
 
 
 # Bat
