@@ -4,7 +4,9 @@ if ("C:\Windows\System32" -eq $path) {
     Set-Location ~
 }
 
+Import-Module syntax-highlighting
 Import-Module -Name Terminal-Icons
+
 oh-my-posh init pwsh --config ~/p10k-lean.omp.json | Invoke-Expression
 $env:POSH_GIT_ENABLED = $true
 
