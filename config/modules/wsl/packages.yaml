@@ -1,0 +1,8 @@
+- shell:
+    - apt update --yes --quiet
+    - apt install --yes --quiet zsh
+    - apt install --yes --quiet git
+    - apt install --yes --quiet neovim
+    - apt install --yes --quiet bat
+    - apt install --yes --quiet 7zip
+    - apt install --yes --quiet php php-fpm php-intl php-curl php-xml php-mbstring php-zip php-sqlite3 php-xdebug php-memcached
