@@ -1,2 +1,4 @@
 - link:
     /etc/wsl.conf: ${DOTFILES_DIR}/wsl/wsl.conf
+- shell:
+    - [chsh -s $(which zsh), Making zsh the default shell]
