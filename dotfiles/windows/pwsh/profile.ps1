@@ -31,8 +31,9 @@ $env:PATH = "${env:PATH};F:\bin\go\bin;${env:GOPATH}/bin"
 $env:PATH = "${env:PATH};F:\bin\php"
 
 # Add MSYS2 to path
+$pythonPath = Split-Path $((Get-Command python).Path)
 $env:PATH = "F:\bin\msys64\ucrt64\bin;${env:PATH}"
-
+$env:PATH = "${pythonPath}\Scripts;${pythonPath};${env:PATH}"
 
 # Bat
 $BatConfigDir = "${env:USERPROFILE}/.bat"
