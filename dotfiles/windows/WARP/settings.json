@@ -1,8 +1,6 @@
 {
   "version": 1,
   "always_on": true,
-  "operation_mode": "Warp",
-  "families": "Off",
   "dns_log_until": null,
   "excluded_ips": [
     [
@@ -88,12 +86,8 @@
       "Downloadly"
     ],
     [
-      "unionfansub.com",
+      "*.unionfansub.com",
       "Union Fansub"
-    ],
-    [
-      "torrent.unionfansub.com",
-      "Union Fansub Torrent"
     ],
     [
       "nexflix.com",
@@ -112,12 +106,8 @@
       "Gazelle Games"
     ],
     [
-      "thegeeks.click",
+      "hegeeks.click",
       "The Geeks"
-    ],
-    [
-      "9anime.to",
-      "9anime"
     ],
     [
       "*.ttvnw.net",
@@ -126,6 +116,10 @@
     [
       "*.cpuid.com",
       "CPUID"
+    ],
+    [
+      "9anime.to",
+      "9anime"
     ]
   ]
 }
