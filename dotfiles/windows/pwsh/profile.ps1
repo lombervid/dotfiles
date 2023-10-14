@@ -184,6 +184,6 @@ function phpsunit { vendor/bin/simple-phpunit @Args }
 # Fast Node Manager (fnm)
 if (Find-Command -commandName 'fnm') {
 fnm env --use-on-cd | Out-String | Invoke-Expression
-fnm completions --shell powershell | Out-String | Invoke-Expression
+    fnm completions --shell power-shell | Out-String | Invoke-Expression
 }
 
