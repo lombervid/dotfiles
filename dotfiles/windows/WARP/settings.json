@@ -36,10 +36,6 @@
       null
     ],
     [
-      "239.255.255.250/32",
-      null
-    ],
-    [
       "255.255.255.255/32",
       null
     ],
@@ -69,10 +65,6 @@
     ],
     [
       "ff05::/16",
-      null
-    ],
-    [
-      "fc00::/7",
       null
     ],
     [
@@ -106,7 +98,7 @@
       "Gazelle Games"
     ],
     [
-      "hegeeks.click",
+      "thegeeks.click",
       "The Geeks"
     ],
     [
