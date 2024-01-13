@@ -10,10 +10,15 @@ export TERMINAL="kitty"
 export BROWSER="firefox"
 
 # Composer bin
-export PATH="${HOME}/.config/composer/vendor/bin:${PATH}"
+export PATH="${XDG_CONFIG_HOME}/composer/vendor/bin:${PATH}"
+
+# Rust
+export RUSTUP_HOME="${XDG_CONFIG_HOME}/.rustup"
+export CARGO_HOME="${XDG_CONFIG_HOME}/.cargo"
+export PATH="${CARGO_HOME}/bin:${PATH}"
 
 # Go
 export PATH="${PATH}:/usr/local/go/bin"
 
-export NVM_DIR="$HOME/.config/nvm"
+export NVM_DIR="${XDG_CONFIG_HOME}/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
