@@ -22,3 +22,8 @@ export PATH="${PATH}:/usr/local/go/bin"
 
 export NVM_DIR="${XDG_CONFIG_HOME}/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# WSL
+if ( grep -qEi "(microsoft|wsl)" /proc/sys/kernel/osrelease &> /dev/null ); then
+    export BROWSER="/mnt/c/Program Files/Mozilla Firefox/firefox.exe"
+fi
