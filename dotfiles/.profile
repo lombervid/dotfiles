@@ -19,6 +19,7 @@ export PATH="${CARGO_HOME}/bin:${PATH}"
 
 # Go
 export PATH="${PATH}:/usr/local/go/bin"
+export GOPATH="${HOME}/.local/share/go"
 
 export NVM_DIR="${XDG_CONFIG_HOME}/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
