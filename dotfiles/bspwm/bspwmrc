@@ -16,13 +16,16 @@ nitrogen --restore &
 xsetroot -cursor_name left_ptr &
 
 # Compositor
-picom -f --experimental-backends &
+# picom -f --experimental-backends &
+# picom -f --legacy-backends &
+picom -f &
 
 # Polybar
 polybar -r example &
 
 # Fix for Java apps
 # [ "$1" = 0 ] && wmname LG3D
+# wmname LG3D
 
 ############### Configuration ###############
 bspc monitor -d I II III IV V VI VII VIII IX X

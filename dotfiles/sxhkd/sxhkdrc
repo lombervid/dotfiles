@@ -14,6 +14,9 @@ super + x; n
 super + x; e
 	thunar
 
+super + x; h
+	alacritty --class htop,htop -e htop
+
 # program launcher
 super + shift + @space
 	dmenu_run
@@ -136,13 +139,39 @@ super + ctrl + shift + space
 #	/home/lombervid/.config/bspwm/scripts/window_resize {west,south,north,east}
 super + alt + {Left,Down,Up,Right}
 	/home/lombervid/.config/bspwm/commands/resize {left,bottom,top,right}
-#super + alt + {Left,Down,Up,Right}
-#	bspwm::resize {left,bottom,top,right}
+# super + alt + {Left,Down,Up,Right}
+# 	bspwm::resize {left,bottom,top,right}
 
 # expand a window by moving one of its side outward
 ## super + alt + {h,j,k,l}
-#super + alt + {Left,Down,Up,Right}
-#	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+# super + alt + {Left,Down,Up,Right}
+# 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# Smart resize, will grow or shrink depending on location.
+# Will always grow for floating nodes.
+# super + alt + {Left,Down,Up,Right}
+#   n=10; \
+#   { d1=left;   d2=right;  dx=-$n; dy=0;   \
+#   , d1=bottom; d2=top;    dx=0;   dy=$n;  \
+#   , d1=top;    d2=bottom; dx=0;   dy=-$n; \
+#   , d1=right;  d2=left;   dx=$n;  dy=0;   \
+#   } \
+#   bspc node --resize $d1 $dx $dy || bspc node --resize $d2 $dx $dy
+
+# resize windows
+# super + alt + {Left,Down,Up,Right}
+#     {bspc node @parent/second -z left -20 0; \
+#     bspc node @parent/first -z right -20 0, \
+#     bspc node @parent/second -z top 0 +20; \
+#     bspc node @parent/first -z bottom 0 +20, \
+#     bspc node @parent/first -z bottom 0 -20; \
+#     bspc node @parent/second -z top 0 -20, \
+#     bspc node @parent/first -z right +20 0; \
+#     bspc node @parent/second -z left +20 0}
+
+
+
+
 
 # contract a window by moving one of its side inward
 ## super + alt + shift + {h,j,k,l}
