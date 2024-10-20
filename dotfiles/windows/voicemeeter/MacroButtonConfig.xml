@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <VBAudioVoicemeeterMacroButtonMap>
-<MacroButtonConfiguration x0='1427' y0='231' dx='1044' dy='196' >
+<MacroButtonConfiguration x0='1129' y0='238' dx='1044' dy='196' >
 	<MacroButton index='1' type='0' color='3' key='113' ctrl='0' shift='0' alt='0' anyway='0' exclusive='1' trigger='0' xinput='0' >
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
@@ -10,8 +10,8 @@
 		<MB_Name>Vol +</MB_Name>
 		<MB_Subname></MB_Subname>
 		<MB_InitRequest>Bus[0].gain = -16;</MB_InitRequest>
-		<MB_OnRequest>Bus[0].gain += 1;
-Bus[1].gain += 1;</MB_OnRequest>
+		<MB_OnRequest>Bus[0].gain += 2;
+Bus[1].gain += 2;</MB_OnRequest>
 		<MB_OffRequest></MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='2' type='0' color='8' key='112' ctrl='0' shift='0' alt='0' anyway='0' exclusive='1' trigger='0' xinput='0' >
@@ -23,8 +23,8 @@ Bus[1].gain += 1;</MB_OnRequest>
 		<MB_Name>Vol -</MB_Name>
 		<MB_Subname></MB_Subname>
 		<MB_InitRequest></MB_InitRequest>
-		<MB_OnRequest>Bus[0].gain -= 1;
-Bus[1].gain -= 1;</MB_OnRequest>
+		<MB_OnRequest>Bus[0].gain -= 2;
+Bus[1].gain -= 2;</MB_OnRequest>
 		<MB_OffRequest></MB_OffRequest>
 	</MacroButton>
 	<MacroButton index='3' type='0' color='5' key='111' ctrl='0' shift='0' alt='0' anyway='0' exclusive='1' trigger='0' xinput='0' >

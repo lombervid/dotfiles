@@ -1,6 +1,8 @@
 {
   "version": 1,
   "always_on": true,
+  "operation_mode": "Warp",
+  "families": "Off",
   "dns_log_until": null,
   "excluded_ips": [
     [
@@ -112,6 +114,79 @@
     [
       "9anime.to",
       "9anime"
+    ],
+    [
+      "*.ncsoft.com",
+      "ncsoft.com"
+    ],
+    [
+      "*.empornium.is",
+      "empornium"
+    ],
+    [
+      "*.youtube.com",
+      "Youtube"
+    ],
+    [
+      "playblackdesert.com",
+      "playblackdesert.com"
+    ],
+    [
+      "*.googlevideo.com",
+      "Youtube Video"
+    ],
+    [
+      "*.google.com",
+      "Google"
+    ],
+    [
+      "*.empornium.sx",
+      "empornium.sx"
+    ],
+    [
+      "*.battle.net",
+      "battle.net"
+    ],
+    [
+      "*.viiwlink.com",
+      "Quick Learning"
+    ],
+    [
+      "*.whatsapp.com",
+      "Whatsapp"
+    ],
+    [
+      "*.whatsapp.net",
+      "Whatsapp"
+    ],
+    [
+      "gbm.com",
+      "GBM"
+    ],
+    [
+      "keepa.com",
+      "Keepa"
+    ],
+    [
+      "appgbm.com",
+      "GBM APP"
+    ],
+    [
+      "docker.com",
+      "Docker Hub"
+    ],
+    [
+      "orpheus.network",
+      "Orpheus"
+    ],
+    [
+      "notwhat.cd",
+      "Notwhat.cd"
+    ],
+    [
+      "redacted.ch",
+      "Redacted.ch"
     ]
-  ]
+  ],
+  "qlog_logging": "enabled"
 }

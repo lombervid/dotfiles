@@ -2,16 +2,17 @@
 <VBAudioVoicemeeterSettings>
 <VoiceMeeterDeviceConfiguration>
 	<OptionDev mme='1024' wdm='512' ks='512' asio='0' srasio='0' msA1='0.00' msA2='0.00' msA3='0.00' />
-	<InputDev index='1' type='4' name="Microphone (2- Antlion USB Microphone)" />
+	<InputDev index='1' type='4' name="Microphone (HD Pro Webcam C920)" />
 	<InputDev index='2' name="-" />
 	<InputDev index='3' name="-" />
-	<OutputDev index='1' type='4' name="Headphones (Audioengine 2+)" />
-	<OutputDev index='2' type='4' name="Speakers (Realtek(R) Audio)" />
+	<OutputDev index='1' type='1' name="Headphones (Audioengine 2+)" />
+	<OutputDev index='2' type='1' name="Speakers (Realtek(R) Audio)" />
 	<OutputDev index='3' name="-" pOut1='0' pOut2='0' pOut3='0' pOut4='0' pOut5='0' pOut6='0' pOut7='0' pOut8='0'  />
 	<MIDIDevIn index='1' name="-" />
 	<MIDIDevIn index='2' name="-" />
 	<MIDIDevOut index='1' name="-" />
 </VoiceMeeterDeviceConfiguration>
+<VoiceMeeterParameters>
 <VoiceMeeterParameters>
 	<LabelStrip1>ModMic</LabelStrip1>
 	<LabelStrip2></LabelStrip2>
@@ -20,31 +21,31 @@
 	<LabelVirtualStrip2>OBS</LabelVirtualStrip2>
 	<VMOptions MonitorOnSEL='0' SliderRelative='0' />
 	<K7BUSRoute busa='1' busa2='1' busa3='1' busb='1' busb2='1' dblevel='0.00' />
-	<Strip index='1' mute='1' solo='0' mono='0' muc='0' prg_c='0' prg_g='0' busa='0' busa2='0' busa3='0' busb='1' busb2='0' karaoke='0' dblevel='0.00' dblimit='12.00' />
-	<StripComp index='1' gainin='0.00' attack='10.0' release='60.0' knee='0.50' comprate='1.000' threshold='-40.00' automakeup='1' gainout='0.00' />
+	<Strip index='1' mute='0' vaio='0' solo='0' mono='0' muc='0' prg_c='0' prg_g='0' busa='0' busa2='0' busa3='0' busb='1' busb2='0' karaoke='0' dblevel='0.00' dblimit='12.00' />
+	<StripComp index='1' gainin='0.00' attack='10.0' release='50.0' knee='0.50' comprate='1.000' threshold='-40.00' automakeup='1' gainout='0.00' />
 	<StripGate index='1' thresin='-60.00' damping='-60.00' bpsidechain='100' attack='10.0' hold='200.0' release='1250.0' />
 	<Strip index='1' paneltype='1' Panel3Dx='0.000' Panel3Dy='0.000' ColorPanelx='0.000' ColorPanely='0.000' ModPanelx='0.000' ModPanely='0.000' audibility_c='0.00' audibility_g='0.00' />
-	<Strip index='2' mute='0' solo='0' mono='0' muc='0' prg_c='0' prg_g='0' busa='0' busa2='0' busa3='0' busb='0' busb2='0' karaoke='0' dblevel='-2.71' dblimit='12.00' />
-	<StripComp index='2' gainin='0.00' attack='10.0' release='60.0' knee='0.50' comprate='1.000' threshold='-40.00' automakeup='1' gainout='0.00' />
+	<Strip index='2' mute='1' vaio='0' solo='0' mono='0' muc='0' prg_c='0' prg_g='0' busa='0' busa2='0' busa3='0' busb='0' busb2='0' karaoke='0' dblevel='-2.71' dblimit='12.00' />
+	<StripComp index='2' gainin='0.00' attack='10.0' release='50.0' knee='0.50' comprate='1.000' threshold='-40.00' automakeup='1' gainout='0.00' />
 	<StripGate index='2' thresin='-60.00' damping='-60.00' bpsidechain='100' attack='10.0' hold='200.0' release='1250.0' />
 	<Strip index='2' paneltype='1' Panel3Dx='0.000' Panel3Dy='0.000' ColorPanelx='0.000' ColorPanely='0.000' ModPanelx='0.000' ModPanely='0.000' audibility_c='0.00' audibility_g='0.00' />
-	<Strip index='3' mute='0' solo='0' mono='0' muc='0' prg_c='0' prg_g='0' busa='0' busa2='0' busa3='0' busb='0' busb2='0' karaoke='0' dblevel='0.00' dblimit='12.00' />
-	<StripComp index='3' gainin='0.00' attack='10.0' release='60.0' knee='0.50' comprate='1.000' threshold='-40.00' automakeup='1' gainout='0.00' />
+	<Strip index='3' mute='0' vaio='0' solo='0' mono='0' muc='0' prg_c='0' prg_g='0' busa='0' busa2='0' busa3='0' busb='0' busb2='0' karaoke='0' dblevel='0.00' dblimit='12.00' />
+	<StripComp index='3' gainin='0.00' attack='10.0' release='50.0' knee='0.50' comprate='1.000' threshold='-40.00' automakeup='1' gainout='0.00' />
 	<StripGate index='3' thresin='-60.00' damping='-60.00' bpsidechain='100' attack='10.0' hold='200.0' release='1250.0' />
 	<Strip index='3' paneltype='1' Panel3Dx='0.000' Panel3Dy='0.000' ColorPanelx='0.000' ColorPanely='0.000' ModPanelx='0.000' ModPanely='0.000' audibility_c='0.00' audibility_g='0.00' />
-	<Strip index='4' mute='0' solo='0' mono='0' muc='0' prg_c='0' prg_g='0' busa='1' busa2='1' busa3='0' busb='0' busb2='0' karaoke='0' dblevel='0.00' dblimit='12.00' />
-	<StripComp index='4' gainin='0.00' attack='10.0' release='60.0' knee='0.50' comprate='1.000' threshold='-40.00' automakeup='1' gainout='0.00' />
-	<StripGate index='4' thresin='-50.00' damping='-50.00' bpsidechain='50' attack='20.0' hold='200.0' release='1250.0' />
+	<Strip index='4' mute='0' vaio='0' solo='0' mono='0' muc='0' prg_c='0' prg_g='0' busa='1' busa2='1' busa3='0' busb='0' busb2='0' karaoke='0' dblevel='0.00' dblimit='12.00' />
+	<StripComp index='4' gainin='0.00' attack='10.0' release='50.0' knee='0.50' comprate='1.000' threshold='-40.00' automakeup='1' gainout='0.00' />
+	<StripGate index='4' thresin='-60.00' damping='-60.00' bpsidechain='100' attack='20.0' hold='200.0' release='1250.0' />
 	<Strip index='4' EQGain1='0.00' EQGain2='0.00' EQGain3='0.00' Panel3Dx='0.000' Panel3Dy='0.000' />
-	<Strip index='5' mute='0' solo='0' mono='0' muc='0' prg_c='0' prg_g='0' busa='1' busa2='1' busa3='0' busb='0' busb2='0' karaoke='0' dblevel='0.00' dblimit='12.00' />
-	<StripComp index='5' gainin='0.00' attack='10.0' release='60.0' knee='0.50' comprate='1.000' threshold='-40.00' automakeup='1' gainout='0.00' />
-	<StripGate index='5' thresin='-50.00' damping='-50.00' bpsidechain='50' attack='20.0' hold='200.0' release='1250.0' />
+	<Strip index='5' mute='0' vaio='0' solo='0' mono='0' muc='0' prg_c='0' prg_g='0' busa='1' busa2='1' busa3='0' busb='0' busb2='0' karaoke='0' dblevel='0.00' dblimit='12.00' />
+	<StripComp index='5' gainin='0.00' attack='10.0' release='50.0' knee='0.50' comprate='1.000' threshold='-40.00' automakeup='1' gainout='0.00' />
+	<StripGate index='5' thresin='-60.00' damping='-60.00' bpsidechain='100' attack='20.0' hold='200.0' release='1250.0' />
 	<Strip index='5' EQGain1='0.00' EQGain2='0.00' EQGain3='0.00' Panel3Dx='0.000' Panel3Dy='0.000' />
-	<Bus index='1' mute='1' mono='0' cross='0' BusMode='0' EQon='0' SEL='0' monitor='1' dblevel='-10.00' />
-	<Bus index='2' mute='0' mono='0' cross='0' BusMode='0' EQon='0' SEL='0' monitor='0' dblevel='-25.00' />
-	<Bus index='3' mute='0' mono='0' cross='0' BusMode='0' EQon='0' SEL='0' monitor='0' dblevel='0.00' />
-	<Bus index='4' mute='0' mono='0' cross='0' BusMode='0' EQon='0' SEL='0' monitor='0' dblevel='0.00' />
-	<Bus index='5' mute='0' mono='0' cross='0' BusMode='0' EQon='0' SEL='0' monitor='0' dblevel='0.00' />
+	<Bus index='1' mute='1' vaio='0' mono='0' cross='0' BusMode='0' EQon='0' SEL='0' monitor='1' dblevel='-15.00' />
+	<Bus index='2' mute='0' vaio='0' mono='0' cross='0' BusMode='0' EQon='0' SEL='0' monitor='0' dblevel='-20.00' />
+	<Bus index='3' mute='0' vaio='0' mono='0' cross='0' BusMode='0' EQon='0' SEL='0' monitor='0' dblevel='0.00' />
+	<Bus index='4' mute='0' vaio='0' mono='0' cross='0' BusMode='0' EQon='0' SEL='0' monitor='0' dblevel='0.00' />
+	<Bus index='5' mute='0' vaio='0' mono='0' cross='0' BusMode='0' EQon='0' SEL='0' monitor='0' dblevel='0.00' />
 	<LabelBus1>A2+</LabelBus1>
 	<LabelBus2>DT 770</LabelBus2>
 	<LabelBus3></LabelBus3>
@@ -301,7 +302,7 @@
 	<RecordLastFileName>C:\Users\david\Documents\Voicemeeter\Record 2022-12-13 at 09h58m47s.wav</RecordLastFileName>
 	<RecordDirectory>C:\Users\david\Documents\Voicemeeter</RecordDirectory>
 	<RecordPrefix></RecordPrefix>
-	<RecordParam FileType='3' BitRes='16' TargetSR='0' nbChannel='2' kbps='192' />
+	<RecordParam FileType='3' BitRes='16' TargetSR='0' nbChannel='2' kbps='192' preRecTime='0' />
 </VoiceMeeterRecorder>
 <VoiceMeeterMidiMap>
 	<MidiMapName>-noname-</MidiMapName>
