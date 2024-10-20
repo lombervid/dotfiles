@@ -1,0 +1,2 @@
+- link:
+    $APPDATA/mpv: ${DOTFILES_DIR}/mpv
