@@ -1,0 +1,11 @@
+# https://minecraft.fandom.com/wiki/Options.txt
+
+forceUnicodeFont:true
+graphicsMode:0
+fov:0.5
+fullscreenResolution:2560x1440@144:24
+guiScale:4
+narrator:2
+tutorialStep:none
+advancedItemTooltips:true
+showSubtitles:true
