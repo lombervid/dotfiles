@@ -5,7 +5,7 @@
 	<InputDev index='1' type='4' name="Microphone (HD Pro Webcam C920)" />
 	<InputDev index='2' name="-" />
 	<InputDev index='3' name="-" />
-	<OutputDev index='1' type='1' name="Headphones (Audioengine 2+)" />
+	<OutputDev index='1' type='4' name="Headphones (Audioengine 2+)" />
 	<OutputDev index='2' type='1' name="Speakers (Realtek(R) Audio)" />
 	<OutputDev index='3' name="-" pOut1='0' pOut2='0' pOut3='0' pOut4='0' pOut5='0' pOut6='0' pOut7='0' pOut8='0'  />
 	<MIDIDevIn index='1' name="-" />

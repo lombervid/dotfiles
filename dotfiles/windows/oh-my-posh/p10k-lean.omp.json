@@ -1,35 +1,41 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-  "version": 2,
   "pwd": "osc99",
   "blocks": [
     {
       "type": "rprompt",
       "segments": [
         {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "foreground": "#0b5a18",
           "type": "exit",
           "style": "plain",
-          "foreground": "#0b5a18",
-          "foreground_templates": ["{{ if gt .Code 0 }}#910d0d{{ end }}"]
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}#910d0d{{ end }}"
+          ]
         },
         {
-          "type": "executiontime",
-          "style": "plain",
-          "foreground": "#87875f",
-          "template": " {{ .FormattedMs }} \uf252",
           "properties": {
+            "cache_duration": "none",
             "style": "round",
             "threshold": 3
-          }
+          },
+          "template": " {{ .FormattedMs }} \uf252",
+          "foreground": "#87875f",
+          "type": "executiontime",
+          "style": "plain"
         },
         {
-          "type": "time",
-          "style": "plain",
-          "foreground": "#5f8787",
-          "template": " {{ .CurrentDate | date .Format }} \uf017",
           "properties": {
+            "cache_duration": "none",
             "time_format": "15:04:05"
-          }
+          },
+          "template": " {{ .CurrentDate | date .Format }} \uf017",
+          "foreground": "#5f8787",
+          "type": "time",
+          "style": "plain"
         }
       ]
     },
@@ -38,47 +44,61 @@
       "alignment": "left",
       "segments": [
         {
-          "type": "os",
-          "style": "plain",
+          "properties": {
+            "cache_duration": "none"
+          },
           "foreground": "#00AEE9",
           "templates_logic": "first_match",
+          "type": "os",
+          "style": "plain",
+          "foreground_templates": [
+            "{{ if eq .Shell \"bash\" }}#F54D27{{ end }}"
+          ],
           "templates": [
             "{{ if eq .Shell \"bash\" }}\uebca {{ end }}",
             "{{ if eq .Shell \"pwsh\" }}{{ .Icon }} {{ end }}",
             "\udb80\udea0 "
-          ],
-          "foreground_templates": [
-            "{{ if eq .Shell \"bash\" }}#F54D27{{ end }}"
           ]
         },
         {
-          "type": "root",
-          "style": "plain",
-          "foreground": "#8e7800",
-          "template": "\uf0e7 "
-        },
-        {
-          "type": "path",
-          "style": "plain",
-          "foreground": "#2EEFBF",
-          "template": "{{ .Path }} ",
           "properties": {
+            "cache_duration": "none"
+          },
+          "template": "\uf0e7 ",
+          "foreground": "#8e7800",
+          "type": "root",
+          "style": "plain"
+        },
+        {
+          "properties": {
+            "cache_duration": "none",
             "style": "folder"
-          }
+          },
+          "template": "{{ .Path }} ",
+          "foreground": "#2EEFBF",
+          "type": "path",
+          "style": "plain"
         },
         {
-          "type": "git",
-          "style": "plain",
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "<#F54D27>\ue725 </>{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }} ",
           "foreground": "#FFE700",
-          "template": "<#F54D27>\ue725 </>{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uF044 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uF046 {{ .Staging.String }}{{ end }} "
+          "type": "git",
+          "style": "plain"
         },
         {
-          "type": "text",
-          "style": "plain",
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "❯ ",
           "foreground": "#43D426",
-          "template": "\u276f "
+          "type": "text",
+          "style": "plain"
         }
       ]
     }
-  ]
+  ],
+  "version": 3
 }

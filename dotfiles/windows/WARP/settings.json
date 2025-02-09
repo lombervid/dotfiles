@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "always_on": true,
+  "always_on": false,
   "operation_mode": "Warp",
   "families": "Off",
   "dns_log_until": null,
@@ -186,6 +186,10 @@
     [
       "redacted.ch",
       "Redacted.ch"
+    ],
+    [
+      "promodescuentos.com",
+      "Promodescuentos"
     ]
   ],
   "qlog_logging": "enabled"

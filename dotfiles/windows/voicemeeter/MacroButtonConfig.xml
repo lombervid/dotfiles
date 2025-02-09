@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <VBAudioVoicemeeterMacroButtonMap>
-<MacroButtonConfiguration x0='1129' y0='238' dx='1044' dy='196' >
+<MacroButtonConfiguration x0='1134' y0='242' dx='1044' dy='196' >
 	<MacroButton index='1' type='0' color='3' key='113' ctrl='0' shift='0' alt='0' anyway='0' exclusive='1' trigger='0' xinput='0' >
 		<MB_MIDI b1='00' b2='00' b3='00' b4='00' b5='00' b6='00' />
 		<MB_TRIGGER tchannel='0' tin='0.0' tout='0.0' tmsHold='100' tafterMute='0' />
