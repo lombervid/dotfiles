@@ -41,7 +41,6 @@ local function process_vid_stats() end
 local function process_dislikes() end
 local function add_commas_to_number() end
 local function addLikeCountToTitle() end
-local function format_file_size(file_size) end
 local function get_playlist() end
 local function get_chapterlist() end
 local function show_message(text, duration) end
@@ -358,6 +357,7 @@ local function contains(list, item)
     return false
 end
 
+-- debug function
 local function dumptable(o)
     if type(o) == 'table' then
        local s = '{ '
@@ -463,7 +463,6 @@ local state = {
     osd = mp.create_osd_overlay('ass-events'),
     new_file_flag = false,                  -- flag to detect new file starts
     chapter_list = {},                      -- sorted by time
-    chapter_list_pre_sponsorblock = {},
     mute = false,
     looping = false,
     sliderpos = 0,
@@ -496,6 +495,7 @@ local state = {
     commentsPage = 0,
     maxCommentPages = 0,
     commentsAdditionalText = "",
+    is_live = false,
 
     sponsor_segments = {},
 
@@ -757,7 +757,7 @@ end
 -- Tracklist Management
 --
 
-local nicetypes = {video = texts.video, audio = texts.audio, sub = texts.subtitle}
+local valid_types = {video = texts.video, audio = texts.audio, sub = texts.subtitle}
 local tracks_osc, tracks_mpv
 
 -- updates the OSC internal playlists, should be run each time the track-layout changes
@@ -787,7 +787,9 @@ end
 
 -- return a nice list of tracks of the given type (video, audio, sub)
 function get_tracklist(type)
-    local message = nicetypes[type] .. texts.track
+    update_tracklist()
+
+    local message = valid_types[type] .. texts.track
     if not tracks_osc or #tracks_osc[type] == 0 then
         message = texts.none
     else
@@ -1487,9 +1489,11 @@ function checktitle()
     state.localDescriptionClick = nil
     local title = mp.get_property("media-title")
     local artist = mp.get_property("filtered-metadata/by-key/Album_Artist") or mp.get_property("filtered-metadata/by-key/Artist") or mp.get_property("filtered-metadata/by-key/Uploader")
+    local tempartistclicktext = "Contributing artists: " .. ("" or artist)
     if (mp.get_property("filtered-metadata/by-key/Album_Artist") and mp.get_property("filtered-metadata/by-key/Artist")) then
         if (mp.get_property("filtered-metadata/by-key/Album_Artist") ~= mp.get_property("filtered-metadata/by-key/Artist")) then
-            artist = mp.get_property("filtered-metadata/by-key/Album_Artist") .. ', ' .. mp.get_property("filtered-metadata/by-key/Artist")
+            artist = mp.get_property("filtered-metadata/by-key/Artist") .. ", " .. mp.get_property("filtered-metadata/by-key/Album_Artist")
+            tempartistclicktext = "Contributing artists: " .. mp.get_property("filtered-metadata/by-key/Artist") .. "\\NAlbum arist: " .. mp.get_property("filtered-metadata/by-key/Album_Artist")
         end
     end
     local album = mp.get_property("filtered-metadata/by-key/Album")
@@ -1499,10 +1503,13 @@ function checktitle()
     state.ytdescription = ""
     state.youtubeuploader = artist
 
-    print(dumptable(mp.get_property_native("metadata")))
-    if mp.get_property_native('metadata') then
-        state.ytdescription = mp.get_property_native('metadata').ytdl_description or description or ""
-        state.ytdescription = state.ytdescription:gsub('\r', '\\N'):gsub('\n', '\\N'):gsub("%%", "%%%%")
+    local metadata = mp.get_property_native('metadata')
+    print(dumptable(metadata))
+    if metadata then
+        state.ytdescription = metadata.ytdl_description or description or ""
+        state.ytdescription = state.ytdescription:gsub('\r', '\\N'):gsub('\n', '\\N'):gsub("%%", "%%")
+
+        state.is_live = metadata.ytdl_is_live
     else
         print("Failed to load metadata")
     end
@@ -1516,7 +1523,6 @@ function checktitle()
 
                 if #utf8split ~= #state.ytdescription then
                     local tmp = utf8split:gsub("[,%.%s]+$", "")
-
                     utf8split = tmp .. "..."
                 end
                 utf8split = utf8split:match("^(.-)%s*$")
@@ -1535,7 +1541,7 @@ function checktitle()
         if (artist ~= nil) then
             if (state.localDescription == nil) then
                 state.localDescription = artist
-                state.localDescriptionClick = state.localDescriptionClick .. state.localDescription
+                state.localDescriptionClick = state.localDescriptionClick .. tempartistclicktext
                 state.localDescriptionIsClickable = true
             end
         end
@@ -1546,12 +1552,12 @@ function checktitle()
                 state.localDescriptionIsClickable = true
             else -- append to other metadata
                 if (state.localDescriptionClick ~= nil) then
-                    state.localDescriptionClick = state.localDescriptionClick .. " | " .. album
+                    state.localDescriptionClick = state.localDescriptionClick .. "\\NAlbum: " .. album .. "\\N"
                 else
                     state.localDescriptionClick = album
                     state.localDescriptionIsClickable = true
                 end
-                state.localDescription = state.localDescription .. " | " .. album
+                state.localDescription = state.localDescription .. " (" .. album .. ")"
             end
         end
         if (date ~= nil) then
@@ -1594,12 +1600,16 @@ end
 
 function normaliseDate(date)
     date = string.gsub(date:gsub("/", ""), "-", "")
+    local date_table
+    if string.find(date:sub(1,8), ":") then
+        return date
+    end
     if (#date > 8) then -- YYYYMMDD HHMMSS (plus a time)
-        local dateTable = {year = date:sub(1,4), month = date:sub(5,6), day = date:sub(7,8)}
-        return os.date(user_opts.date_format, os.time(dateTable)) .. date:sub(9)
+        date_table = {year = date:sub(1,4), month = date:sub(5,6), day = date:sub(7,8)}
+        return os.date(user_opts.date_format, os.time(date_table)) .. date:sub(9)
     elseif (#date > 4) then -- YYYYMMDD
-        local dateTable = {year = date:sub(1,4), month = date:sub(5,6), day = date:sub(7,8)}
-        return os.date(user_opts.date_format, os.time(dateTable))
+        date_table = {year = date:sub(1,4), month = date:sub(5,6), day = date:sub(7,8)}
+        return os.date(user_opts.date_format, os.time(date_table))
     else -- YYYY
         return date
     end
@@ -1919,7 +1929,7 @@ function process_vid_stats(success, result, error)
         state.ytdescription
 
     if (state.dislikes == "") then
-        state.localDescriptionClick = state.localDescriptionClick .. string.gsub(string.gsub(result.stdout, '\r', '\\N'), '\n', '\\N')
+        state.localDescriptionClick = state.localDescriptionClick .. string.gsub(result.stdout, '\r', '\\N'):gsub("\n", "\\N")
         state.localDescriptionClick = state.localDescriptionClick:sub(1, #state.localDescriptionClick - 2)
     end
     addLikeCountToTitle()
@@ -2059,6 +2069,7 @@ end
 
 local function make_sponsorblock_segments()
     if not user_opts.show_sponsorblock_segments then return end
+    if not state.is_URL then return end
 
     local sponsor_types = user_opts.sponsor_types
 
@@ -2067,14 +2078,21 @@ local function make_sponsorblock_segments()
     local is_start_added = false
     local current_category = ""
 
+    local temp_chapters = mp.get_property_native("chapter-list")
     local duration = mp.get_property_number('duration', nil)
 
     if duration then
-        for _, chapter in ipairs(state.chapter_list_pre_sponsorblock) do
+        for _, chapter in ipairs(temp_chapters) do
+
+            print(chapter.title)
+
             if chapter.title then
+
+
                 for _, value in ipairs(sponsor_types) do
                     if string.find(string.lower(chapter.title), value) then
                         current_category = value
+
                         if not temp_segment[current_category] then
                             temp_segment[current_category] = {}
                         end
@@ -2109,14 +2127,17 @@ local function make_sponsorblock_segments()
     if not user_opts.add_sponsorblock_chapters then
         -- remove [SponsorBlock] chapters
         local updated_chapters = {}
-        for _, chapter in ipairs(state.chapter_list_pre_sponsorblock) do
+        for _, chapter in ipairs(temp_chapters) do
             if not string.find(chapter.title, "%[SponsorBlock%]") then
                 table.insert(updated_chapters, chapter)
             end
         end
         -- updated chapter list
         state.chapter_list = updated_chapters
-        mp.set_property_native("chapter-list", updated_chapters)
+
+        if #updated_chapters > 0 then
+            mp.set_property_native("chapter-list", updated_chapters)
+        end
     end
 
     print("Added SponsorBlock segments")
@@ -2513,14 +2534,16 @@ function window_controls()
         end
         lo = add_layout('window_title')
 
-        local geo = {x = 20, y = button_y + 14, an = 1, w = osc_param.playresx - 50, h = wc_geo.h}
+        local geo = {x = 20, y = button_y + 14, an = 1, w = osc_param.playresx - 150, h = wc_geo.h}
         if user_opts.title_bar_box then
-            geo = {x = 10, y = button_y + 10, an = 1, w = osc_param.playresx - 50, h = wc_geo.h}
+            geo = {x = 10, y = button_y + 10, an = 1, w = osc_param.playresx - 150, h = wc_geo.h}
         end
 
         lo.geometry = geo
-        lo.style = osc_styles.window_title
-        lo.button.maxchars = geo.w / 10
+        lo.style = string.format("%s{\\clip(0,%f,%f,%f)}", osc_styles.window_title,
+                    geo.y - geo.h, geo.x + geo.w, geo.y + geo.h)
+
+        -- lo.button.maxchars = geo.w / 10
     end
 end
 
@@ -3398,7 +3421,7 @@ local function osc_init()
         function ()
             mp.set_property_number("secondary-sid", 0)
             set_track('sub', 1)
-            show_message(get_tracklist('sub'))
+            show_message(get_tracklist("sub"))
         end
     ne.eventresponder['enter'] =
         function ()
@@ -3420,8 +3443,6 @@ local function osc_init()
     end
     ne.eventresponder['shift+mbtn_right_down'] =
         function () show_message(get_tracklist('sub')) end
-
-
 
     -- vol_ctrl
     ne = new_element("vol_ctrl", "button")
@@ -3575,7 +3596,6 @@ local function osc_init()
             if (state.initialborder == 'yes') then
                 if (mp.get_property('ontop') == 'yes') then
                     mp.commandv('set', 'border', "no")
-
                 else
                     mp.commandv('set', 'border', "yes")
                 end
@@ -3850,8 +3870,8 @@ local function osc_init()
     ne = new_element("chapter_title", "button")
     ne.visible = true
     ne.content = function()
-        if state.buffering then
-            return "Buffering..." .. " " .. mp.get_property("cache-buffering-state") .. "%"
+        if state.buffering ~= nil and state.buffering then
+            return "Buffering..." .. " " .. (mp.get_property("cache-buffering-state") or "0") .. "%"
         else
             if user_opts.chapter_fmt ~= "no" and chapter_index >= 0 then
                 request_init()
@@ -3880,7 +3900,7 @@ local function osc_init()
         local prefix = state.tc_right_rem and
             (user_opts.unicode_minus and UNICODE_MINUS or "-") or ""
 
-        return prefix .. format_time(time_to_display)
+        return prefix .. format_time(time_to_display) .. (state.is_live and " • LIVE" or "")
     end
     ne.eventresponder["mbtn_left_up"] = function()
         state.tc_right_rem = not state.tc_right_rem
@@ -4322,7 +4342,6 @@ function tick()
             state.showhide_enabled = false
         end
 
-
     elseif (state.fullscreen and user_opts.show_fullscreen)
         or (not state.fullscreen and user_opts.show_windowed) then
 
@@ -4357,7 +4376,6 @@ mp.observe_property('playlist', nil, request_init)
 mp.observe_property("chapter-list", "native", function(_, list) -- chapter list changes
     list = list or {}  -- safety, shouldn't return nil
     table.sort(list, function(a, b) return a.time < b.time end)
-    state.chapter_list_pre_sponsorblock = list
     state.chapter_list = list
     -- make_sponsorblock_segments()
     request_init()
@@ -4374,7 +4392,7 @@ mp.observe_property('seeking', nil, function()
 end)
 
 if user_opts.key_bindings then
-    local function changeChapter(number)
+    local function change_chapter(number)
         mp.commandv("add", "chapter", number)
         reset_timeout()
         show_message(get_chapterlist())
@@ -4390,10 +4408,10 @@ if user_opts.key_bindings then
         destroyscrollingkeys()
     end);
     mp.add_key_binding("shift+left", "prevchapter", function()
-        changeChapter(-1)
+        change_chapter(-1)
     end);
     mp.add_key_binding("shift+right", "nextchapter", function()
-        changeChapter(1)
+        change_chapter(1)
     end);
 
     -- extra key bindings
