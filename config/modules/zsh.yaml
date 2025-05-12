@@ -10,7 +10,7 @@
         description: Adding ZDOTDIR variable to /etc/security/pam_env.conf
         command: >-
             sudo sed -i \
-                -e '/^ZDOTDIR.*/{s//ZDOTDIR     DEFAULT=@{HOME}\/.config\/zsh/;:a;n;ba;q}' \
+                -e '/^#*\s*ZDOTDIR.*/{s//ZDOTDIR     DEFAULT=@{HOME}\/.config\/zsh/;:a;n;ba;q}' \
                 -e '$a\\n# ZSH Directory\nZDOTDIR     DEFAULT=@{HOME}/.config/zsh' \
                 /etc/security/pam_env.conf
         quiet: true
