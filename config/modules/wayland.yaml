@@ -1,0 +1,13 @@
+- link:
+    ~/.config/electron-flags.conf: ${DOTFILES_DIR}/wayland/electron-flags.conf
+
+
+- shell:
+    -
+        description: Adding ELECTRON_OZONE_PLATFORM_HINT variable to /etc/environment
+        command: >-
+            sudo sed -i \
+                -e '/^#*\s*ELECTRON_OZONE_PLATFORM_HINT.*/{s//ELECTRON_OZONE_PLATFORM_HINT=auto/;:a;n;ba;q}' \
+                -e '$a\\n# Electron Wayland\nELECTRON_OZONE_PLATFORM_HINT=auto' \
+                /etc/environment
+        quiet: true
