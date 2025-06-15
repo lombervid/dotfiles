@@ -1,8 +1,7 @@
 configuration {
-  modi: "drun,window,combi";
-  //theme: "themes/slate";
+  modes: [drun,window,combi];
   font: "FiraCode Nerd Font 12";
-  combi-modi: "window,drun,keys,mobi";
+  combi-modes: [ drun, window, keys ];
   show-icons: true;
   timeout {
       action: "kb-cancel";
@@ -13,3 +12,5 @@ configuration {
       sorting-method:    "name";
   }
 }
+
+@theme "themes/squared-nord.rasi"
