@@ -1,0 +1,2 @@
+- link:
+    ~/.config/waybar: ${DOTFILES_DIR}/waybar
