@@ -26,3 +26,9 @@ if [[ ! "${ZSH_PROMPT}" == "" ]]; then
         source "${ZSH_PROMPTS_DIR}/${ZSH_PROMPT}.zsh"
     fi
 fi
+
+
+# fzf
+if (command_exists 'fzf'); then
+    source <(fzf --zsh)
+fi
