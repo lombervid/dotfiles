@@ -27,8 +27,12 @@ if [[ ! "${ZSH_PROMPT}" == "" ]]; then
     fi
 fi
 
-
 # fzf
 if (command_exists 'fzf'); then
     source <(fzf --zsh)
+fi
+
+# fnm
+if (command_exists 'fnm'); then
+    eval "$(fnm env --use-on-cd --shell zsh)"
 fi
