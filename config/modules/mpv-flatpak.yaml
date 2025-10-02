@@ -1,0 +1,2 @@
+- link:
+    ~/.var/app/io.mpv.Mpv/config/mpv: ${DOTFILES_DIR}/mpv
