@@ -1,9 +1,18 @@
-# ls
-alias l='ls -lah'
-alias la='ls -lAh'
-alias ll='ls -lh'
-alias ls='ls --color=tty'
-alias lsa='ls -Ah'
+
+# eza
+if (command_exists 'eza'); then
+    alias ls='eza --icons=auto --group-directories-first --octal-permissions --group'
+    alias l='ls -laah'
+    alias la='ls -lAh'
+    alias ll='ls -lh'
+    alias lsa='ls -Ah'
+else
+    alias ls='ls --color=tty'
+    alias l='ls -lah'
+    alias la='ls -lAh'
+    alias ll='ls -lh'
+    alias lsa='ls -Ah'
+fi
 
 # Startx
 alias startx='\startx ${XINITRC}'
