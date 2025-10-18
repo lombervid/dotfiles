@@ -36,3 +36,8 @@ fi
 if (command_exists 'fnm'); then
     eval "$(fnm env --use-on-cd --shell zsh)"
 fi
+
+# zoxide
+if (command_exists 'zoxide'); then
+    eval "$(zoxide init zsh)"
+fi
