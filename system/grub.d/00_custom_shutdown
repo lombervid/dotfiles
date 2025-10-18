@@ -1,0 +1,15 @@
+#!/bin/sh
+exec tail -n +3 $0
+
+# Example file to add Shutdown/Restart entries in the grub menu
+# Replace "00" of the file name with the corresponding number in order to place it correctly in the generated confid
+
+menuentry "Shutdown" {
+        echo "Shutting down..."
+        halt
+}
+
+menuentry "Restart" {
+        echo "Rebooting..."
+        reboot
+}

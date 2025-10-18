@@ -1,0 +1,13 @@
+#!/bin/sh
+exec tail -n +3 $0
+
+# Example file to add an atomic distro entry in the grub menu
+# Replace "00" of the file name with the corresponding number in order to place it correctly in the generated confid
+# Replace "linux" of the file name with the name of the distro (Optional)
+
+menuentry "Aurora" --class aurora --class gnu-linux --class gnu --class os $menuentry_id_option 'aurora-ED15-3186' {
+        insmod chain
+        insmod fat
+        search --no-floppy --fs-uuid --set=root ED15-3186 #Replace with the UUID of the partition
+        chainloader /EFI/fedora/grubx64.efi
+}

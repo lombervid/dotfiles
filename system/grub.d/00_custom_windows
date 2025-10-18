@@ -1,0 +1,16 @@
+#!/bin/sh
+exec tail -n +3 $0
+
+# Example file to add a windows entry in the grub menu
+# Replace "00" of the file name with the corresponding number in order to place it correctly in the generated confid
+# You can also generate the corresponding code with os-prober and replace the complete code below
+
+# This menu entry is supported only on EFI platforms.
+if [ "$grub_platform" = "efi" ]; then
+        menuentry 'Windows 11 Pro' --class windows --class os $menuentry_id_option 'windows-364F-B913' {
+                insmod part_gpt
+                insmod fat
+                search --no-floppy --fs-uuid --set=root 364F-B913 #Replace with the UUID of the partition
+                chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+        }
+fi
