@@ -1,5 +1,6 @@
 - link:
     ~/.config/electron-flags.conf: ${DOTFILES_DIR}/wayland/electron-flags.conf
+    ~/.config/chromium-flags.conf: ${DOTFILES_DIR}/wayland/chromium-flags.conf
 
 
 - shell:
