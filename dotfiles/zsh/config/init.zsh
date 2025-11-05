@@ -45,4 +45,11 @@ fi
 # Homebrew
 if (test -x /home/linuxbrew/.linuxbrew/bin/brew); then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+    if (type brew &>/dev/null); then
+        FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+        autoload -Uz compinit
+        compinit
+    fi
 fi
