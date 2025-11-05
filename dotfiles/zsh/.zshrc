@@ -20,6 +20,7 @@ HISTSIZE=1000
 SAVEHIST=1000
 bindkey -e
 # End of lines configured by zsh-newuser-install
+
 # The following lines were added by compinstall
 zstyle :compinstall filename "${ZSH_DOT_DIR}/.zshrc"
 
@@ -36,22 +37,12 @@ setopt COMPLETE_ALIASES
 
 zle_highlight=(paste:underline,fg=green isearch:underline,fg=cyan)
 
-#autoload -Uz compinit promptinit
-#compinit
-#promptinit
-
-# Activate menu completion (press Tab twice)
-#zstyle ':completion:*' menu select
-# Autocompletion of command line switches for aliases
-#setopt COMPLETE_ALIASES
-
 # End of lines added by compinstall
-#
+
 # Prompt
 # autoload -Uz promptinit
 # promptinit
-
-# prompt walters
+# prompt oliver
 
 # Load key bingings
 if [[ -f "${ZSH_CONFIG_DIR}/init.zsh" ]]; then
@@ -61,3 +52,5 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 # [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
+autoload -Uz compinit
+compinit

@@ -1,17 +1,11 @@
 [[ -f "${ZSH_CONFIG_DIR}/functions.zsh" ]] && . "${ZSH_CONFIG_DIR}/functions.zsh"
 
-autoload -Uz compinit promptinit
-
 include_file "${ZSH_CONFIG_DIR}/key_bindings.zsh"
-include_file "${ZSH_CONFIG_DIR}/aliases.zsh"
 
 # Load all plugins defined in .zshrc
 for plugin in $plugins; do
     load_plugin "${plugin}"
 done
-
-compinit
-promptinit
 
 # Load theme
 if [[ ! "${ZSH_THEME}" == "" ]]; then
@@ -46,3 +40,5 @@ fi
 if (test -x /home/linuxbrew/.linuxbrew/bin/brew); then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
+
+include_file "${ZSH_CONFIG_DIR}/aliases.zsh"
