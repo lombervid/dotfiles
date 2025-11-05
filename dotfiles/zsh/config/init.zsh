@@ -41,3 +41,8 @@ fi
 if (command_exists 'zoxide'); then
     eval "$(zoxide init zsh)"
 fi
+
+# Homebrew
+if (test -x /home/linuxbrew/.linuxbrew/bin/brew); then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
