@@ -49,6 +49,10 @@ font-feature = cv28
 font-feature = cv30
 font-feature = cv32
 
+# Quick Terminal
+quick-terminal-position = top
+quick-terminal-size = 35%,100%
+
 #
 # # Spacing around the equals sign does not matter.
 # # All of these are identical:
