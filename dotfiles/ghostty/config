@@ -52,7 +52,7 @@ font-feature = cv32
 # Quick Terminal
 quick-terminal-position = top
 quick-terminal-size = 35%,100%
-quick-terminal-autohide = true
+# quick-terminal-autohide = true
 
 #
 # # Spacing around the equals sign does not matter.
