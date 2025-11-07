@@ -1,3 +1,6 @@
 - link:
     $ProgramW6432/EqualizerAPO/config/config.txt: ${DOTFILES_DIR}/windows/EqualizerAPO/config.txt
+    $ProgramW6432/EqualizerAPO/config/speakers.txt: ${DOTFILES_DIR}/windows/EqualizerAPO/speakers.txt
     $ProgramW6432/EqualizerAPO/config/a2plus.txt: ${DOTFILES_DIR}/windows/EqualizerAPO/a2plus.txt
+    $ProgramW6432/EqualizerAPO/config/headphones.txt: ${DOTFILES_DIR}/windows/EqualizerAPO/headphones.txt
+    $ProgramW6432/EqualizerAPO/config/dt770.txt: ${DOTFILES_DIR}/windows/EqualizerAPO/dt770.txt

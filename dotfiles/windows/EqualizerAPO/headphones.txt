@@ -1,0 +1,3 @@
+Device: Output A2 Voicemeeter; Speakers Realtek(R) Audio {7c29c7d1-4d89-48a1-8915-1bfc16a83063}
+Preamp: 4.39 dB
+Include: dt770.txt
