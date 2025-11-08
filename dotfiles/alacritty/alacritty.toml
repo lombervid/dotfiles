@@ -1,0 +1,27 @@
+[general]
+import = ["/home/lombervid/.config/alacritty/themes/uwu.toml"]
+
+[window]
+decorations = "none"
+opacity = 0.95
+
+[window.padding]
+x = 10
+y = 10
+
+[font]
+size = 11.0
+
+[font.normal]
+family = "FiraCode Nerd Font Mono"
+style = "Regular"
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[cursor]
+thickness = 0.15
+
+[cursor.style]
+blinking = "Always"
+shape = "Beam"

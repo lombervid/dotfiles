@@ -1,0 +1,30 @@
+[env]
+TERM = "xterm-256color"
+
+[colors.primary]
+background = "#131a1c"
+foreground = "#c5c8c9"
+
+[colors.cursor]
+cursor = "#6db0ad"
+text = "#d6d6d6"
+
+[colors.normal]
+black = "#1b2224"
+blue = "#53a7bf"
+cyan = "#51a39f"
+green = "#6bb05d"
+magenta = "#b185db"
+red = "#f65b5b"
+white = "#c4c4c4"
+yellow = "#e59e67"
+
+[colors.bright]
+black = "#232a2c"
+blue = "#6cbad1"
+cyan = "#6db0ad"
+green = "#8dc776"
+magenta = "#bb8fe5"
+red = "#c26f6f"
+white = "#cecece"
+yellow = "#e7ac7e"
