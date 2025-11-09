@@ -1,38 +1,44 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-family: "Inter", "FiraCode Nerd Font Propo", Roboto, Helvetica, Arial, sans-serif;
+    font-feature-settings: "ss01,ss02,ss03,cv06,cv11,cv12,cv13,tnum";
+    font-size: 16px;
 }
 
 window#waybar {
     background-color: rgba(43, 48, 59, 0.5);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    border-bottom: 2px solid rgba(100, 114, 125, 0.5);
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
+    border-radius: 5px;
+}
+
+window#waybar>.horizontal {
+    padding: 0 8px;
 }
 
 window#waybar.hidden {
     opacity: 0.2;
 }
 
-/*
-window#waybar.empty {
+/* make window module transparent when no windows present */
+/* window#waybar.empty {
     background-color: transparent;
 }
+
 window#waybar.solo {
     background-color: #FFFFFF;
-}
-*/
+} */
 
-window#waybar.termite {
+/* window#waybar.termite {
     background-color: #3F3F3F;
 }
 
 window#waybar.chromium {
     background-color: #000000;
     border: none;
-}
+} */
 
 button {
     /* Use box-shadow instead of border so the text isn't offset */
@@ -104,12 +110,12 @@ button:hover {
 }
 
 /* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
+.modules-left>widget:first-child>#workspaces {
     margin-left: 0;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
+.modules-right>widget:last-child>#workspaces {
     margin-right: 0;
 }
 
@@ -122,7 +128,8 @@ button:hover {
     color: #000000;
 }
 
-#battery.charging, #battery.plugged {
+#battery.charging,
+#battery.plugged {
     color: #ffffff;
     background-color: #26A65B;
 }
@@ -238,11 +245,11 @@ label:focus {
     background-color: #2980b9;
 }
 
-#tray > .passive {
+#tray>.passive {
     -gtk-icon-effect: dim;
 }
 
-#tray > .needs-attention {
+#tray>.needs-attention {
     -gtk-icon-effect: highlight;
     background-color: #eb4d4b;
 }
@@ -289,11 +296,11 @@ label:focus {
     min-width: 16px;
 }
 
-#keyboard-state > label {
+#keyboard-state>label {
     padding: 0 5px;
 }
 
-#keyboard-state > label.locked {
+#keyboard-state>label.locked {
     background: rgba(0, 0, 0, 0.2);
 }
 
@@ -302,7 +309,7 @@ label:focus {
 }
 
 #scratchpad.empty {
-	background-color: transparent;
+    background-color: transparent;
 }
 
 #privacy {
@@ -324,4 +331,8 @@ label:focus {
 
 #privacy-item.audio-out {
     background-color: #0069d4;
+}
+
+#custom-power {
+    margin-left: 5px;
 }
