@@ -14,6 +14,8 @@ else
     alias lsa='ls -Ah'
 fi
 
+alias lsb='lsblk -o name,size,type,fstype,label,parttypename,uuid,mountpoints'
+
 # Startx
 alias startx='\startx ${XINITRC}'
 
