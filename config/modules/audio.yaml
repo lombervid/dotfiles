@@ -1,3 +1,0 @@
-- link:
-    ~/.config/easyeffects: ${DOTFILES_DIR}/audio/easyeffects
-    ~/.config/wireplumber/: ${DOTFILES_DIR}/audio/wireplumber
