@@ -1,0 +1,3 @@
+#temperature.critical {
+    color: @warning_color;
+}

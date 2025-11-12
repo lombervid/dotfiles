@@ -1,0 +1,47 @@
+{
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "󰷛",
+            "deactivated": "󰶐"
+        }
+    },
+    "memory": {
+        "format": " {}%",
+        "tooltip-format": "{used:0.1f}G / {total:0.1f}G "
+    },
+    "cpu": {
+        "format": " {usage}%"
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{icon} {percent}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": {
+            "numlock": "{icon} N",
+            "capslock": "{icon} C"
+        },
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+}

@@ -1,0 +1,28 @@
+{
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "urgent": "",
+            "active": "",
+            "default": ""
+        },
+        "sort-by-number": true
+    },
+    "hyprland/window": {
+        "format": "{}",
+        "rewrite": {
+            "(.*) — Mozilla Firefox": " $1",
+            "(.*) - fish": "> [$1]"
+        },
+        "separate-outputs": true
+    },
+    "hyprland/language": {
+        "format": " {shortDescription} ({variant})",
+    }
+}
