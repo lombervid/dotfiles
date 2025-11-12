@@ -1,0 +1,25 @@
+{
+    "include": [
+        "~/.config/waybar/modules/temperature.jsonc",
+    ],
+    "group/hardware": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+            "transition-left-to-right": false,
+        },
+        "modules": [
+            "temperature",
+            "cpu",
+            "memory",
+        ]
+    },
+    "cpu": {
+        "format": " {usage}%"
+    },
+    "memory": {
+        "format": " {}%",
+        "tooltip-format": "{used:0.1f}G / {total:0.1f}G "
+    },
+}

@@ -6,13 +6,6 @@
             "deactivated": "󰶐"
         }
     },
-    "memory": {
-        "format": " {}%",
-        "tooltip-format": "{used:0.1f}G / {total:0.1f}G "
-    },
-    "cpu": {
-        "format": " {usage}%"
-    },
     "backlight": {
         // "device": "acpi_video1",
         "format": "{icon} {percent}%",

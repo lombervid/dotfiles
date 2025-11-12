@@ -11,11 +11,11 @@
         "~/.config/waybar/modules/pulseaudio.jsonc",
         "~/.config/waybar/modules/network.jsonc",
         "~/.config/waybar/modules/power-profiles-daemon.jsonc",
-        "~/.config/waybar/modules/temperature.jsonc",
         "~/.config/waybar/modules/battery.jsonc",
         "~/.config/waybar/modules/clock.jsonc",
         "~/.config/waybar/modules/custom-swaync.jsonc",
         "~/.config/waybar/modules/custom-power.jsonc",
+        "~/.config/waybar/modules/hardware.jsonc",
     ],
     // Choose the order of the modules
     "modules-left": [
@@ -33,6 +33,7 @@
         "cpu",
         "memory",
         "temperature",
+        // "group/hardware",
         "backlight",
         "keyboard-state",
         "hyprland/language",
@@ -41,5 +42,5 @@
         "clock",
         "custom/swaync",
         "custom/power"
-    ]
+    ],
 }
