@@ -22,20 +22,20 @@
     ],
     // Choose the order of the modules
     "modules-left": [
-        "hyprland/workspaces",
+        "power-profiles-daemon",
+        "temperature",
+        "cpu",
+        "memory",
         "hyprland/submap"
     ],
     "modules-center": [
-        "hyprland/window"
+        "hyprland/workspaces"
     ],
     "modules-right": [
         "idle_inhibitor",
+        "wireplumber",
         "pulseaudio",
         "network",
-        "power-profiles-daemon",
-        "cpu",
-        "memory",
-        "temperature",
         // "group/hardware",
         "backlight",
         "keyboard-state",
