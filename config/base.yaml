@@ -5,3 +5,8 @@
     ~/:
     ~/.config:
         recursive: true
+
+- link:
+    ~/.local/bin/:
+        glob: true
+        path: ${DOTFILES_DIR}/scripts/*
