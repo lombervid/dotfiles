@@ -1,2 +1,2 @@
 - link:
-    ~/.config/easyeffects: ${DOTFILES_DIR}/easyeffects
+    ~/.local/share/easyeffects/output: ${DOTFILES_DIR}/easyeffects/data/output
