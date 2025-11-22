@@ -1,7 +1,7 @@
 {
     "custom/swaync": {
         "tooltip": true,
-        "format": "{icon}<sup><small>{0}</small></sup>",
+        "format": "{icon}<sup>{0}</sup>",
         "format-icons": {
             "notification": "󱅫",
             "none": "󰂜",
