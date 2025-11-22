@@ -1,13 +1,17 @@
 {
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{icon} {volume}% {format_source}",
-        "format-bluetooth": "{icon}󰂯 {volume}% {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{icon}󰂯 {volume}%",
+        "format-bluetooth-muted": " {icon}",
+        "format-muted": "{icon} ",
         "format-source": " {volume}%",
         "format-source-muted": "",
         "format-icons": {
+            "alsa_output.pci-0000_0d_00.4.analog-stereo": "",
+            "alsa_output.pci-0000_0d_00.4.analog-stereo-muted": "󰟎",
+            "alsa_output.usb-Audioengine_Ltd._Audioengine_2__ABCDEFB1180003-00.analog-stereo": "󰓃",
+            "alsa_output.usb-Audioengine_Ltd._Audioengine_2__ABCDEFB1180003-00.analog-stereo-muted": "󰓄",
             "headphone": "",
             "hands-free": "󱎔",
             "headset": "",

@@ -1,12 +1,14 @@
 {
     "wireplumber": {
-        "format": "{volume}% {icon}",
-        "format-muted": "",
-        "on-click": "pwvucontrol",
-        "format-icons": [
-            "",
-            "",
-            ""
-        ]
+        "format": "{icon} {volume}%",
+        "format-muted": "{icon} ",
+        "format-icons": {
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "on-click": "pwvucontrol"
     },
 }

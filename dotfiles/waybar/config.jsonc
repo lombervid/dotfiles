@@ -12,6 +12,7 @@
         "~/.config/waybar/modules/hyprland.jsonc",
         "~/.config/waybar/modules/default-modules.jsonc",
         "~/.config/waybar/modules/pulseaudio.jsonc",
+        "~/.config/waybar/modules/wireplumber.jsonc",
         "~/.config/waybar/modules/network.jsonc",
         "~/.config/waybar/modules/power-profiles-daemon.jsonc",
         "~/.config/waybar/modules/battery.jsonc",
@@ -26,19 +27,19 @@
         "temperature",
         "cpu",
         "memory",
-        "hyprland/submap"
+        "hyprland/submap",
+        "keyboard-state",
+        "idle_inhibitor"
     ],
     "modules-center": [
         "hyprland/workspaces"
     ],
     "modules-right": [
-        "idle_inhibitor",
         "wireplumber",
         "pulseaudio",
         "network",
         // "group/hardware",
         "backlight",
-        "keyboard-state",
         "hyprland/language",
         "battery",
         "tray",

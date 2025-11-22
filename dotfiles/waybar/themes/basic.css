@@ -63,6 +63,10 @@ widget:nth-child(4n+4)>box.module {
     color: @warning_color;
 }
 
+#workspaces button.urgent {
+    color: @error_color;
+}
+
 /*------ Power menu ------*/
 menu {
     border-radius: 8px;
