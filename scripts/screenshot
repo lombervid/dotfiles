@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+IFS=$'\n\t'
+
+FULLSCREEN=true
+INTERACTIVE=false
+OUTPUT_DIR="${HOME}/Pictures/Screenshots"
+FILENAME="screenshot-$(date '+%Y%m%d-%H:%M:%S')"
+
+show_help() {
+    COMMAND_NAME=$(basename "$0")
+    echo "Usage: ${COMMAND_NAME} [OPTIONS]"
+    echo
+    echo "This script takes screenshots. Requires grim, slurp, satty and wl-clipboard."
+    echo
+    echo "Options:"
+    echo "  -h, --help            Display this help message"
+    echo "  -r, --region          Capture a specific region (default: fullscreen)"
+    echo "  -i, --interactive     Interactive screenshot (Active when region is selected)"
+    echo "  -o, --output-dir DIR  Specify output directory (default: ${OUTPUT_DIR})"
+    echo "  -n, --name FILENAME   Specify output filename without extension (default: ${FILENAME})"
+    echo
+    echo "Examples:"
+    echo "  ${COMMAND_NAME} --region"
+    echo "  ${COMMAND_NAME} -i -o ~/Screenshots --name my_screenshot"
+}
+
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        -h|--help)
+            show_help
+            exit 0
+            ;;
+        -r|--region)
+            FULLSCREEN=false
+            INTERACTIVE=true
+            ;;
+        -i|--interactive)
+            INTERACTIVE=true
+            ;;
+        -o|--output-dir)
+            OUTPUT_DIR="$2"
+            shift
+            ;;
+        -n|--name)
+            FILENAME="$2"
+            shift
+            ;;
+        *)
+            echo -e "Unknown option: $1\n"
+            show_help
+            exit 1
+            ;;
+    esac
+    shift
+done
+
+if [[ $FULLSCREEN == true ]]; then
+    if [[ $INTERACTIVE == true ]]; then
+        grim -g "$(slurp -o -r -c '##ff0000ff')" -t ppm - | satty --filename - --fullscreen --output-filename "${OUTPUT_DIR}/${FILENAME}.png"
+    else
+        grim - | wl-copy
+    fi
+else
+    # Interactive region selection
+    grim -g "$(slurp -c '##ff0000ff')" -t ppm - | satty --filename - --output-filename "${OUTPUT_DIR}/${FILENAME}.png"
+fi
