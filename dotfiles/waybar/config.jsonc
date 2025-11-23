@@ -9,7 +9,7 @@
     "margin-right": 5,
     "spacing": 10, // Gaps between modules (4px)
     "include": [
-        "~/.config/waybar/modules/hyprland.jsonc",
+        "~/.config/waybar/modules/niri.jsonc",
         "~/.config/waybar/modules/default-modules.jsonc",
         "~/.config/waybar/modules/pulseaudio.jsonc",
         "~/.config/waybar/modules/wireplumber.jsonc",
@@ -27,12 +27,11 @@
         "temperature",
         "cpu",
         "memory",
-        "hyprland/submap",
         "keyboard-state",
         "idle_inhibitor"
     ],
     "modules-center": [
-        "hyprland/workspaces"
+        "niri/workspaces"
     ],
     "modules-right": [
         "wireplumber",
@@ -40,7 +39,7 @@
         "network",
         // "group/hardware",
         "backlight",
-        "hyprland/language",
+        "niri/language",
         "battery",
         "tray",
         "clock",

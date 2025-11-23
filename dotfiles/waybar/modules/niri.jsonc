@@ -1,0 +1,12 @@
+{
+    "niri/workspaces": {
+        "format": "{value}",
+        "format-icons": {
+            "active": "󰮯",
+            "default": "󰊠"
+        }
+    },
+    "niri/language": {
+        "format": " {shortDescription} ({variant})",
+    }
+}
