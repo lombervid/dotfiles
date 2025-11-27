@@ -1,7 +1,7 @@
 
 # eza
 if (command_exists 'eza'); then
-    alias ls='eza --icons=auto --group-directories-first --octal-permissions --group'
+    alias ls='eza --icons=auto --group-directories-first --octal-permissions --group --smart-group --total-size'
     alias l='ls -laah'
     alias la='ls -lAh'
     alias ll='ls -lh'
