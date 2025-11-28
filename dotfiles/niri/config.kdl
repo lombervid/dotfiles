@@ -443,6 +443,12 @@ binds {
     Mod+Ctrl+U         { move-column-to-workspace-down; }
     Mod+Ctrl+I         { move-column-to-workspace-up; }
 
+
+    Mod+Alt+Down { focus-workspace-down; }
+    Mod+Alt+Up   { focus-workspace-up; }
+    Mod+Alt+J    { focus-workspace-down; }
+    Mod+Alt+K    { focus-workspace-up; }
+
     // Alternatively, there are commands to move just a single window:
     // Mod+Ctrl+Page_Down { move-window-to-workspace-down; }
     // ...
