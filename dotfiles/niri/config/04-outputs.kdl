@@ -1,0 +1,13 @@
+// You can configure outputs by their name, which you can find
+// by running `niri msg outputs` while inside a niri instance.
+// The built-in laptop monitor is usually called "eDP-1".
+// Find more information on the wiki:
+// https://yalter.github.io/niri/Configuration:-Outputs
+// Remember to uncomment the node by removing "/-"!
+output "Ancor Communications Inc ROG PG279Q #ASPEEdXol/Ld" {
+    mode "2560x1440@143.998"
+    variable-refresh-rate
+    transform "normal"
+    scale 1
+    position x=0 y=0
+}
