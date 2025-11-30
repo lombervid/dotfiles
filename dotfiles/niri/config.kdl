@@ -286,6 +286,8 @@ spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
 
+spawn-sh-at-startup "waypaper --restore"
+
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 
@@ -360,6 +362,7 @@ window-rule {
     match app-id="com.obsproject.Studio"
     match app-id="Ferdium"
     match app-id="Audacity"
+    match app-id="waypaper"
 
     open-floating true
 }
