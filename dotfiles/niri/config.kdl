@@ -363,6 +363,7 @@ window-rule {
     match app-id="Ferdium"
     match app-id="Audacity"
     match app-id="waypaper"
+    match app-id="blueman-manager"
 
     open-floating true
 }
