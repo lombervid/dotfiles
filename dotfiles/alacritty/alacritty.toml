@@ -1,5 +1,5 @@
 [general]
-import = ["/home/lombervid/.config/alacritty/themes/uwu.toml"]
+import = ["~/.config/alacritty/themes/tokyo_night.toml"]
 
 [window]
 decorations = "none"
