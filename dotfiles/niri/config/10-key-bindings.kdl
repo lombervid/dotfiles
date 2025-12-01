@@ -51,7 +51,7 @@ binds {
     // or do a four-finger swipe up on a touchpad.
     Mod+O repeat=false { toggle-overview; }
 
-    Mod+Q repeat=false { close-window; }
+    Mod+Q repeat=false { spawn-sh "~/.config/niri/scripts/close-window.sh"; }
 
     Mod+Alt+Down { focus-workspace-down; }
     Mod+Alt+Up   { focus-workspace-up; }
