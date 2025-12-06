@@ -1,7 +1,7 @@
 {
     "clock": {
-        "format": " {:%H:%M}",
-        "format-alt": "󰃰 {:%A, %B %d, %Y (%R)}",
+        "format": "<small>󰸗 {0:%Y/%m/%d}\n {0:%H:%M}</small>",
+        "format-alt": "<small>󰃰 {0:%A, %B %d, %Y}\n {0:%H:%M}</small>",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
             "mode": "month",
