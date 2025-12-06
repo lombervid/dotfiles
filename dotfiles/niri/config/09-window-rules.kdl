@@ -57,6 +57,10 @@ window-rule {
 window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     match app-id=r#"^Bitwarden$"#
+    match app-id=r#"^discord$"#
+    match app-id=r#"firefox$"# title=r#"^.*- Outlook — Mozilla Firefox$"#
+    match app-id=r#"firefox$"# title=r#"^.*- Slack — Mozilla Firefox$"#
+    match app-id=r#"firefox$"# title=r#"^.*\| LinkedIn — Mozilla Firefox$"#
 
     block-out-from "screencast"
 }
@@ -66,4 +70,15 @@ window-rule {
 /-window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
+}
+
+// Block out notifications from screencasts.
+layer-rule {
+    // Mako notifications
+    match namespace="^notifications$"
+    // Swaync notification and control center
+    match namespace="^swaync-notification-window$"
+    match namespace="^swaync-control-center$"
+
+    block-out-from "screencast"
 }
