@@ -7,9 +7,11 @@ spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
 
-spawn-sh-at-startup "swww-daemon"
-spawn-sh-at-startup "swww-daemon -n overview"
-spawn-sh-at-startup "waypaper --restore"
+spawn-at-startup "swww-daemon"
+spawn-at-startup "swww-daemon" "-n" "overview"
+spawn-at-startup "waypaper" "--restore"
+spawn-at-startup "wl-clip-persist" "--clipboard" "regular"
+spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"

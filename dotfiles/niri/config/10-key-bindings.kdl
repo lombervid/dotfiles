@@ -9,7 +9,7 @@ binds {
     // Most actions that you can bind here can also be invoked programmatically with
     // `niri msg action do-something`.
 
-    Mod+E { spawn "thunar"; }
+    Mod+E hotkey-overlay-title="Open file manager: Thunar" { spawn "thunar"; }
 
     // Mod-Shift-/, which is usually the same as Mod-?,
     // shows a list of important hotkeys.
@@ -51,7 +51,8 @@ binds {
     // or do a four-finger swipe up on a touchpad.
     Mod+O repeat=false { toggle-overview; }
 
-    Mod+Q repeat=false { spawn-sh "~/.config/niri/scripts/close-window.sh"; }
+    Mod+Q repeat=false hotkey-overlay-title="Close Focused Window" { spawn-sh "~/.config/niri/scripts/close-window.sh"; }
+
 
     Mod+Alt+Down { focus-workspace-down; }
     Mod+Alt+Up   { focus-workspace-up; }
@@ -261,7 +262,7 @@ binds {
     Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
     Ctrl+Print { spawn-sh "screenshot --interactive"; }
-    Mod+Shift+S { spawn-sh "screenshot --region"; }
+    Mod+Shift+S hotkey-overlay-title="Take a screenshot of a region" { spawn-sh "screenshot --region"; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here

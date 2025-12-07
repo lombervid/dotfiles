@@ -58,11 +58,11 @@ done
 
 if [[ $FULLSCREEN == true ]]; then
     if [[ $INTERACTIVE == true ]]; then
-        grim -g "$(slurp -o -r -c '##ff0000ff')" -t ppm - | satty --filename - --fullscreen --output-filename "${OUTPUT_DIR}/${FILENAME}.png"
+        grim -g "$(slurp -o -r -c '#ffffffff')" -t ppm - | satty --filename - --fullscreen --output-filename "${OUTPUT_DIR}/${FILENAME}.png"
     else
         grim - | wl-copy
     fi
 else
     # Interactive region selection
-    grim -g "$(slurp -c '##ff0000ff')" -t ppm - | satty --filename - --output-filename "${OUTPUT_DIR}/${FILENAME}.png"
+    grim -g "$(slurp -d -c '#ffffffff')" -t ppm - | satty --filename - --output-filename "${OUTPUT_DIR}/${FILENAME}.png"
 fi
