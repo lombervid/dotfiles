@@ -10,6 +10,7 @@ binds {
     // `niri msg action do-something`.
 
     Mod+E hotkey-overlay-title="Open file manager: Thunar" { spawn "thunar"; }
+    Mod+Ctrl+V hotkey-overlay-title="Open clipboard history" { spawn-sh "rofi -modi clipboard:cliphist-rofi-img -show clipboard -show-icons"; }
 
     // Mod-Shift-/, which is usually the same as Mod-?,
     // shows a list of important hotkeys.

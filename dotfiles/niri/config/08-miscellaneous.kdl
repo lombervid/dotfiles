@@ -11,7 +11,8 @@ spawn-at-startup "swww-daemon"
 spawn-at-startup "swww-daemon" "-n" "overview"
 spawn-at-startup "waypaper" "--restore"
 spawn-at-startup "wl-clip-persist" "--clipboard" "regular"
-spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
+spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
+spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
