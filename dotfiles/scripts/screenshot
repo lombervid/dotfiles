@@ -6,7 +6,7 @@ IFS=$'\n\t'
 FULLSCREEN=true
 INTERACTIVE=false
 OUTPUT_DIR="${HOME}/Pictures/Screenshots"
-FILENAME="screenshot-$(date '+%Y%m%d-%H:%M:%S')"
+FILENAME="screenshot-$(date '+%Y.%m.%d-%H.%M.%S')"
 
 show_help() {
     COMMAND_NAME=$(basename "$0")
