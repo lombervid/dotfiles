@@ -1,0 +1,4 @@
+- link:
+    ~/.local/share/applications/:
+        glob: true
+        path: ${DOTFILES_DIR}/app-entries/*

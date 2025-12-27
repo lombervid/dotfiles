@@ -47,6 +47,7 @@ window-rule {
     match app-id="Audacity"
     match app-id="waypaper"
     match app-id="blueman-manager"
+    match app-id="pied"
 
     open-floating true
 }
@@ -68,6 +69,7 @@ window-rule {
     match app-id=r#"firefox$"# title=r#"^.*- Outlook — Mozilla Firefox$"#
     match app-id=r#"firefox$"# title=r#"^.*- Slack — Mozilla Firefox$"#
     match app-id=r#"firefox$"# title=r#"^.*\| LinkedIn — Mozilla Firefox$"#
+    match app-id=r#"^com.obsproject.Studio$"#
 
     block-out-from "screencast"
 }
