@@ -41,4 +41,14 @@ if (test -x /home/linuxbrew/.linuxbrew/bin/brew); then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
+# kubectl
+if (command_exists 'kubectl'); then
+    source <(kubectl completion zsh)
+fi
+
+# minikube
+if (command_exists 'minikube'); then
+    source <(minikube completion zsh)
+fi
+
 include_file "${ZSH_CONFIG_DIR}/aliases.zsh"
