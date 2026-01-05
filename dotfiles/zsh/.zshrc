@@ -44,7 +44,7 @@ zle_highlight=(paste:underline,fg=green isearch:underline,fg=cyan)
 # promptinit
 # prompt oliver
 
-# Load key bingings
+# Load configurations
 if [[ -f "${ZSH_CONFIG_DIR}/init.zsh" ]]; then
     . "${ZSH_CONFIG_DIR}/init.zsh"
 fi
@@ -54,3 +54,6 @@ fi
 
 autoload -Uz compinit
 compinit
+
+# Load completions
+include_file "${ZSH_CONFIG_DIR}/completions.zsh"
