@@ -22,6 +22,3 @@ if [[ ! "${ZSH_PROMPT}" == "" ]]; then
         source "${ZSH_PROMPTS_DIR}/${ZSH_PROMPT}.zsh"
     fi
 fi
-
-# Load aliases
-include_file "${ZSH_CONFIG_DIR}/aliases.zsh"

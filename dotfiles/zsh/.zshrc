@@ -57,3 +57,6 @@ compinit
 
 # Load completions
 include_file "${ZSH_CONFIG_DIR}/completions.zsh"
+
+# Load aliases
+include_file "${ZSH_CONFIG_DIR}/aliases.zsh"
