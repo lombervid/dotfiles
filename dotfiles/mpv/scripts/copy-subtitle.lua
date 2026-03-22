@@ -41,7 +41,7 @@ local function copy_subtitle(prop)
 
   if result ~= '' and result ~= nil then
 
-    result = result:gsub("%s*\n\t?%s*", " ")
+    result = result:gsub("\\N", "\n"):gsub("%s*\n\t?%s*", " ")
 
     if is_win_os() then
       mp.commandv('run', 'powershell', '-NoProfile', '-command', 'Set-Clipboard', '"' .. result:gsub('[$"`]', '`%1') .. '"')
