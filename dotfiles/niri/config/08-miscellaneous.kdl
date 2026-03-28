@@ -7,8 +7,8 @@ spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
 
-spawn-at-startup "swww-daemon"
-spawn-at-startup "swww-daemon" "-n" "overview"
+spawn-at-startup "awww-daemon"
+spawn-at-startup "awww-daemon" "-n" "overview"
 spawn-at-startup "waypaper" "--restore"
 spawn-at-startup "wl-clip-persist" "--clipboard" "regular"
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"

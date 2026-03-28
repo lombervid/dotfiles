@@ -2,9 +2,9 @@
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Window-Rules
 
-// Put swww inside the overview backdrop.
+// Put awww inside the overview backdrop.
 layer-rule {
-    match namespace="^swww-daemonoverview$"
+    match namespace="^awww-daemonoverview$"
 
     place-within-backdrop true
 }
