@@ -12,3 +12,5 @@ include "config/07-animations.kdl"
 include "config/08-miscellaneous.kdl"
 include "config/09-window-rules.kdl"
 include "config/10-key-bindings.kdl"
+
+include "../noctalia/niri-config.kdl"

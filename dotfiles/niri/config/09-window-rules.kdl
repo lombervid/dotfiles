@@ -2,13 +2,6 @@
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Window-Rules
 
-// Put awww inside the overview backdrop.
-layer-rule {
-    match namespace="^awww-daemonoverview$"
-
-    place-within-backdrop true
-}
-
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.
 window-rule {

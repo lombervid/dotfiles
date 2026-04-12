@@ -10,7 +10,6 @@ binds {
     // `niri msg action do-something`.
 
     Mod+E hotkey-overlay-title="Open file manager: Thunar" { spawn "thunar"; }
-    Mod+Ctrl+V hotkey-overlay-title="Open clipboard history" { spawn-sh "rofi -modi clipboard:cliphist-rofi-img -show clipboard -show-icons"; }
 
     // Mod-Shift-/, which is usually the same as Mod-?,
     // shows a list of important hotkeys.
@@ -250,7 +249,7 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
 
     // Move the focused window between the floating and the tiling layout.
-    Mod+V       { toggle-window-floating; }
+    Mod+Ctrl+V       { toggle-window-floating; }
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
     // Toggle tabbed column display mode.
