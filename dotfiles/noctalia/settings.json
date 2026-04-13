@@ -42,14 +42,14 @@
     "bar": {
         "autoHideDelay": 500,
         "autoShowDelay": 150,
-        "backgroundOpacity": 0.93,
+        "backgroundOpacity": 0,
         "barType": "simple",
         "capsuleColorKey": "none",
         "capsuleOpacity": 1,
         "contentPadding": 2,
         "density": "comfortable",
         "displayMode": "always_visible",
-        "enableExclusionZoneInset": true,
+        "enableExclusionZoneInset": false,
         "fontScale": 1,
         "frameRadius": 12,
         "frameThickness": 8,
@@ -63,7 +63,7 @@
         ],
         "mouseWheelAction": "none",
         "mouseWheelWrap": true,
-        "outerCorners": true,
+        "outerCorners": false,
         "position": "top",
         "reverseScroll": false,
         "rightClickAction": "controlCenter",
@@ -71,10 +71,10 @@
         "rightClickFollowMouse": true,
         "screenOverrides": [
         ],
-        "showCapsule": true,
+        "showCapsule": false,
         "showOnWorkspaceSwitch": true,
         "showOutline": false,
-        "useSeparateOpacity": false,
+        "useSeparateOpacity": true,
         "widgetSpacing": 6,
         "widgets": {
             "center": [
@@ -189,6 +189,12 @@
                     "useCustomFont": false
                 },
                 {
+                    "defaultSettings": {
+                        "enableTodoIntegration": false,
+                        "notecardsEnabled": true,
+                        "pincardsEnabled": true,
+                        "showCloseButton": true
+                    },
                     "id": "plugin:clipper"
                 },
                 {
