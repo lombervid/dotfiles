@@ -4,7 +4,7 @@
 // See the binds section below for more spawn examples.
 spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 
-// This line starts waybar, a commonly used bar for Wayland compositors.
+// This line starts noctalia-shell
 spawn-at-startup "qs" "-c" "noctalia-shell"
 
 spawn-at-startup "wl-clip-persist" "--clipboard" "regular"
@@ -16,7 +16,7 @@ spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
-    // skip-at-startup
+    skip-at-startup
 }
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
