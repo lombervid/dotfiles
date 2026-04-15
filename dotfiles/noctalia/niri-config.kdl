@@ -26,6 +26,7 @@ binds {
     Mod+X { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
     Mod+V { spawn-sh "qs -c noctalia-shell ipc call launcher clipboard"; }
     Mod+Comma { spawn-sh "qs -c noctalia-shell ipc call settings toggle"; }
+    Mod+Shift+Slash { spawn-sh "qs -c noctalia-shell ipc call plugin:keybind-cheatsheet toggle"; }
 
     // Audio & Brightness
     XF86AudioRaiseVolume { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "increase"; }
