@@ -24,7 +24,7 @@ binds {
     Mod+Space { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
     Mod+S { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
     Mod+X { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
-    Mod+V { spawn-sh "qs -c noctalia-shell ipc call plugin:clipper toggle"; }
+    Mod+V { spawn-sh "qs -c noctalia-shell ipc call launcher clipboard"; }
     Mod+Comma { spawn-sh "qs -c noctalia-shell ipc call settings toggle"; }
 
     // Audio & Brightness
