@@ -36,14 +36,13 @@ window-rule {
     match app-id="org.keepassxc.KeePassXC"
     match app-id="com.github.tchx84.Flatseal"
     match app-id="it.mijorus.gearlever"
-    match app-id="obsidian"
     match app-id="com.obsproject.Studio"
     match app-id="Ferdium"
     match app-id="Audacity"
     match app-id="waypaper"
     match app-id="blueman-manager"
     match app-id="pied"
-    match app-id="org.prismlauncher.PrismLauncher"
+    match app-id="com.gabm.satty"
 
     open-floating true
 }
