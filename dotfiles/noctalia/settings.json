@@ -109,6 +109,9 @@
                     "showBadge": true,
                     "showLabelsOnlyWhenOccupied": true,
                     "unfocusedIconsOpacity": 1
+                },
+                {
+                    "id": "plugin:privacy-indicator"
                 }
             ],
             "left": [
