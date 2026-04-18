@@ -123,7 +123,7 @@
                     "useDistroLogo": false
                 },
                 {
-                    "compactMode": true,
+                    "compactMode": false,
                     "diskPath": "/",
                     "iconColor": "none",
                     "id": "SystemMonitor",
@@ -651,7 +651,7 @@
         "fontFixed": "monospace",
         "fontFixedScale": 1,
         "panelBackgroundOpacity": 0.93,
-        "panelsAttachedToBar": true,
+        "panelsAttachedToBar": false,
         "scrollbarAlwaysVisible": true,
         "settingsPanelMode": "window",
         "settingsPanelSideBarCardStyle": false,
