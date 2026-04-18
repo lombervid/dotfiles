@@ -323,13 +323,39 @@
         }
     },
     "desktopWidgets": {
-        "enabled": false,
+        "enabled": true,
         "gridSnap": false,
         "gridSnapScale": false,
         "monitorWidgets": [
             {
                 "name": "DP-1",
                 "widgets": [
+                    {
+                        "clockColor": "secondary",
+                        "clockStyle": "minimal",
+                        "customFont": "OpenDyslexicAlt Nerd Font",
+                        "format": "HH:mm\\nd MMMM yyyy",
+                        "id": "Clock",
+                        "roundedCorners": true,
+                        "scale": 4.264384235282427,
+                        "showBackground": false,
+                        "useCustomFont": true,
+                        "x": 1000,
+                        "y": 80
+                    },
+                    {
+                        "colorName": "secondary",
+                        "height": 240,
+                        "hideWhenIdle": true,
+                        "id": "AudioVisualizer",
+                        "roundedCorners": false,
+                        "scale": 1,
+                        "showBackground": false,
+                        "visualizerType": "linear",
+                        "width": 2470,
+                        "x": 40,
+                        "y": 1200
+                    }
                 ]
             }
         ],
