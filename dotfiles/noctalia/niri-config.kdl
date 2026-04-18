@@ -21,12 +21,15 @@ layer-rule {
 
 binds {
     // Core Noctalia binds
-    Mod+Space { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
-    Mod+S { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
-    Mod+X { spawn-sh "qs -c noctalia-shell ipc call sessionMenu toggle"; }
-    Mod+V { spawn-sh "qs -c noctalia-shell ipc call launcher clipboard"; }
-    Mod+Comma { spawn-sh "qs -c noctalia-shell ipc call settings toggle"; }
-    Mod+Shift+Slash { spawn-sh "qs -c noctalia-shell ipc call plugin:keybind-cheatsheet toggle"; }
+    Mod+Space { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
+    Mod+Comma { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "settings" "toggle"; }
+    Mod+S { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "controlCenter" "toggle"; }
+    Mod+X { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
+
+    // Extra
+    Mod+V { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "clipboard"; }
+    Mod+Period { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:kaomoji" "toggle"; }
+    Mod+Shift+Slash { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:keybind-cheatsheet" "toggle"; }
 
     // Audio & Brightness
     XF86AudioRaiseVolume { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "increase"; }
