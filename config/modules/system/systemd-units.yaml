@@ -1,0 +1,4 @@
+- link:
+    ~/.config/systemd/user/:
+        glob: true
+        path: ${DOTFILES_DIR}/systemd/user/*
