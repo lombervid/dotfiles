@@ -19,6 +19,13 @@ layer-rule {
   place-within-backdrop true
 }
 
+// Open settings window in floating mode
+window-rule {
+    match app-id="dev.noctalia.noctalia-qs"
+
+    open-floating true
+}
+
 binds {
     // Core Noctalia binds
     Mod+Space { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
