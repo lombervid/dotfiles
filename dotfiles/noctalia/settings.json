@@ -166,6 +166,9 @@
             ],
             "right": [
                 {
+                    "id": "plugin:timer"
+                },
+                {
                     "deviceNativePath": "__default__",
                     "displayMode": "graphic",
                     "hideIfIdle": true,
