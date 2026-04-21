@@ -1,3 +1,5 @@
+// This line starts noctalia-shell
+spawn-at-startup "qs" "-c" "noctalia-shell" "--no-duplicate"
 
 // Noctalia Shell Configs
 window-rule {

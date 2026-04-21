@@ -1,0 +1,19 @@
+
+// This line starts waybar, a commonly used bar for Wayland compositors.
+spawn-at-startup "waybar"
+
+spawn-at-startup "awww-daemon"
+spawn-at-startup "awww-daemon" "-n" "overview"
+spawn-at-startup "waypaper" "--restore"
+
+
+// Put awww inside the overview backdrop.
+layer-rule {
+    match namespace="^awww-daemonoverview$"
+
+    place-within-backdrop true
+}
+
+binds {
+    Mod+V hotkey-overlay-title="Open clipboard history" { spawn-sh "rofi -modi clipboard:cliphist-rofi-img -show clipboard -show-icons"; }
+}

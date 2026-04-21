@@ -1,2 +1,5 @@
 - link:
-    ~/.config/niri: ${DOTFILES_DIR}/niri
+    ~/.config/niri/config: ${DOTFILES_DIR}/niri/config
+    ~/.config/niri/scripts: ${DOTFILES_DIR}/niri/scripts
+    ~/.config/niri/config.kdl: ${DOTFILES_DIR}/niri/config.kdl
+    ~/.config/niri/_shell.kdl: ${DOTFILES_DIR}/niri/no-shell.kdl
