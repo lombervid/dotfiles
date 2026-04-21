@@ -1,3 +1,6 @@
+// Polkit agent
+// Arch || Fedora
+spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 || /usr/libexec/kf6/polkit-kde-authentication-agent-1"
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
