@@ -269,6 +269,7 @@ binds {
     Alt+Print { screenshot-window; }
     Ctrl+Print { spawn-sh "screenshot --interactive"; }
     Mod+Shift+S hotkey-overlay-title="Take a screenshot of a region" { spawn-sh "screenshot --region"; }
+    Mod+Print { spawn "screen-recording"; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here

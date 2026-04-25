@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+IFS=$'\n\t'
+
+if (pgrep -f gpu-screen-recorder); then
+    # Stop recording
+    pkill -SIGINT -f "^gpu-screen-recorder"
+    notify-send --expire-time 2000 --icon video "Recording" "Stopping screen recording"
+else
+    # Start recording
+    REGION="$(slurp -f "%wx%h+%x+%y")"
+    FILENAME="${HOME}/Videos/Recordings/recording_$(date '+%Y.%m.%d-%H.%M.%S').mkv"
+    gpu-screen-recorder -w "${REGION}" -o "${FILENAME}" &
+    notify-send --expire-time 2000 --icon video "Recording" "Starting screen recording"
+fi
