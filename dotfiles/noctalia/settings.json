@@ -554,7 +554,7 @@
         "enableBatteryToast": true,
         "enableKeyboardLayoutToast": true,
         "enableMarkdown": false,
-        "enableMediaToast": true,
+        "enableMediaToast": false,
         "enabled": true,
         "location": "bottom_right",
         "lowUrgencyDuration": 3,
