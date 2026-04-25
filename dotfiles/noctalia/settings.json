@@ -580,7 +580,7 @@
     },
     "osd": {
         "autoHideMs": 1300,
-        "backgroundOpacity": 0.01,
+        "backgroundOpacity": 0.25,
         "enabled": true,
         "enabledTypes": [
             0,
