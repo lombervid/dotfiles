@@ -81,14 +81,3 @@ window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
 }
-
-// Block out notifications from screencasts.
-layer-rule {
-    // Mako notifications
-    match namespace="^notifications$"
-    // Swaync notification and control center
-    match namespace="^swaync-notification-window$"
-    match namespace="^swaync-control-center$"
-
-    block-out-from "screencast"
-}
