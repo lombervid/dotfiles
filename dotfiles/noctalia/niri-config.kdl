@@ -28,6 +28,13 @@ window-rule {
     open-floating true
 }
 
+// Block out notifications from screencasts.
+layer-rule {
+    match namespace="^noctalia-notifications.*$"
+
+    block-out-from "screencast"
+}
+
 binds {
     // Core Noctalia binds
     Mod+Space { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
