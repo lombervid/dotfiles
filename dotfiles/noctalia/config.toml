@@ -1,0 +1,64 @@
+[bar.main]
+background_blur = false
+background_opacity = 0.35
+capsule = false
+margin_h = 0
+margin_v = 0
+padding = 10
+radius = 0
+shadow = true
+widget_spacing = 10
+start = [ "power_profiles", "wallpaper", "cpu", "ram", "media", "lock_keys" ]
+center = [ "workspaces" ]
+end = [
+    "tray",
+    "network",
+    "bluetooth",
+    "brightness",
+    "battery",
+    "volume",
+    "keyboard_layout",
+    "clock",
+    "notifications",
+    "session"
+]
+
+[brightness]
+enable_ddcutil = true
+
+[notification]
+position = "bottom_right"
+
+[overview]
+enabled = true
+tint_intensity = 0.40
+unload_when_not_in_use = false
+
+[shell]
+clipboard_auto_paste = "auto"
+polkit_agent = true
+settings_show_advanced = true
+show_location = false
+telemetry_enabled = true
+
+[theme]
+builtin = "Tokyo-Night"
+
+[wallpaper]
+directory = "~/Pictures/Wallpapers/"
+enabled = true
+
+[widget.brightness]
+show_label = false
+
+[widget.lock_keys]
+anchor = false
+display = "full"
+hide_when_off = true
+show_num_lock = false
+
+[widget.network]
+show_label = false
+
+[widget.volume]
+show_label = false

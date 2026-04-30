@@ -1,0 +1,66 @@
+// Polkit agent
+// systemctl --user status plasma-polkit-agent.service
+// spawn-sh-at-startup "systemctl --user status plasma-polkit-agent.service"
+
+// Set overview wallpaper
+layer-rule {
+    match namespace="^noctalia-overview*"
+    place-within-backdrop true
+}
+
+layer-rule {
+  match namespace="^noctalia-background-.*$"
+  background-effect {
+    xray false
+  }
+}
+
+layer-rule {
+  match namespace="^noctalia-.*$"
+  background-effect {
+    xray false
+  }
+}
+
+// Open settings window in floating mode
+window-rule {
+    match app-id="dev.noctalia.Noctalia.Settings"
+
+    default-floating-position x=0 y=80 relative-to="top"
+    default-column-width { fixed 1050; }
+    default-window-height { fixed 1040; }
+    open-floating true
+}
+
+// Block out notifications from screencasts.
+layer-rule {
+    match namespace="^noctalia-notification$"
+
+    block-out-from "screencast"
+}
+
+binds {
+    // Core Noctalia binds
+    Mod+Space { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
+    Mod+Comma { spawn "noctalia" "msg" "settings-toggle"; }
+    Mod+S { spawn "noctalia" "msg" "panel-toggle" "control-center"; }
+    Mod+X { spawn "noctalia" "msg" "panel-toggle" "session"; }
+
+    // Extra
+    Mod+V { spawn "noctalia" "msg" "panel-toggle" "clipboard"; }
+    // Mod+Period { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:kaomoji" "toggle"; }
+    // Mod+Shift+Slash { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:keybind-cheatsheet" "toggle"; }
+
+    // Audio & Brightness
+    XF86AudioRaiseVolume { spawn "noctalia" "msg" "volume-up"; }
+    XF86AudioLowerVolume { spawn "noctalia" "msg" "volume-down"; }
+    XF86AudioMute { spawn "noctalia" "msg" "volume-mute"; }
+    XF86MonBrightnessUp { spawn "noctalia" "msg" "brightness-up"; }
+    XF86MonBrightnessDown { spawn "noctalia" "msg" "brightness-down"; }
+
+    // Media keys
+    XF86AudioNext   allow-when-locked=true { spawn "noctalia" "msg" "media" "next"; }
+    XF86AudioPause  allow-when-locked=true { spawn "noctalia" "msg" "media" "toggle"; }
+    XF86AudioPlay   allow-when-locked=true { spawn "noctalia" "msg" "media" "toggle"; }
+    XF86AudioPrev   allow-when-locked=true { spawn "noctalia" "msg" "media" "previous"; }
+}
