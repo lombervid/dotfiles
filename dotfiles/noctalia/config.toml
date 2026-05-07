@@ -1,14 +1,16 @@
 [bar.main]
-background_blur = false
-background_opacity = 0.35
 capsule = false
-margin_h = 0
-margin_v = 0
+capsule_opacity = 0.5
+capsule_padding = 10.0
+margin_edge = 0
+margin_ends = 0
 padding = 10
 radius = 0
-shadow = true
+background_opacity = 0.0
+shadow = false
 widget_spacing = 10
-start = [ "power_profiles", "wallpaper", "cpu", "ram", "media", "lock_keys" ]
+capsule_groups = [ "system-monitoring", "system-settings", "right-edge", "left-edge" ]
+start = [ "power_profiles", "wallpaper", "cpu", "temp", "ram", "media", "lock_keys" ]
 center = [ "workspaces" ]
 end = [
     "tray",
@@ -23,24 +25,6 @@ end = [
     "session"
 ]
 
-[brightness]
-enable_ddcutil = true
-
-[notification]
-position = "bottom_right"
-
-[overview]
-enabled = true
-tint_intensity = 0.40
-unload_when_not_in_use = false
-
-[shell]
-clipboard_auto_paste = "auto"
-polkit_agent = true
-settings_show_advanced = true
-show_location = false
-telemetry_enabled = true
-
 [theme]
 builtin = "Tokyo-Night"
 
@@ -48,8 +32,29 @@ builtin = "Tokyo-Night"
 directory = "~/Pictures/Wallpapers/"
 enabled = true
 
-[widget.brightness]
-show_label = false
+[backdrop]
+enabled = true
+tint_intensity = 0.40
+unload_when_not_in_use = false
+
+[shell]
+settings_show_advanced = true
+clipboard_auto_paste = "auto"
+polkit_agent = true
+show_location = false
+telemetry_enabled = true
+
+[notification]
+position = "bottom_right"
+
+[widget.tray]
+drawer = true
+
+[brightness]
+enable_ddcutil = true
+
+[widget.clock]
+format = "{:%-I:%M %P}\n{:%d/%m/%Y}"
 
 [widget.lock_keys]
 anchor = false
@@ -58,7 +63,40 @@ hide_when_off = true
 show_num_lock = false
 
 [widget.network]
+capsule_group = "system-settings"
 show_label = false
 
-[widget.volume]
+[widget.bluetooth]
+capsule_group = "system-settings"
+
+[widget.brightness]
+capsule_group = "system-settings"
 show_label = false
+
+[widget.battery]
+capsule_group = "system-settings"
+
+[widget.volume]
+capsule_group = "system-settings"
+show_label = false
+
+[widget.power_profiles]
+capsule_group = "left-edge"
+
+[widget.wallpaper]
+capsule_group = "left-edge"
+
+[widget.cpu]
+capsule_group = "system-monitoring"
+
+[widget.ram]
+capsule_group = "system-monitoring"
+
+[widget.temp]
+capsule_group = "system-monitoring"
+
+[widget.notifications]
+capsule_group = "right-edge"
+
+[widget.session]
+capsule_group = "right-edge"

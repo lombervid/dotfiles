@@ -4,7 +4,7 @@
 
 // Set overview wallpaper
 layer-rule {
-    match namespace="^noctalia-overview*"
+    match namespace="^noctalia-backdrop$"
     place-within-backdrop true
 }
 
@@ -22,13 +22,19 @@ layer-rule {
   }
 }
 
+layer-rule {
+  match namespace="^noctalia-bar-.*$"
+  background-effect {
+    blur false
+  }
+}
+
 // Open settings window in floating mode
 window-rule {
     match app-id="dev.noctalia.Noctalia.Settings"
 
     default-floating-position x=0 y=80 relative-to="top"
-    default-column-width { fixed 1050; }
-    default-window-height { fixed 1040; }
+    default-window-height { fixed 900; }
     open-floating true
 }
 
@@ -42,6 +48,7 @@ layer-rule {
 binds {
     // Core Noctalia binds
     Mod+Space { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
+    Mod+Shift+Space hotkey-overlay-title="Run an Application: rofi" { spawn-sh "rofi -show combi"; }
     Mod+Comma { spawn "noctalia" "msg" "settings-toggle"; }
     Mod+S { spawn "noctalia" "msg" "panel-toggle" "control-center"; }
     Mod+X { spawn "noctalia" "msg" "panel-toggle" "session"; }
