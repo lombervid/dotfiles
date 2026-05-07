@@ -81,3 +81,14 @@ window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
 }
+
+
+// Enable blur behind the Alacritty terminal.
+window-rule {
+    match app-id="Alacritty"
+
+    background-effect {
+        blur true
+        xray false
+    }
+}

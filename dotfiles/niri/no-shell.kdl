@@ -1,5 +1,9 @@
 // Polkit agent
-// systemctl --user status plasma-polkit-agent.service
+// systemctl --user start plasma-polkit-agent.service
+spawn-at-startup "systemct" "--user" "start" "plasma-polkit-agent.service"
+
+spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
+spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
