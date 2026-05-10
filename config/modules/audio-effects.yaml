@@ -1,2 +1,4 @@
 - link:
     ~/.local/share/easyeffects/output: ${DOTFILES_DIR}/easyeffects/data/output
+    ~/.local/share/easyeffects/autoload/output/alsa_output.usb-Audioengine_Ltd._Audioengine_2__ABCDEFB1180003-00.analog-stereo:Analog Output.json: ${DOTFILES_DIR}/easyeffects/data/autoload/output/audioengine-a2-plus.json
+    ~/.local/share/easyeffects/autoload/output/alsa_output.pci-0000_0d_00.4.analog-stereo:Line Out.json: ${DOTFILES_DIR}/easyeffects/data/autoload/output/dt770-pro.json
