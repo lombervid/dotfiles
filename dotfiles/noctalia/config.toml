@@ -1,5 +1,6 @@
 [bar.main]
 capsule = false
+capsule_radius = 10.0
 capsule_opacity = 0.5
 capsule_padding = 10.0
 margin_edge = 0
@@ -35,7 +36,6 @@ enabled = true
 [backdrop]
 enabled = true
 tint_intensity = 0.40
-unload_when_not_in_use = false
 
 [shell]
 settings_show_advanced = true
@@ -43,6 +43,10 @@ clipboard_auto_paste = "auto"
 polkit_agent = true
 show_location = false
 telemetry_enabled = true
+
+[shell.panel]
+open_near_click_control_center = true
+transparency_mode = "glass"
 
 [notification]
 position = "bottom_right"
@@ -100,3 +104,6 @@ capsule_group = "right-edge"
 
 [widget.session]
 capsule_group = "right-edge"
+
+[widget.media]
+title_scroll = "on_hover"

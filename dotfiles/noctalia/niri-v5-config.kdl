@@ -9,13 +9,6 @@ layer-rule {
 }
 
 layer-rule {
-  match namespace="^noctalia-background-.*$"
-  background-effect {
-    xray false
-  }
-}
-
-layer-rule {
   match namespace="^noctalia-.*$"
   background-effect {
     xray false
