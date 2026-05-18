@@ -1,3 +1,9 @@
+# niri
+if (command_exists 'niri'); then
+    # https://github.com/niri-wm/niri/issues/1682
+    source <(niri completions zsh | sed "s/line\[2\]/line[1]/g; /'::command/d")
+fi
+
 # fzf
 if (command_exists 'fzf'); then
     source <(fzf --zsh)
