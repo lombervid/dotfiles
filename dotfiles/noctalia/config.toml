@@ -37,6 +37,10 @@ enabled = true
 enabled = true
 tint_intensity = 0.40
 
+[osd]
+orientation = "vertical"
+position = "center_right"
+
 [shell]
 settings_show_advanced = true
 clipboard_auto_paste = "auto"
@@ -47,6 +51,9 @@ telemetry_enabled = true
 [shell.panel]
 open_near_click_control_center = true
 transparency_mode = "glass"
+control_center_placement = "floating"
+session_placement = "centered"
+wallpaper_placement = "centered"
 
 [notification]
 position = "bottom_right"
@@ -107,3 +114,7 @@ capsule_group = "right-edge"
 
 [widget.media]
 title_scroll = "on_hover"
+
+[widget.keyboard_layout]
+display = "full"
+hide_label = true
