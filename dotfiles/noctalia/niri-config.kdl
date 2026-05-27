@@ -1,6 +1,5 @@
 // Polkit agent
-// systemctl --user status plasma-polkit-agent.service
-// spawn-sh-at-startup "systemctl --user status plasma-polkit-agent.service"
+// spawn-at-startup "noctalia" "-d"
 
 // Set overview wallpaper
 layer-rule {
@@ -26,7 +25,6 @@ layer-rule {
 window-rule {
     match app-id="dev.noctalia.Noctalia.Settings"
 
-    default-floating-position x=0 y=80 relative-to="top"
     default-window-height { fixed 900; }
     open-floating true
 }

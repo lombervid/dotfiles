@@ -11,13 +11,13 @@ background_opacity = 0.0
 shadow = false
 widget_spacing = 10
 capsule_groups = [ "system-monitoring", "system-settings" ]
-start = [ "cpu", "temp", "ram", "media", "lock_keys" ]
+start = [ "cpu", "temp", "gpu", "gpu_temp", "ram", "media", "lock_keys" ]
 center = [ "workspaces" ]
 end = [
-    "tray",
-    "network",
-    "bluetooth",
     "battery",
+    "tray",
+    "bluetooth",
+    "network",
     "volume",
     "keyboard_layout",
     "clock",
@@ -56,12 +56,12 @@ wallpaper_placement = "centered"
 [notification]
 position = "bottom_right"
 
+[brightness]
+enable_ddcutil = true
+
 [widget.tray]
 drawer = true
 drawer_columns = 4
-
-[brightness]
-enable_ddcutil = true
 
 [widget.clock]
 format = "{:%-I:%M %P}\n{:%d/%m/%Y}"
@@ -96,10 +96,20 @@ show_label = false
 [widget.cpu]
 capsule_group = "system-monitoring"
 
-[widget.ram]
+[widget.temp]
 capsule_group = "system-monitoring"
 
-[widget.temp]
+[widget.gpu]
+capsule_group = "system-monitoring"
+stat = "gpu_usage"
+type = "sysmon"
+
+[widget.gpu_temp]
+capsule_group = "system-monitoring"
+stat = "gpu_temp"
+type = "sysmon"
+
+[widget.ram]
 capsule_group = "system-monitoring"
 
 [widget.media]
@@ -107,5 +117,23 @@ title_scroll = "on_hover"
 hide_when_no_media = true
 
 [widget.keyboard_layout]
-display = "full"
+hide_when_single_layout = true
 show_label = false
+
+[[control_center.shortcuts]]
+type = "wifi"
+
+[[control_center.shortcuts]]
+type = "bluetooth"
+
+[[control_center.shortcuts]]
+type = "dark_mode"
+
+[[control_center.shortcuts]]
+type = "power_profile"
+
+[[control_center.shortcuts]]
+type = "wallpaper"
+
+[[control_center.shortcuts]]
+type = "session"
