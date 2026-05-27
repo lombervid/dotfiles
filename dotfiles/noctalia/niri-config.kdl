@@ -1,56 +1,66 @@
-// This line starts noctalia-shell
-spawn-at-startup "qs" "-c" "noctalia-shell" "--no-duplicate"
+// Polkit agent
+// systemctl --user status plasma-polkit-agent.service
+// spawn-sh-at-startup "systemctl --user status plasma-polkit-agent.service"
 
-// Noctalia Shell Configs
-window-rule {
-  // Rounded corners for a modern look.
-  geometry-corner-radius 7
-
-  // Clips window contents to the rounded corner boundaries.
-  clip-to-geometry true
-}
-
-debug {
-  // Allows notification actions and window activation from Noctalia.
-  honor-xdg-activation-with-invalid-serial
-}
-
-// Set the overview wallpaper on the backdrop.
+// Set overview wallpaper
 layer-rule {
-  match namespace="^noctalia-overview*"
-  place-within-backdrop true
+    match namespace="^noctalia-backdrop$"
+    place-within-backdrop true
+}
+
+layer-rule {
+  match namespace="^noctalia-.*$"
+  background-effect {
+    xray false
+  }
+}
+
+layer-rule {
+  match namespace="^noctalia-bar-.*$"
+  background-effect {
+    blur false
+  }
 }
 
 // Open settings window in floating mode
 window-rule {
-    match app-id="dev.noctalia.noctalia-qs"
+    match app-id="dev.noctalia.Noctalia.Settings"
 
+    default-floating-position x=0 y=80 relative-to="top"
+    default-window-height { fixed 900; }
     open-floating true
 }
 
 // Block out notifications from screencasts.
 layer-rule {
-    match namespace="^noctalia-notifications.*$"
+    match namespace="^noctalia-notification$"
 
     block-out-from "screencast"
 }
 
 binds {
     // Core Noctalia binds
-    Mod+Space { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
-    Mod+Comma { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "settings" "toggle"; }
-    Mod+S { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "controlCenter" "toggle"; }
-    Mod+X { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
+    Mod+Space { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
+    Mod+Shift+Space hotkey-overlay-title="Run an Application: rofi" { spawn-sh "rofi -show combi"; }
+    Mod+Comma { spawn "noctalia" "msg" "settings-toggle"; }
+    Mod+S { spawn "noctalia" "msg" "panel-toggle" "control-center"; }
+    Mod+X { spawn "noctalia" "msg" "panel-toggle" "session"; }
 
     // Extra
-    Mod+V { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "clipboard"; }
-    Mod+Period { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:kaomoji" "toggle"; }
-    Mod+Shift+Slash { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:keybind-cheatsheet" "toggle"; }
+    Mod+V { spawn "noctalia" "msg" "panel-toggle" "clipboard"; }
+    // Mod+Period { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:kaomoji" "toggle"; }
+    // Mod+Shift+Slash { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:keybind-cheatsheet" "toggle"; }
 
     // Audio & Brightness
-    XF86AudioRaiseVolume { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "increase"; }
-    XF86AudioLowerVolume { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "decrease"; }
-    XF86AudioMute { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
-    XF86MonBrightnessUp { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "increase"; }
-    XF86MonBrightnessDown { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "decrease"; }
+    XF86AudioRaiseVolume { spawn "noctalia" "msg" "volume-up"; }
+    XF86AudioLowerVolume { spawn "noctalia" "msg" "volume-down"; }
+    XF86AudioMute { spawn "noctalia" "msg" "volume-mute"; }
+    XF86MonBrightnessUp { spawn "noctalia" "msg" "brightness-up"; }
+    XF86MonBrightnessDown { spawn "noctalia" "msg" "brightness-down"; }
+
+    // Media keys
+    XF86AudioNext   allow-when-locked=true { spawn "noctalia" "msg" "media" "next"; }
+    XF86AudioPause  allow-when-locked=true { spawn "noctalia" "msg" "media" "toggle"; }
+    XF86AudioPlay   allow-when-locked=true { spawn "noctalia" "msg" "media" "toggle"; }
+    XF86AudioPrev   allow-when-locked=true { spawn "noctalia" "msg" "media" "previous"; }
 }

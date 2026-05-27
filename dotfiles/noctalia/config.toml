@@ -10,20 +10,18 @@ radius = 0
 background_opacity = 0.0
 shadow = false
 widget_spacing = 10
-capsule_groups = [ "system-monitoring", "system-settings", "right-edge", "left-edge" ]
-start = [ "power_profiles", "wallpaper", "cpu", "temp", "ram", "media", "lock_keys" ]
+capsule_groups = [ "system-monitoring", "system-settings" ]
+start = [ "cpu", "temp", "ram", "media", "lock_keys" ]
 center = [ "workspaces" ]
 end = [
     "tray",
     "network",
     "bluetooth",
-    "brightness",
     "battery",
     "volume",
     "keyboard_layout",
     "clock",
     "notifications",
-    "session"
 ]
 
 [theme]
@@ -60,6 +58,7 @@ position = "bottom_right"
 
 [widget.tray]
 drawer = true
+drawer_columns = 4
 
 [brightness]
 enable_ddcutil = true
@@ -86,16 +85,13 @@ show_label = false
 
 [widget.battery]
 capsule_group = "system-settings"
+display_mode = "graphic"
+hide_when_full = true
+show_label = false
 
 [widget.volume]
 capsule_group = "system-settings"
 show_label = false
-
-[widget.power_profiles]
-capsule_group = "left-edge"
-
-[widget.wallpaper]
-capsule_group = "left-edge"
 
 [widget.cpu]
 capsule_group = "system-monitoring"
@@ -106,15 +102,10 @@ capsule_group = "system-monitoring"
 [widget.temp]
 capsule_group = "system-monitoring"
 
-[widget.notifications]
-capsule_group = "right-edge"
-
-[widget.session]
-capsule_group = "right-edge"
-
 [widget.media]
 title_scroll = "on_hover"
+hide_when_no_media = true
 
 [widget.keyboard_layout]
 display = "full"
-hide_label = true
+show_label = false

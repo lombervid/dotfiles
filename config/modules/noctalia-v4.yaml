@@ -1,0 +1,3 @@
+- link:
+    ~/.config/noctalia: ${DOTFILES_DIR}/noctalia-v4
+    ~/.config/niri/_shell.kdl: ${DOTFILES_DIR}/noctalia-v4/niri-config.kdl
