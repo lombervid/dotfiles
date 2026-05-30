@@ -10,19 +10,33 @@ radius = 0
 background_opacity = 0.0
 shadow = false
 widget_spacing = 10
-capsule_groups = [ "system-monitoring", "system-settings" ]
-start = [ "cpu", "temp", "gpu", "gpu_temp", "ram", "media", "lock_keys" ]
+start = [ "group:cpu-stats", "group:gpu-stats", "ram", "media", "lock_keys" ]
 center = [ "workspaces" ]
-end = [
-    "battery",
-    "tray",
-    "bluetooth",
-    "network",
-    "volume",
-    "keyboard_layout",
-    "clock",
-    "notifications",
-]
+end = [ "battery", "tray", "group:system-settings", "windows_clock", "notifications" ]
+
+[[bar.main.capsule_group]]
+id = "cpu-stats"
+members = [ "cpu", "temp" ]
+fill = "surface_variant"
+opacity = 0.5
+padding = 10.0
+radius = 10.0
+
+[[bar.main.capsule_group]]
+id = "gpu-stats"
+members = [ "gpu", "gpu_temp" ]
+fill = "surface_variant"
+opacity = 0.5
+padding = 10.0
+radius = 10.0
+
+[[bar.main.capsule_group]]
+id = "system-settings"
+members = [ "bluetooth", "network", "volume", "keyboard_layout" ]
+fill = "surface_variant"
+opacity = 0.5
+padding = 10.0
+radius = 10.0
 
 [theme]
 builtin = "Tokyo-Night"
@@ -42,6 +56,7 @@ position = "center_right"
 [shell]
 settings_show_advanced = true
 clipboard_auto_paste = "auto"
+clipboard_image_action_command = "satty -f -"
 polkit_agent = true
 show_location = false
 telemetry_enabled = true
@@ -63,8 +78,10 @@ enable_ddcutil = true
 drawer = true
 drawer_columns = 4
 
-[widget.clock]
+[widget.windows_clock]
+type = "clock"
 format = "{:%-I:%M %P}\n{:%d/%m/%Y}"
+tooltip_format = "{:%A, %B %d}"
 
 [widget.lock_keys]
 anchor = false
@@ -73,44 +90,23 @@ hide_when_off = true
 show_num_lock = false
 
 [widget.network]
-capsule_group = "system-settings"
-show_label = false
-
-[widget.bluetooth]
-capsule_group = "system-settings"
-
-[widget.brightness]
-capsule_group = "system-settings"
 show_label = false
 
 [widget.battery]
-capsule_group = "system-settings"
 display_mode = "graphic"
 hide_when_full = true
 show_label = false
 
 [widget.volume]
-capsule_group = "system-settings"
 show_label = false
 
-[widget.cpu]
-capsule_group = "system-monitoring"
-
-[widget.temp]
-capsule_group = "system-monitoring"
-
 [widget.gpu]
-capsule_group = "system-monitoring"
 stat = "gpu_usage"
 type = "sysmon"
 
 [widget.gpu_temp]
-capsule_group = "system-monitoring"
 stat = "gpu_temp"
 type = "sysmon"
-
-[widget.ram]
-capsule_group = "system-monitoring"
 
 [widget.media]
 title_scroll = "on_hover"
