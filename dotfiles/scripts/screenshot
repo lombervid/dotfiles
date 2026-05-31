@@ -26,6 +26,38 @@ show_help() {
     echo "  ${COMMAND_NAME} -i -o ~/Screenshots --name my_screenshot"
 }
 
+TMP_IMAGE=
+create_temp_file() {
+    TMP_IMAGE="$(mktemp --suffix=.ppm)"
+}
+
+remove_temp_file() {
+    if [[ -f "${TMP_IMAGE}" ]]; then
+        rm -f "${TMP_IMAGE}"
+    fi
+}
+
+WAYFREEZE_PID=
+freeze_screen() {
+    wayfreeze &
+    WAYFREEZE_PID=$!
+    sleep 0.1 # Allow some time for freeze to take effect
+}
+
+unfreeze_screen() {
+    if (kill -0 "${WAYFREEZE_PID}" 2>/dev/null); then
+        if ! (kill "${WAYFREEZE_PID}" 2>/dev/null); then
+            killall wayfreeze 2>/dev/null
+        fi
+    fi
+}
+
+cleanup() {
+    unfreeze_screen
+    remove_temp_file
+}
+trap cleanup EXIT
+
 while [[ $# -gt 0 ]]; do
     case $1 in
         -h|--help)
@@ -58,11 +90,19 @@ done
 
 if [[ $FULLSCREEN == true ]]; then
     if [[ $INTERACTIVE == true ]]; then
-        grim -g "$(slurp -o -r -c '#ffffffff')" -t ppm - | satty --filename - --fullscreen --output-filename "${OUTPUT_DIR}/${FILENAME}.png"
+        # grim -g "$(slurp -o -r -c '#ffffffff')" -t ppm - | satty --filename - --fullscreen --output-filename "${OUTPUT_DIR}/${FILENAME}.png"
+        grim -t ppm - | satty --filename - --fullscreen --output-filename "${OUTPUT_DIR}/${FILENAME}.png"
     else
         grim - | wl-copy
     fi
 else
     # Interactive region selection
-    grim -g "$(slurp -d -c '#ffffffff')" -t ppm - | satty --filename - --output-filename "${OUTPUT_DIR}/${FILENAME}.png"
+    # grim -g "$(slurp -d -c '#ffffffff')" -t ppm - | satty --filename - --output-filename "${OUTPUT_DIR}/${FILENAME}.png"
+    create_temp_file
+    freeze_screen
+    grim -g "$(slurp -d -c '#ffffffff')" -t ppm "${TMP_IMAGE}"
+    unfreeze_screen
+    satty --filename "${TMP_IMAGE}" --output-filename "${OUTPUT_DIR}/${FILENAME}.png"
+    remove_temp_file
+    trap - EXIT
 fi
