@@ -10,21 +10,13 @@ radius = 0
 background_opacity = 0.0
 shadow = false
 widget_spacing = 10
-start = [ "group:cpu-stats", "group:gpu-stats", "ram", "media", "lock_keys" ]
+start = [ "group:hardware", "media", "lock_keys" ]
 center = [ "workspaces" ]
 end = [ "battery", "tray", "group:system-settings", "windows_clock", "notifications" ]
 
 [[bar.main.capsule_group]]
-id = "cpu-stats"
-members = [ "cpu", "temp" ]
-fill = "surface_variant"
-opacity = 0.5
-padding = 10.0
-radius = 10.0
-
-[[bar.main.capsule_group]]
-id = "gpu-stats"
-members = [ "gpu", "gpu_temp" ]
+id = "hardware"
+members = [ "ram", "temp", "gpu_temp" ]
 fill = "surface_variant"
 opacity = 0.5
 padding = 10.0
@@ -41,6 +33,9 @@ radius = 10.0
 [theme]
 builtin = "Tokyo-Night"
 
+[system.monitor]
+gpu_poll_seconds = 5
+
 [wallpaper]
 directory = "~/Pictures/Wallpapers/"
 enabled = true
@@ -56,6 +51,7 @@ position = "center_right"
 [shell]
 settings_show_advanced = true
 clipboard_auto_paste = "auto"
+clipboard_confirm_clear_history = false
 clipboard_image_action_command = "satty -f -"
 polkit_agent = true
 show_location = false
@@ -82,6 +78,7 @@ drawer_columns = 4
 type = "clock"
 format = "{:%-I:%M %P}\n{:%d/%m/%Y}"
 tooltip_format = "{:%A, %B %d}"
+capsule = false
 
 [widget.lock_keys]
 anchor = false
@@ -95,14 +92,12 @@ show_label = false
 [widget.battery]
 display_mode = "graphic"
 hide_when_full = true
-show_label = false
 
 [widget.volume]
 show_label = false
 
-[widget.gpu]
-stat = "gpu_usage"
-type = "sysmon"
+[widget.ram]
+show_label = false
 
 [widget.gpu_temp]
 stat = "gpu_temp"
@@ -111,10 +106,24 @@ type = "sysmon"
 [widget.media]
 title_scroll = "on_hover"
 hide_when_no_media = true
+capsule_padding = 2.0
+art_size = 22.0
+
+[widget.workspaces]
+anchor = true
+capsule = false
+hide_when_empty = true
+labels_only_when_occupied = true
 
 [widget.keyboard_layout]
 hide_when_single_layout = true
 show_label = false
+
+[widget.notifications]
+capsule = false
+
+[control_center]
+sidebar_section = "none"
 
 [[control_center.shortcuts]]
 type = "wifi"
