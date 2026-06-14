@@ -32,6 +32,7 @@ window-rule {
     match app-id="mpv"
     match app-id="feh"
     match app-id="com.interversehq.qView"
+    match app-id="qimgv"
     match app-id="Bitwarden"
     match app-id="org.keepassxc.KeePassXC"
     match app-id="com.github.tchx84.Flatseal"
@@ -49,6 +50,7 @@ window-rule {
 
 window-rule {
     match app-id="org.pulseaudio.pavucontrol"
+    match app-id="pavucontrol-qt"
     match app-id="com.saivert.pwvucontrol"
 
     open-floating true
