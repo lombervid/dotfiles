@@ -7,10 +7,10 @@ exec tail -n +3 $0
 
 # This menu entry is supported only on EFI platforms.
 if [ "$grub_platform" = "efi" ]; then
-        menuentry 'Windows 11 Pro' --class windows --class os $menuentry_id_option 'windows-364F-B913' {
+        menuentry 'Windows 11 Pro' --class windows --class os $menuentry_id_option 'windows-UUID-HERE' {
                 insmod part_gpt
                 insmod fat
-                search --no-floppy --fs-uuid --set=root 364F-B913 #Replace with the UUID of the partition
+                search --no-floppy --fs-uuid --set=root UUID-HERE #Replace with the UUID of the partition
                 chainloader /EFI/Microsoft/Boot/bootmgfw.efi
         }
 fi
