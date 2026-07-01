@@ -46,7 +46,10 @@ tint_intensity = 0.40
 
 [osd]
 orientation = "vertical"
-position = "center_right"
+position = "top_right"
+position_vertical = "center_right"
+background_opacity = 0.44999998994171619
+scale = 0.85000000521540642
 
 [shell]
 settings_show_advanced = true
@@ -61,8 +64,10 @@ telemetry_enabled = true
 open_near_click_control_center = true
 transparency_mode = "glass"
 control_center_placement = "floating"
-session_placement = "centered"
-wallpaper_placement = "centered"
+session_placement = "floating"
+session_position = "center"
+wallpaper_placement = "floating"
+wallpaper_position = "center"
 
 [notification]
 position = "bottom_right"

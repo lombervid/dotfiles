@@ -46,7 +46,7 @@ binds {
 
     // Extra
     Mod+V { spawn "noctalia" "msg" "panel-toggle" "clipboard"; }
-    // Mod+Period { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:kaomoji" "toggle"; }
+    Mod+Period { spawn "noctalia" "msg" "panel-toggle" "launcher" "/kao ";  }
     // Mod+Shift+Slash { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "plugin:keybind-cheatsheet" "toggle"; }
 
     // Audio & Brightness
@@ -61,4 +61,8 @@ binds {
     XF86AudioPause  allow-when-locked=true { spawn "noctalia" "msg" "media" "toggle"; }
     XF86AudioPlay   allow-when-locked=true { spawn "noctalia" "msg" "media" "toggle"; }
     XF86AudioPrev   allow-when-locked=true { spawn "noctalia" "msg" "media" "previous"; }
+
+    // Setting overwritten niri keybinds
+    Mod+Alt+Comma  { consume-window-into-column; }
+    Mod+Alt+Period { expel-window-from-column; }
 }
