@@ -1,0 +1,2 @@
+- link:
+    ~/.config/zed: ${DOTFILES_DIR}/zed

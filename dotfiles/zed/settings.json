@@ -1,0 +1,148 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)"
+  },
+  "ui_font_family": "Inter Variable",
+  "ui_font_fallbacks": [
+      ".SystemUIFont",
+      ".ZedSans"
+  ],
+  "ui_font_features": {
+      "ss01": true,
+      "ss02": true,
+      "ss03": true,
+      "cv06": true,
+      "cv11": true,
+      "cv12": true,
+      "cv13": true,
+      "tnum": true
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "agent": {
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "terminal": {
+    "font_family": "FiraCode Nerd Font Mono",
+    "font_fallbacks": [
+    ],
+    "font_features": {
+        "calt": true,
+        "ss01": true,
+        "ss02": true,
+        "ss03": true,
+        "ss04": true,
+        "ss05": true,
+        "ss06": true,
+        "ss07": true,
+        "ss09": true,
+        "cv01": true,
+        "cv02": true,
+        "cv04": true,
+        "cv08": true,
+        "cv12": true,
+        "cv14": true,
+        "cv16": true,
+        "cv25": true,
+        "cv26": true,
+        "cv27": true,
+        "cv28": true,
+        "cv30": true,
+        "cv32": true
+    },
+    "cursor_shape": "bar"
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "project_panel": {
+    "dock": "left",
+    "auto_reveal_entries": false
+  },
+  "search": {
+    "include_ignored": false
+  },
+  "sticky_scroll": {
+    "enabled": true
+  },
+  "mouse_wheel_zoom": true,
+  "minimap": {
+    "show": "always",
+    "max_width_columns": 70
+  },
+  "scrollbar": {
+    "axes": {
+      "vertical": true
+    }
+  },
+  "cursor_blink": true,
+  "buffer_font_family": "Fira Code",
+  "buffer_font_fallbacks": [
+      ".ZedMono"
+  ],
+  "buffer_font_features": {
+      "calt": true,
+      "ss01": true,
+      "ss02": true,
+      "ss03": true,
+      "ss04": true,
+      "ss05": true,
+      "ss06": true,
+      "ss07": true,
+      "ss09": true,
+      "cv01": true,
+      "cv02": true,
+      "cv04": true,
+      "cv08": true,
+      "cv12": true,
+      "cv14": true,
+      "cv16": true,
+      "cv25": true,
+      "cv26": true,
+      "cv27": true,
+      "cv28": true,
+      "cv30": true,
+      "cv32": true
+  },
+  "colorize_brackets": true,
+  "auto_indent_on_paste": true,
+  "linked_edits": true,
+  "show_whitespaces": "boundary",
+  "show_edit_predictions": true,
+  "line_ending": "prefer_lf",
+  "ensure_final_newline_on_save": true,
+  "wrap_guides": [
+    80,
+    120
+  ],
+  "soft_wrap": "editor_width",
+  "tab_size": 4,
+  "base_keymap": "VSCode",
+  "ui_font_size": 16,
+  "buffer_font_size": 16.0,
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "One Dark Pro",
+  },
+}
