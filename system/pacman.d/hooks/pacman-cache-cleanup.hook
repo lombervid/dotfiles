@@ -1,0 +1,14 @@
+# Remove old packages from pacman cache (keeping the latest two)
+# Remove pacman cache from uninstalled packages
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+Description = Removing pacman package cache...
+Depends = pacman-contrib
+When = PostTransaction
+Exec = /usr/bin/sh -c "paccache -rk2 && paccache -rvuk0"
