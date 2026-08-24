@@ -1,6 +1,6 @@
 [user]
-	email = david.lomberlan@gmail.com
-	name = David Lombera
+	email =
+	name =
 [core]
 	excludesFile = ~/.gitignore_global
 	autocrlf = true
