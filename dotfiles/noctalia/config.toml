@@ -101,9 +101,6 @@ hide_when_full = true
 [widget.volume]
 show_label = false
 
-[widget.ram]
-show_label = false
-
 [widget.gpu_temp]
 stat = "gpu_temp"
 type = "sysmon"
