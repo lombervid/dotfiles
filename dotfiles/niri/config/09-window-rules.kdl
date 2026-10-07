@@ -44,6 +44,9 @@ window-rule {
     match app-id="blueman-manager"
     match app-id="pied"
     match app-id="com.gabm.satty"
+    match app-id="proton-authenticator"
+    match app-id="org.qbittorrent.qBittorrent"
+    match app-id="mediainfo-gui"
 
     open-floating true
 }
