@@ -1,5 +1,5 @@
 // Polkit agent
-// spawn-at-startup "noctalia" "-d"
+spawn-at-startup "noctalia" "-d"
 
 // Set overview wallpaper
 layer-rule {
@@ -23,7 +23,7 @@ layer-rule {
 
 // Open settings window in floating mode
 window-rule {
-    match app-id="dev.noctalia.Noctalia.Settings"
+    match app-id="dev.noctalia.Noctalia"
 
     default-window-height { fixed 900; }
     open-floating true
