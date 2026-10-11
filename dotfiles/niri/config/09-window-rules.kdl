@@ -63,7 +63,8 @@ window-rule {
     match app-id="org.pulseaudio.pavucontrol"
     match app-id="pavucontrol-qt"
     match app-id="com.saivert.pwvucontrol"
-    match app-id="org.qbittorrent.qBittorrent" title="^(Choose save path|Open Torrent Files)$"
+    match app-id="org.qbittorrent.qBittorrent" title="^(Choose save path|Open Torrent Files|Select folder to monitor)$"
+    match app-id="mkbrr-gui" title="^Select Content Directory or File$"
 
     open-floating true
     default-column-width { fixed 1107; }
