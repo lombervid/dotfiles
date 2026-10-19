@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+IFS=$'\n\t'
+
+OUTPUT_DIR="${HOME}/Pictures/video-screenshots"
+# FILENAME="screenshot-$(date '+%Y.%m.%d-%H.%M.%S')"
+
+# show_help() {
+#     COMMAND_NAME=$(basename "$0")
+#     echo "Usage: ${COMMAND_NAME} [OPTIONS]"
+#     echo
+#     echo "This script takes screenshots. Requires grim, slurp, satty and wl-clipboard."
+#     echo
+#     echo "Options:"
+#     echo "  -h, --help            Display this help message"
+#     echo "  -r, --region          Capture a specific region (default: fullscreen)"
+#     echo "  -i, --interactive     Interactive screenshot (Active when region is selected)"
+#     echo "  -o, --output-dir DIR  Specify output directory (default: ${OUTPUT_DIR})"
+#     echo "  -n, --name FILENAME   Specify output filename without extension (default: ${FILENAME})"
+#     echo
+#     echo "Examples:"
+#     echo "  ${COMMAND_NAME} --region"
+#     echo "  ${COMMAND_NAME} -i -o ~/Screenshots --name my_screenshot"
+# }
+
+ptint_bar(){
+   printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' = || echo "==========="
+}
+ptint_bar
+ABORT=0
+if [ -z "$1" ]; then ABORT=1; echo "Missing input filename..."; fi
+if [ ! -f "$1" ]; then ABORT=1; echo "Filename \"$1\" does not exist..."; fi
+if [ -z "$2" ]; then ABORT=1; echo "Missing number screens..."; fi
+if [ $ABORT -eq 1 ]
+ then
+   echo -e "$0 requires two arguments...\nFirst is the filename, second is number of screenshots..."
+   exit
+fi
+FILENAME="$1"
+echo "Processing: ${FILENAME}"
+MEDIA_INFO=`mediainfo "--Inform=Video;%FrameCount% %FrameRate%\n" "${FILENAME}" | head -n1`
+TOTAL_FRAMES=$(echo "${MEDIA_INFO}" | cut -d' ' -f 1)
+echo "Total frame: $TOTAL_FRAMES"
+FPS=$(echo "${MEDIA_INFO}" | cut -d' ' -f 2)
+echo "FPS: $FPS"
+NUMFRAMES=$2
+NUMB_SC=$(printf %0.f $(echo "scale=2;$TOTAL_FRAMES/$FPS" | bc -l))
+echo "Number of seconds: $NUMB_SC"
+ADD_D=$(($NUMB_SC/$(($NUMFRAMES+1))))
+ADD=$ADD_D
+mkdir -p "${OUTPUT_DIR}/${FILENAME}"
+for i in $(seq 1 $NUMFRAMES)
+ do
+   echo "Doing second ${ADD}"
+   ffmpeg -loglevel warning -hide_banner -ss ${ADD} -i "${FILENAME}" -frames:v 1 "${OUTPUT_DIR}/${FILENAME}/${ADD}-${FILENAME}.png"
+#    mpv --slang=en --no-config \
+#         --sub-visibility=no \
+#         --vo=image --vo-image-format=png --vo-image-high-bit-depth=no \
+#         --no-audio --untimed --hr-seek=yes \
+#         --vo-image-outdir="${OUTPUT_DIR}/${FILENAME}" \
+#         --start="+${ADD}" \
+#         --sstep="${ADD}" \
+#         $FILENAME
+
+    ADD=$(($ADD+$ADD_D))
+done
+ptint_bar
