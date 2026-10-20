@@ -3,6 +3,7 @@ from pathlib import Path
 from typing import Final
 import argparse
 import logging
+import os
 import re
 import subprocess
 
@@ -111,7 +112,7 @@ def _process_input_options(options):
             Console.error(f'    ✗ Error: Video file not found.')
             continue
 
-        output_dir = Path(options['output_dir'])
+        output_dir = Path(os.path.expandvars(options['output_dir'])).expanduser()
         # If there is more than 1 file, create a subdirectory with the filename
         if total_files > 1:
             output_dir = output_dir.joinpath(file.name)
