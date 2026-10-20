@@ -6,6 +6,7 @@ import logging
 import os
 import re
 import subprocess
+import sys
 
 _DEFAULT_CONFIG: Final = {
     'screenshot_count': 6,
@@ -53,10 +54,9 @@ def get_video_duration(video: Path):
         return duration
     except (subprocess.CalledProcessError, FileNotFoundError):
         Console.error(f'    ✗ Error: ffprobe is not installed or not in PATH.')
-        return None
     except ValueError as e:
         Console.error(f'    ✗ Error: Could not parse video duration: {e}')
-        return None
+    return None
 
 def take_video_screenshots(video: Path, num_screenshots: int, output: Path):
     """
@@ -160,22 +160,19 @@ def _parse_parameters():
 
     return options
 
-def main():
+if __name__ == '__main__':
     options = _parse_parameters()
 
     # Validate number of screenshots
     if options['screenshot_count'] <= 0:
         Console.error('✗ Error: Number of screenshots must be greater than 0')
-        return
+        sys.exit(1)
 
     # Check if ffmpeg is installed
     if ffmpeg_version := _get_ffmpeg_version():
         Console.success(f'✓ ffmpeg installed - Version: {ffmpeg_version}')
     else:
         Console.error('✗ ffmpeg not found or error occurred')
-        return
+        sys.exit(1)
 
     _process_input_options(options)
-
-if __name__ == '__main__':
-    main()
