@@ -11,6 +11,7 @@ import sys
 _DEFAULT_CONFIG: Final = {
     'screenshot_count': 6,
     'output_dir': 'screenshots',
+    'folder_per_file': True,
 }
 
 class Console:
@@ -114,7 +115,7 @@ def _process_input_options(options):
 
         output_dir = Path(os.path.expandvars(options['output_dir'])).expanduser()
         # If there is more than 1 file, create a subdirectory with the filename
-        if total_files > 1:
+        if total_files > 1 and options['folder_per_file']:
             output_dir = output_dir.joinpath(file.name)
 
         take_video_screenshots(file, options['screenshot_count'], output_dir)
@@ -152,6 +153,8 @@ def _parse_parameters():
     parser.add_argument('-n', '--count', type=int,
                         default=_DEFAULT_CONFIG['screenshot_count'],
                         help='number of screenshots', dest='screenshot_count')
+    parser.add_argument('-sf', '--single-folder', action='store_false',
+                        help="Do not split screenshot of multiple files in individual folders", dest="folder_per_file")
     parser.add_argument('filenames', type=Path, help='Path(s) to the video file(s)', nargs='+')
     args = parser.parse_args()
 
