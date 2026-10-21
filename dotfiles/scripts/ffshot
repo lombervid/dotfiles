@@ -21,7 +21,7 @@ class Console:
     __RED = "\033[31m"     # error
     __GRAY = "\033[90m"    # log
 
-    def log(msg: str):
+    def debug(msg: str):
         print(f'{Console.__GRAY}{msg}{Console.__RESET}')
 
     def info(msg: str):
@@ -81,7 +81,7 @@ def take_video_screenshots(video: Path, num_screenshots: int, output: Path):
         output.mkdir(parents=True, exist_ok=True)
 
         for i in range(1, num_screenshots+1):
-            Console.log(f'        ✓ Screenshot {i}/{num_screenshots}')
+            Console.debug(f'        ✓ Screenshot {i}/{num_screenshots}')
             output_path = output.joinpath(f'{video.name}_{timestamp:08d}.png')
             # Build ffmpeg command to extract single frame at timestamp
             ffmpeg_cmd = [
@@ -103,7 +103,7 @@ def take_video_screenshots(video: Path, num_screenshots: int, output: Path):
 
 def _process_input_options(options):
     total_files = len(options['filenames'])
-    Console.log(f'● {total_files} videos to process..')
+    Console.debug(f'● {total_files} videos to process..')
 
     for file in options['filenames']:
         print(f'\n● Processing "{file.name}"')
