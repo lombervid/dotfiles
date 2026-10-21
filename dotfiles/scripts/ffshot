@@ -21,6 +21,10 @@ class Console:
     __YELLOW = "\033[33m"  # warning
     __RED = "\033[31m"     # error
     __GRAY = "\033[90m"    # log
+    __NORMAL = "\x1b[38;20m"
+
+    def print(msg: str):
+        print(f'{Console.__NORMAL}{msg}{Console.__RESET}')
 
     def debug(msg: str):
         print(f'{Console.__GRAY}{msg}{Console.__RESET}')
@@ -107,7 +111,7 @@ def _process_input_options(options):
     Console.debug(f'● {total_files} videos to process..')
 
     for file in options['filenames']:
-        print(f'\n● Processing "{file.name}"')
+        Console.print(f'\n● Processing "{file.name}"')
 
         if not file.exists():
             Console.error(f'    ✗ Error: Video file not found.')
@@ -155,6 +159,7 @@ def _parse_parameters():
                         help='number of screenshots', dest='screenshot_count')
     parser.add_argument('-sf', '--single-folder', action='store_false',
                         help="Do not split screenshot of multiple files in individual folders", dest="folder_per_file")
+    parser.add_argument('-o', '--output-dir', type=Path, default=_DEFAULT_CONFIG['output_dir'], help='directory to save the screenshots')
     parser.add_argument('filenames', type=Path, help='Path(s) to the video file(s)', nargs='+')
     args = parser.parse_args()
 
