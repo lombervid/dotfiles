@@ -92,11 +92,12 @@ def take_video_screenshots(video: Path, num_screenshots: int, output: Path):
             ffmpeg_cmd = [
                 'ffmpeg',
                 '-y',
-                '-loglevel', 'error',
+                '-loglevel', 'time+level+error',
                 '-hide_banner',
                 '-ss', f'{timestamp:.3f}',
                 '-i', video,
                 '-frames:v', '1',
+                '-update', '1',
                 output_path
             ]
             subprocess.run(ffmpeg_cmd, check=True)
