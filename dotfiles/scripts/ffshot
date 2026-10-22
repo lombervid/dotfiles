@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 from pathlib import Path
-from typing import Final
+from typing import Final, TypedDict
 import argparse
 import logging
 import os
@@ -8,11 +8,22 @@ import re
 import subprocess
 import sys
 
-_DEFAULT_CONFIG: Final = {
-    'screenshot_count': 6,
-    'output_dir': 'screenshots',
-    'folder_per_file': True,
-}
+class DefaultOptions(TypedDict):
+    screenshot_count: int
+    output_dir: Path
+    use_single_folder: bool
+
+class ScreenshotSettings(TypedDict):
+    force_8bits_color: bool
+
+class InputArguments(DefaultOptions, ScreenshotSettings):
+    filenames: list[Path]
+
+_DEFAULT_CONFIG: Final[DefaultOptions] = DefaultOptions(
+    screenshot_count = 6,
+    output_dir = 'screenshots',
+    use_single_folder = False,
+)
 
 class Console:
     __RESET = "\033[0m"
@@ -61,6 +72,7 @@ def get_video_duration(video: Path):
         Console.error(f'    ✗ Error: ffprobe is not installed or not in PATH.')
     except ValueError as e:
         Console.error(f'    ✗ Error: Could not parse video duration: {e}')
+
     return None
 
 def take_video_screenshots(video: Path, num_screenshots: int, output: Path):
@@ -107,7 +119,7 @@ def take_video_screenshots(video: Path, num_screenshots: int, output: Path):
     except subprocess.CalledProcessError as e:
         Console.error(f'    ✗ Error: ffmpeg command failed: {e}')
 
-def _process_input_options(options):
+def _process_input_options(options: InputArguments):
     total_files = len(options['filenames'])
     Console.debug(f'● {total_files} videos to process..')
 
@@ -120,7 +132,7 @@ def _process_input_options(options):
 
         output_dir = Path(os.path.expandvars(options['output_dir'])).expanduser()
         # If there is more than 1 file, create a subdirectory with the filename
-        if total_files > 1 and options['folder_per_file']:
+        if total_files > 1 and not options['use_single_folder']:
             output_dir = output_dir.joinpath(file.name)
 
         take_video_screenshots(file, options['screenshot_count'], output_dir)
@@ -149,7 +161,7 @@ def _get_ffmpeg_version() -> str | None:
 
     return None
 
-def _parse_parameters():
+def _parse_parameters() -> InputArguments:
     parser = argparse.ArgumentParser(
         prog='ffshot',
         description='Take screenshots from a video file using ffmpeg and ffprobe',
@@ -158,15 +170,13 @@ def _parse_parameters():
     parser.add_argument('-n', '--count', type=int,
                         default=_DEFAULT_CONFIG['screenshot_count'],
                         help='number of screenshots', dest='screenshot_count')
-    parser.add_argument('-sf', '--single-folder', action='store_false',
-                        help="Do not split screenshot of multiple files in individual folders", dest="folder_per_file")
+    parser.add_argument('-sf', '--single-folder', action='store_true',
+                        help="Save all the screenshots in the same folder when multiple files ares passed", dest="use_single_folder")
     parser.add_argument('-o', '--output-dir', type=Path, default=_DEFAULT_CONFIG['output_dir'], help='directory to save the screenshots')
     parser.add_argument('filenames', type=Path, help='Path(s) to the video file(s)', nargs='+')
     args = parser.parse_args()
 
-    options = _DEFAULT_CONFIG.copy()
-    options.update(vars(args))
-
+    options = InputArguments(vars(args))
     return options
 
 if __name__ == '__main__':
