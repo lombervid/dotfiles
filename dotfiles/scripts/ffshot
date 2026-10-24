@@ -153,7 +153,7 @@ def _get_ffmpeg_version() -> str | None:
 
         # Parse first line for version
         first_line = result.stdout.split('\n')[0]
-        version_match = re.search(r'version ([\d\.]+)', first_line)
+        version_match = re.search(r'version ([a-z]?[\d\.]+)', first_line)
 
         if not version_match:
             Console.error('✗ ffmpeg: unable to parse version')
