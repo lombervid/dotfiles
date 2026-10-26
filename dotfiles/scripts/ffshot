@@ -12,6 +12,7 @@ class DefaultOptions(TypedDict):
     screenshot_count: int
     output_dir: Path
     use_single_folder: bool
+    quiet_output: bool
 
 class ScreenshotSettings(TypedDict):
     force_8bits_color: bool
@@ -23,34 +24,42 @@ _DEFAULT_CONFIG: Final[DefaultOptions] = DefaultOptions(
     screenshot_count = 6,
     output_dir = 'screenshots',
     use_single_folder = False,
+    quiet_output = False,
 )
 
 class Console:
-    __RESET = "\033[0m"
-    __GREEN = "\033[32m"   # success
-    __BLUE = "\033[34m"    # info
-    __YELLOW = "\033[33m"  # warning
-    __RED = "\033[31m"     # error
-    __GRAY = "\033[90m"    # log
-    __NORMAL = "\x1b[38;20m"
+    __RESET = '\033[0m'
+    __NORMAL = '\x1b[38;20m'
 
-    def print(msg: str):
-        print(f'{Console.__NORMAL}{msg}{Console.__RESET}')
+    __COLORS: Final[dict[str, str]] = {
+        'debug': '\033[90m', # grey
+        'info': '\033[34m', # blue
+        'success': '\033[32m', # green
+        'warning': '\033[33m', # yellow
+        'error': '\033[31m', # red
+    }
+
+    def print(msg: str, color: str = None):
+        if not _DEFAULT_CONFIG['quiet_output']:
+            return
+
+        color = Console.__COLORS.get(color, Console.__NORMAL)
+        print(f'{color}{msg}{Console.__RESET}')
 
     def debug(msg: str):
-        print(f'{Console.__GRAY}{msg}{Console.__RESET}')
+        Console.print(msg, 'debug')
 
     def info(msg: str):
-        print(f'{Console.__BLUE}{msg}{Console.__RESET}')
+        Console.print(msg, 'info')
 
     def success(msg: str):
-        print(f'{Console.__GREEN}{msg}{Console.__RESET}')
+        Console.print(msg, 'success')
 
     def warning(msg: str):
-        print(f'{Console.__YELLOW}{msg}{Console.__RESET}')
+        Console.print(msg, 'warning')
 
     def error(msg: str):
-        print(f'{Console.__RED}{msg}{Console.__RESET}')
+        Console.print(msg, 'error')
 
 def get_video_duration(video: Path):
     """
@@ -183,15 +192,17 @@ def _parse_parameters() -> InputArguments:
     )
     parser.add_argument('-n', '--count', type=int,
                         default=_DEFAULT_CONFIG['screenshot_count'],
-                        help='number of screenshots', dest='screenshot_count')
+                        help='Number of screenshots', dest='screenshot_count')
     parser.add_argument('-sf', '--single-folder', action='store_true',
-                        help="Save all the screenshots in the same folder when multiple files ares passed", dest="use_single_folder")
-    parser.add_argument('-8bit', '--force-8bits-color', action='store_true', help="Force 8 bit color", dest="force_8bits_color")
-    parser.add_argument('-o', '--output-dir', type=Path, default=_DEFAULT_CONFIG['output_dir'], help='directory to save the screenshots')
+                        help='Save all the screenshots in the same folder when multiple files ares passed', dest='use_single_folder')
+    parser.add_argument('-8bit', '--force-8bits-color', action='store_true', help='Force 8 bit color', dest='force_8bits_color')
+    parser.add_argument('-o', '--output-dir', type=Path, default=_DEFAULT_CONFIG['output_dir'], help='Directory to save the screenshots')
+    parser.add_argument('-q', '--quiet', action='store_false', help='Disable progress output', dest='quiet_output')
     parser.add_argument('filenames', type=Path, help='Path(s) to the video file(s)', nargs='+')
-    args = parser.parse_args()
+    args = vars(parser.parse_args())
 
-    options = InputArguments(vars(args))
+    _DEFAULT_CONFIG['quiet_output'] = args.pop('quiet_output', _DEFAULT_CONFIG['quiet_output'])
+    options = InputArguments(args)
     return options
 
 if __name__ == '__main__':
