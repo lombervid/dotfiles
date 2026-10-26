@@ -88,43 +88,50 @@ def take_video_screenshots(video: Path, num_screenshots: int, output: Path, opti
     if not duration:
         return
 
+    output_name = ''
+    ffmpeg_inputs: list = []
+    ffmpeg_outputs: list = []
+    ffmpeg_filters: list = []
+
+    if options['force_8bits_color']:
+        ffmpeg_filters.extend(['-pix_fmt', 'rgba'])
+        output_name += '_8bit'
+
     # Calculate timestamps for evenly spaced screenshots
     increment = int(duration / (num_screenshots + 1))
     timestamp = increment
 
-    filters = []
-    output_name = ''
-    if options['force_8bits_color']:
-        filters.extend(['-pix_fmt', 'rgba'])
-        output_name += '_8bit'
-
     try:
         Console.info(f'    ● Taking {num_screenshots} screenshots...')
+        for i in range(0, num_screenshots):
+            ffmpeg_inputs.extend(['-ss', f'{timestamp:.3f}', '-i', video])
+            ffmpeg_outputs.extend([
+                '-map', f'{i}:v',
+                '-frames:v', '1', '-update', '1',
+                output.joinpath(f'{video.stem}-{timestamp:08d}{output_name}.png'),
+            ])
+            timestamp += increment
+
         # Create output directory
         output.mkdir(parents=True, exist_ok=True)
 
-        for i in range(1, num_screenshots+1):
-            Console.debug(f'        ✓ Screenshot {i}/{num_screenshots}')
-            output_path = output.joinpath(f'{video.name}{output_name}_{timestamp:08d}.png')
-            # Build ffmpeg command to extract single frame at timestamp
-            ffmpeg_cmd = [
-                'ffmpeg',
-                '-y',
-                '-loglevel', 'time+level+error',
-                '-hide_banner',
-                '-ss', f'{timestamp:.3f}',
-                '-i', video,
-                *filters,
-                '-frames:v', '1',
-                '-update', '1',
-                output_path
-            ]
-            subprocess.run(ffmpeg_cmd, check=True)
-            timestamp += increment
+        # Build ffmpeg command to extract single frame at timestamp
+        ffmpeg_cmd = [
+            'ffmpeg',
+            '-y',
+            '-loglevel', 'time+level+error',
+            '-hide_banner',
+            *ffmpeg_inputs,
+            *ffmpeg_filters,
+            *ffmpeg_outputs,
+        ]
+        subprocess.run(ffmpeg_cmd, check=True)
 
-        Console.success(f'    ✓ Successfully taken {num_screenshots} screenshots to "{output}" directory.')
+        Console.success(f'    ✓ Successfully saved to "{output.absolute()}" directory.')
     except subprocess.CalledProcessError as e:
         Console.error(f'    ✗ Error: ffmpeg command failed: {e}')
+    except Exception as e:
+        Console.error(f'    ✗ Error: {e}')
 
 def _process_input_options(options: InputArguments):
     total_files = len(options['filenames'])
