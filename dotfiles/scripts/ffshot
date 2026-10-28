@@ -103,7 +103,7 @@ def take_video_screenshots(video: Path, num_screenshots: int, output: Path, opti
     ffmpeg_filters: list = []
 
     if options['force_8bits_color']:
-        ffmpeg_filters.extend(['-pix_fmt', 'rgba'])
+        ffmpeg_filters.extend(['-pix_fmt', 'rgb24'])
         output_name += '_8bit'
 
     # Calculate timestamps for evenly spaced screenshots
@@ -116,6 +116,7 @@ def take_video_screenshots(video: Path, num_screenshots: int, output: Path, opti
             ffmpeg_inputs.extend(['-ss', f'{timestamp:.3f}', '-i', video])
             ffmpeg_outputs.extend([
                 '-map', f'{i}:v',
+                *ffmpeg_filters,
                 '-frames:v', '1', '-update', '1',
                 output.joinpath(f'{video.stem}-{timestamp:08d}{output_name}.png'),
             ])
@@ -131,7 +132,6 @@ def take_video_screenshots(video: Path, num_screenshots: int, output: Path, opti
             '-loglevel', 'time+level+error',
             '-hide_banner',
             *ffmpeg_inputs,
-            *ffmpeg_filters,
             *ffmpeg_outputs,
         ]
         subprocess.run(ffmpeg_cmd, check=True)
