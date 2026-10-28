@@ -16,6 +16,7 @@ class DefaultOptions(TypedDict):
 
 class ScreenshotSettings(TypedDict):
     force_8bits_color: bool
+    force_sdr_mode: bool
 
 class InputArguments(DefaultOptions, ScreenshotSettings):
     filenames: list[Path]
@@ -102,7 +103,12 @@ def take_video_screenshots(video: Path, num_screenshots: int, output: Path, opti
     ffmpeg_outputs: list = []
     ffmpeg_filters: list = []
 
+    if options['force_sdr_mode']:
+        output_name += '_sdr'
+        ffmpeg_filters.extend(['-filter:v', 'libplacebo=tonemapping=spline:colorspace=bt709:color_primaries=bt709:color_trc=bt709:format=yuv420p'])
+
     if options['force_8bits_color']:
+        output_name += '_8bit'
         ffmpeg_filters.extend(['-pix_fmt', 'rgb24'])
         output_name += '_8bit'
 
@@ -196,6 +202,7 @@ def _parse_parameters() -> InputArguments:
     parser.add_argument('-sf', '--single-folder', action='store_true',
                         help='Save all the screenshots in the same folder when multiple files ares passed', dest='use_single_folder')
     parser.add_argument('-8bit', '--force-8bits-color', action='store_true', help='Force 8 bit color', dest='force_8bits_color')
+    parser.add_argument('-hdr', '--force-hdr-to-sdr', action='store_true', help='Force HDR to SDR', dest='force_sdr_mode')
     parser.add_argument('-o', '--output-dir', type=Path, default=_DEFAULT_CONFIG['output_dir'], help='Directory to save the screenshots')
     parser.add_argument('-q', '--quiet', action='store_false', help='Disable progress output', dest='quiet_output')
     parser.add_argument('filenames', type=Path, help='Path(s) to the video file(s)', nargs='+')
