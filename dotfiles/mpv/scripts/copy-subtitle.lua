@@ -27,12 +27,20 @@ local options = {
   osd_message_print_copied = false,
   osd_warning_nothing_to_copy = 'always',
   clipboard_command = 'xclip -rmlastnl -selection clipboard',
+  clipboard_command_wayland = 'wl-copy',
 }
 
 read_options(options, 'copy_subtitle')
 
 local function is_win_os()
   return package.config:sub(1,1) == '\\'
+end
+
+local function is_wayland_session()
+    local session_type = tostring(os.getenv("XDG_SESSION_TYPE"))
+    local wayland_display = os.getenv("WAYLAND_DISPLAY")
+
+    return session_type == "wayland" or wayland_display ~= nil
 end
 
 local function copy_subtitle(prop)
@@ -47,9 +55,10 @@ local function copy_subtitle(prop)
       mp.commandv('run', 'powershell', '-NoProfile', '-command', 'Set-Clipboard', '"' .. result:gsub('[$"`]', '`%1') .. '"')
       -- mp.commandv('run', 'powershell', '-NoProfile', '-command', 'Set-Clipboard', '"' .. string.gsub(result, '[$"`]', '`%1') .. '"')
     else
+      local copy_command = is_wayland_session() and options.clipboard_command_wayland or options.clipboard_command
       mp.commandv(
         'run', '/usr/bin/env', 'bash', '-c',
-        string.format("<<<'%s' LANG=en_US.UTF-8 %s", result:gsub("'", "'\\''"), options.clipboard_command)
+        string.format("<<<'%s' LANG=en_US.UTF-8 %s", result:gsub("'", "'\\''"), copy_command)
       )
     end
 
