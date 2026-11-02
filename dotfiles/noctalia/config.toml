@@ -17,7 +17,7 @@ end = [ "battery", "tray", "group:system-settings", "windows_clock", "notificati
 [[bar.main.capsule_group]]
 id = "hardware"
 members = [ "ram", "temp", "gpu_temp" ]
-fill = "surface_variant"
+fill = "surface_container"
 opacity = 0.5
 padding = 10.0
 radius = 10.0
@@ -25,7 +25,7 @@ radius = 10.0
 [[bar.main.capsule_group]]
 id = "system-settings"
 members = [ "bluetooth", "network", "volume", "keyboard_layout" ]
-fill = "surface_variant"
+fill = "surface_container"
 opacity = 0.5
 padding = 10.0
 radius = 10.0
@@ -144,3 +144,38 @@ type = "wallpaper"
 
 [[control_center.shortcuts]]
 type = "session"
+
+[[shell.session.actions]]
+action = "lock"
+countdown_seconds = 5.0
+enabled = true
+shortcut = "1"
+variant = "default"
+
+[[shell.session.actions]]
+action = "logout"
+countdown_seconds = 5.0
+enabled = true
+shortcut = "2"
+variant = "default"
+
+[[shell.session.actions]]
+action = "lock_and_suspend"
+countdown_seconds = 0.0
+enabled = false
+shortcut = "3"
+variant = "default"
+
+[[shell.session.actions]]
+action = "reboot"
+countdown_seconds = 5.0
+enabled = true
+shortcut = "4"
+variant = "default"
+
+[[shell.session.actions]]
+action = "shutdown"
+countdown_seconds = 5.0
+enabled = true
+shortcut = "5"
+variant = "destructive"
