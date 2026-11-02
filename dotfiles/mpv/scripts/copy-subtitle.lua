@@ -21,51 +21,44 @@
 require('mp.options')
 
 local options = {
-  console_message = true,
-  console_message_print_copied = true,
-  osd_message = true,
-  osd_message_print_copied = false,
-  osd_warning_nothing_to_copy = 'always',
+    console_message = true,
+    console_message_print_copied = true,
+    osd_message = true,
+    osd_message_print_copied = false,
+    osd_warning_nothing_to_copy = 'always',
 }
 
 read_options(options, 'copy_subtitle')
 
 local function copy_subtitle(prop)
+    local result = mp.get_property(prop)
 
-  local result = mp.get_property(prop)
+    if result ~= nil and result ~= '' then
+        result = result:gsub('\\N', '\n'):gsub('%s*\n\t?%s*', ' ')
+        mp.set_property('clipboard/text', result)
 
-  if result ~= '' and result ~= nil then
-
-    result = result:gsub("\\N", "\n"):gsub("%s*\n\t?%s*", " ")
-    mp.set_property('clipboard/text', result)
-
-    if options.console_message == true then
-      if options.console_message_print_copied == true then
-        print('`' ..  prop .. '` copied to clipboard:\n' .. result)
-      else
-        print('`' ..  prop .. '` copied to clipboard')
-      end
+        if options.console_message == true then
+            if options.console_message_print_copied == true then
+                mp.msg.info('`' ..  prop .. '` copied to clipboard:\n' .. result)
+            else
+                mp.msg.info('`' ..  prop .. '` copied to clipboard')
+            end
+        end
+        if options.osd_message == true then
+            if options.osd_message_print_copied == true then
+                mp.osd_message('`' .. prop .. '` copied to clipboard:\n\n' .. result)
+            else
+                mp.osd_message('`' .. prop .. '` copied to clipboard')
+            end
+        end
+    else
+        if
+            options.osd_warning_nothing_to_copy == 'always' or
+            (options.osd_warning_nothing_to_copy == 'auto' and options.osd_message == true)
+        then
+            mp.osd_message('No `' .. prop  .. '` to copy')
+        end
     end
-
-    if options.osd_message == true then
-      if options.osd_message_print_copied == true then
-        mp.osd_message('`' .. prop .. '` copied to clipboard:\n\n' .. result)
-      else
-        mp.osd_message('`' .. prop .. '` copied to clipboard')
-      end
-    end
-
-  else
-
-    if
-      options.osd_warning_nothing_to_copy == 'always' or
-      (options.osd_warning_nothing_to_copy == 'auto' and options.osd_message == true)
-    then
-      mp.osd_message('No `' .. prop  .. '` to copy')
-    end
-
-  end
-
 end
 
 mp.add_key_binding('Ctrl+c', 'copy-subtitle-primary', function() copy_subtitle('sub-text') end)
