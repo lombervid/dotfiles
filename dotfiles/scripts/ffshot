@@ -113,7 +113,6 @@ def take_video_screenshots(video: Path, num_screenshots: int, output: Path, opti
     if options['force_8bits_color']:
         output_name += '_8bit'
         ffmpeg_filters.extend(['-pix_fmt', 'rgb24'])
-        output_name += '_8bit'
 
     # Calculate timestamps for evenly spaced screenshots
     increment = int(duration / (num_screenshots + 1))
