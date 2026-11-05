@@ -123,7 +123,7 @@ def take_video_screenshots(video: Path, num_screenshots: int, output: Path, opti
         for i in range(0, num_screenshots):
             ffmpeg_inputs.extend(['-ss', f'{timestamp:.3f}', '-i', video])
             ffmpeg_outputs.extend([
-                '-map', f'{i}:v',
+                '-map', f'{i}:v:0',
                 *ffmpeg_filters,
                 '-frames:v', '1', '-update', '1',
                 output.joinpath(f'{video.stem}-{timestamp:08d}{output_name}.png'),
