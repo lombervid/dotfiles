@@ -33,6 +33,9 @@ radius = 10.0
 [theme]
 builtin = "Tokyo-Night"
 
+[theme.templates]
+builtin_ids = [ "gtk3", "gtk4", "kcolorscheme" ]
+
 [system.monitor]
 gpu_poll_seconds = 5
 
@@ -51,23 +54,8 @@ position_vertical = "center_right"
 background_opacity = 0.44999998994171619
 scale = 0.85000000521540642
 
-[shell]
-settings_show_advanced = true
-clipboard_auto_paste = "auto"
-clipboard_confirm_clear_history = false
-clipboard_image_action_command = "satty -f -"
-polkit_agent = true
-show_location = false
-telemetry_enabled = true
-
-[shell.panel]
-open_near_click_control_center = true
-transparency_mode = "glass"
-control_center_placement = "floating"
-session_placement = "floating"
-session_position = "center"
-wallpaper_placement = "floating"
-wallpaper_position = "center"
+[osd.kinds]
+media = false
 
 [notification]
 position = "bottom_right"
@@ -144,6 +132,27 @@ type = "wallpaper"
 
 [[control_center.shortcuts]]
 type = "session"
+
+[shell]
+settings_show_advanced = true
+clipboard_auto_paste = "auto"
+clipboard_confirm_clear_history = false
+clipboard_image_action_command = "satty -f -"
+polkit_agent = true
+show_location = false
+telemetry_enabled = true
+
+[shell.launcher]
+search_position = "top"
+
+[shell.panel]
+open_near_click_control_center = true
+transparency_mode = "glass"
+control_center_placement = "floating"
+session_placement = "floating"
+session_position = "center"
+wallpaper_placement = "floating"
+wallpaper_position = "center"
 
 [[shell.session.actions]]
 action = "lock"
